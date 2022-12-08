@@ -15,7 +15,7 @@ namespace Example
         private static readonly Uri endpoint = new Uri(Environment.GetEnvironmentVariable("AI_URL") ?? "SETENVVAR!");
 
         // Method for summarizing text
-        static async Task<string> AISummerizeText(TextAnalyticsClient client, string document, ILogger logger)
+        static async Task<string> AISummarizeText(TextAnalyticsClient client, string document, ILogger logger)
         {
 
             string summarizedText = "";
@@ -107,7 +107,7 @@ namespace Example
             var client = new TextAnalyticsClient(endpoint, credentials);
             
             // analyze document text using Azure Cognitive Language Services
-            var summarizedText = await AISummerizeText(client, document, logger);
+            var summarizedText = await AISummarizeText(client, document, logger);
             
             Console.WriteLine(summarizedText);
         }
