@@ -3,7 +3,7 @@ using Azure.AI.TextAnalytics;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 
-namespace helloimages
+namespace AI_Functions
 {
     public class summerize_function
     {
