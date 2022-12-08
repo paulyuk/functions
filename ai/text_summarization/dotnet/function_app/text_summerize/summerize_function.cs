@@ -31,6 +31,7 @@ namespace helloimages
 
             // analyze document text using Azure Cognitive Language Services
             var summarizedText = await AISummerizeText(client, myTriggerItem, logger);
+            logger.LogInformation(Newline() + "*****Summary*****" + Newline() + summarizedText);
 
             // Blob Output
             return summarizedText;
@@ -98,7 +99,7 @@ namespace helloimages
                 }
             }
 
-            logger.LogInformation("Returning summarized text: " + Newline + summarizedText);
+            logger.LogInformation(Newline() + "*****Summary*****" + Newline() + summarizedText);
             return summarizedText;
         }
 
