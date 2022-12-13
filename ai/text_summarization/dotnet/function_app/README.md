@@ -27,8 +27,8 @@ Search for Environment Variables in Settings, create new System Variables simila
 
 | Variable | Value |
 | -------- | ----- |
-| AI_URL | *Paste from step 3* |
-| AI_SECRET | *Paste from step 3* |
+| AI_URL | *Paste from step 4* |
+| AI_SECRET | *Paste from step 4* |
 
 Close all Visual Studio 2022 instances.  You may need to log out and log back into Windows for these to take after closing Visual Studio.  
 
