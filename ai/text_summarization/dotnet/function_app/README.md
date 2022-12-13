@@ -36,7 +36,7 @@ Close all Visual Studio 2022 instances.  You may need to log out and log back in
 1) Open `text_summarization.sln` using Visual Studio 2022 or later.
 2) Press Run/F5 to run in the debugger
 3) Open Storage Explorer, Storage Accounts -> Emulator -> Blob Containers -> and create a container `test-samples-trigger` if it does not already exists
-4) Copy any .txt document file with text into the `test-samples-output` container
+4) Copy any .txt document file with text into the `test-samples-trigger` container
 
 You will see AI analysis happen in the Terminal standard out.  The analysis will be saved in a .txt file in the `` blob container.
 
@@ -49,6 +49,6 @@ dotnet build
 func start
 ```
 2) Open Storage Explorer, Storage Accounts -> Emulator -> Blob Containers -> and create a container `test-samples-trigger` if it does not already exists
-3) Copy any .txt document file with text into the `test-samples-output` container
+3) Copy any .txt document file with text into the `test-samples-trigger` container
 
-You will see AI analysis happen in the Terminal standard out.  The analysis will be saved in a .txt file in the `` blob container.
+You will see AI analysis happen in the Terminal standard out.  The analysis will be saved in a .txt file in the `test-samples-output` blob container.
