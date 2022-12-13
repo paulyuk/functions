@@ -13,12 +13,12 @@ This sample shows how to take text documents as a input via BlobTrigger, does Te
 4) Once you have your Azure subscription, [create a Language resource](https://portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) in the Azure portal to get your key and endpoint. After it deploys, click Go to resource.
 You will need the key and endpoint from the resource you create to connect your application to the API. You'll need to store the key and endpoint into the Env Vars or User Secrets code in a next step the quickstart.
 You can use the free pricing tier (Free F0) to try the service, and upgrade later to a paid tier for production.
-5) Export these secrets as Env Vars using values from Step 3.
+5) Export these secrets as Env Vars using values from Step 4.
 
 Mac/Linux
 ```bash
-export AI_URL= *Paste from step 3*
-export AI_SECRET= *Paste from step 3*
+export AI_URL=*Paste from step 4*
+export AI_SECRET=*Paste from step 4*
 ```
 
 Windows
