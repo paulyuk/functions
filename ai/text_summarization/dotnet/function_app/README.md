@@ -6,10 +6,14 @@ This sample shows how to take text documents as a input via BlobTrigger, does Te
 ## Run on your local environment
 
 ### Pre-reqs
-1) .NET 7 SDK
-2) Functions Core Tools
-3) Install and run Azurite, the easiest way is using a Docker container or the support built into Visual Studio:
-`docker run -d -p 10000:10000 -p 10001:10001 -p 10002:10002 mcr.microsoft.com/azure-storage/azurite`
+1) [.NET 7 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) required *and [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) is strongly recommended*
+2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
+3) Install and run [Azurite](https://github.com/Azure/Azurite)
+
+The easiest way to install Azurite is using a Docker container or the support built into Visual Studio:
+```bash
+docker run -d -p 10000:10000 -p 10001:10001 -p 10002:10002 mcr.microsoft.com/azure-storage/azurite
+```
 4) Once you have your Azure subscription, [create a Language resource](https://portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) in the Azure portal to get your key and endpoint. After it deploys, click Go to resource.
 You will need the key and endpoint from the resource you create to connect your application to the API. You'll need to store the key and endpoint into the Env Vars or User Secrets code in a next step the quickstart.
 You can use the free pricing tier (Free F0) to try the service, and upgrade later to a paid tier for production.
