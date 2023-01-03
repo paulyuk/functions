@@ -50,9 +50,9 @@ def ai_summarize_txt(client, document):
 
 @app.function_name(name="summarize_function")
 @app.blob_trigger(arg_name="myblob", path="test-samples-trigger/{name}",
-                  connection="")
-@app.blob_output("test-samples-output/{name}-output.txt")
-def test_function(myblob: func.InputStream):
+                  connection="blobstorage")
+@app.blob_output(arg_name="outputblob", path="test-samples-output/{name}-output.txt", connection="blobstorage")
+def test_function(myblob: func.InputStream, outputblob: func.Out[str]) -> func.Out[str]:
    logging.info(f"Triggered item: {myblob.name}\n")
 
    summarizedText = ai_summarize_txt(client, myblob)
