@@ -36,21 +36,12 @@ Search for Environment Variables in Settings, create new System Variables simila
 | AI_SECRET | *Paste from step 4* |
 6) [Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/) or storage explorer features of [Azure Portal](https://portal.azure.com)
 
-
-### Using Visual Studio
-1) Open `text_summarization.sln` using Visual Studio 2022 or later.
-2) Press Run/F5 to run in the debugger
-3) Open Storage Explorer, Storage Accounts -> Emulator -> Blob Containers -> and create a container `test-samples-trigger` if it does not already exists
-4) Copy any .txt document file with text into the `test-samples-trigger` container
-
-You will see AI analysis happen in the Terminal standard out.  The analysis will be saved in a .txt file in the `` blob container.
-
 ### Using Functions CLI
 1) Open a new terminal and do the following:
 
 ```bash
 cd text_summarize
-dotnet build
+pip3 install -r requirements.txt
 func start
 ```
 2) Open Storage Explorer, Storage Accounts -> Emulator -> Blob Containers -> and create a container `test-samples-trigger` if it does not already exists
