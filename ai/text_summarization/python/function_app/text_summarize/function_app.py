@@ -36,6 +36,7 @@ def ai_summarize_txt(client, document):
         ],
     )
 
+    summarized_text = ""
     document_results = poller.result()
     for result in document_results:
         extract_summary_result = result[0]  # first document, first result
@@ -44,18 +45,24 @@ def ai_summarize_txt(client, document):
                 extract_summary_result.code, extract_summary_result.message
             ))
         else:
-            logging.info("Returning summarized text:  \n{}".format(
+            summarized_text += "Summary extracted: \n{}".format(
                 " ".join([sentence.text for sentence in extract_summary_result.sentences]))
+            logging.info("Returning summarized text:  \n{}".format(
+                " ".join(summarized_text))
             )
+        return summarized_text
+
 
 @app.function_name(name="summarize_function")
 @app.blob_trigger(arg_name="myblob", path="test-samples-trigger/{name}",
                   connection="blobstorage")
 @app.blob_output(arg_name="outputblob", path="test-samples-output/{name}-output.txt", connection="blobstorage")
-def test_function(myblob: func.InputStream, outputblob: func.Out[str]) -> func.Out[str]:
+def test_function(myblob: func.InputStream, outputblob: func.Out[str]):
    logging.info(f"Triggered item: {myblob.name}\n")
 
-   summarizedText = ai_summarize_txt(client, myblob)
-   logging.info(f"\n *****Summary***** \n{summarizedText}");
+   document = [myblob.read().decode('utf-8')]
+   summarized_text = ai_summarize_txt(client, document)
+   logging.info(f"\n *****Summary***** \n{summarized_text}");
+   outputblob.set(summarized_text)
 
-   return summarizedText
+   #return summarized_text
