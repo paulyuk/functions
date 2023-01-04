@@ -32,6 +32,7 @@ def ai_summarize_txt(client, document):
         ],
     )
 
+    summarized_text = ""
     document_results = poller.result()
     for result in document_results:
         extract_summary_result = result[0]  # first document, first result
@@ -40,9 +41,10 @@ def ai_summarize_txt(client, document):
                 extract_summary_result.code, extract_summary_result.message
             ))
         else:
-            print("Summary extracted: \n{}".format(
+            summarized_text += "Summary extracted: \n{}".format(
                 " ".join([sentence.text for sentence in extract_summary_result.sentences]))
-            )
+            print(f"Returning summarized text:  \n{summarized_text}")
+    return summarized_text
 
 
 document = ["""The extractive summarization feature uses natural language processing techniques to locate key sentences in an unstructured text document. 
@@ -52,4 +54,4 @@ document = ["""The extractive summarization feature uses natural language proces
            It draws its strength from transfer learning across monolingual and harness the shared nature of languages to produce models of improved quality and efficiency."""
            ]
 
-ai_summarize_txt(client, document)
+summarized_text = ai_summarize_txt(client, document)

@@ -47,10 +47,8 @@ def ai_summarize_txt(client, document):
         else:
             summarized_text += "Summary extracted: \n{}".format(
                 " ".join([sentence.text for sentence in extract_summary_result.sentences]))
-            logging.info("Returning summarized text:  \n{}".format(
-                " ".join(summarized_text))
-            )
-        return summarized_text
+            logging.info(f"Returning summarized text:  \n{summarized_text}")
+    return summarized_text
 
 
 @app.function_name(name="summarize_function")
