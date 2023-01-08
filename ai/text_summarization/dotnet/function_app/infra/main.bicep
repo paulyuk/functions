@@ -21,20 +21,10 @@ param keyVaultName string = ''
 param logAnalyticsName string = ''
 param resourceGroupName string = ''
 param storageAccountName string = ''
-param sqlDatabaseName string = ''
-param sqlServerName string = ''
-param webServiceName string = ''
+param aiResourceName string = ''
 
 @description('Id of the user or app to assign application roles')
 param principalId string = ''
-
-@secure()
-@description('SQL Server administrator password')
-param sqlAdminPassword string
-
-@secure()
-@description('Application user password')
-param appUserPassword string
 
 var abbrs = loadJsonContent('./abbreviations.json')
 var resourceToken = toLower(uniqueString(subscription().id, environmentName, location))
@@ -47,12 +37,11 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   tags: tags
 }
 
-// The application frontend
-module web './app/web.bicep' = {
-  name: 'web'
+module ai 'app/ai.bicep' = {
+  name: 'ai'
   scope: rg
   params: {
-    name: !empty(webServiceName) ? webServiceName : '${abbrs.webStaticSites}web-${resourceToken}'
+    name: !empty(aiResourceName) ? aiResourceName : '${abbrs.cognitiveServicesTextAnalytics}-${resourceToken}'
     location: location
     tags: tags
   }
@@ -70,9 +59,10 @@ module api './app/api.bicep' = {
     appServicePlanId: appServicePlan.outputs.id
     keyVaultName: keyVault.outputs.name
     storageAccountName: storage.outputs.name
-    allowedOrigins: [ web.outputs.SERVICE_WEB_URI ]
     appSettings: {
-      AZURE_SQL_CONNECTION_STRING_KEY: sqlServer.outputs.connectionStringKey
+      //AI_SECRET: sqlServer.outputs.connectionStringKey
+      //AI_URL: sqlServer.outputs.connectionStringKey
+      //AzureWebJobsStorage: storage.outputs.primaryEndpoints
     }
   }
 }
@@ -84,21 +74,6 @@ module apiKeyVaultAccess './core/security/keyvault-access.bicep' = {
   params: {
     keyVaultName: keyVault.outputs.name
     principalId: api.outputs.SERVICE_API_IDENTITY_PRINCIPAL_ID
-  }
-}
-
-// The application database
-module sqlServer './app/db.bicep' = {
-  name: 'sql'
-  scope: rg
-  params: {
-    name: !empty(sqlServerName) ? sqlServerName : '${abbrs.sqlServers}${resourceToken}'
-    databaseName: sqlDatabaseName
-    location: location
-    tags: tags
-    sqlAdminPassword: sqlAdminPassword
-    appUserPassword: appUserPassword
-    keyVaultName: keyVault.outputs.name
   }
 }
 
@@ -154,7 +129,7 @@ module monitoring './core/monitor/monitoring.bicep' = {
 }
 
 // Data outputs
-output AZURE_SQL_CONNECTION_STRING_KEY string = sqlServer.outputs.connectionStringKey
+//output AZURE_SQL_CONNECTION_STRING_KEY string = sqlServer.outputs.connectionStringKey
 
 // App outputs
 output APPLICATIONINSIGHTS_CONNECTION_STRING string = monitoring.outputs.applicationInsightsConnectionString
@@ -164,4 +139,3 @@ output AZURE_LOCATION string = location
 output AZURE_TENANT_ID string = tenant().tenantId
 output REACT_APP_API_BASE_URL string = api.outputs.SERVICE_API_URI
 output REACT_APP_APPLICATIONINSIGHTS_CONNECTION_STRING string = monitoring.outputs.applicationInsightsConnectionString
-output REACT_APP_WEB_BASE_URL string = web.outputs.SERVICE_WEB_URI
