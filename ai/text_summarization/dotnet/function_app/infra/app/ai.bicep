@@ -11,4 +11,5 @@ module aiLanguageService '../core/cognitive/ai-textanalytics.bicep' = {
   }
 }
 
+output name string = aiLanguageService.name
 output url string = aiLanguageService.outputs.url

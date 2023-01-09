@@ -60,9 +60,8 @@ module api './app/api.bicep' = {
     keyVaultName: keyVault.outputs.name
     storageAccountName: storage.outputs.name
     appSettings: {
-      //AI_SECRET: sqlServer.outputs.connectionStringKey
-      //AI_URL: sqlServer.outputs.connectionStringKey
-      //AzureWebJobsStorage: storage.outputs.primaryEndpoints
+      AI_SECRET: cognitiveService.listKeys().key1
+      AI_URL: ai.outputs.url
     }
   }
 }
@@ -126,6 +125,11 @@ module monitoring './core/monitor/monitoring.bicep' = {
     applicationInsightsName: !empty(applicationInsightsName) ? applicationInsightsName : '${abbrs.insightsComponents}${resourceToken}'
     applicationInsightsDashboardName: !empty(applicationInsightsDashboardName) ? applicationInsightsDashboardName : '${abbrs.portalDashboards}${resourceToken}'
   }
+}
+
+resource cognitiveService 'Microsoft.CognitiveServices/accounts@2021-10-01' existing =  {
+  name: !empty(aiResourceName) ? aiResourceName : '${abbrs.cognitiveServicesTextAnalytics}-${resourceToken}'
+  scope: rg
 }
 
 // Data outputs

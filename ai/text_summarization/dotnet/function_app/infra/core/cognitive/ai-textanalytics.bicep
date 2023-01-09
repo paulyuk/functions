@@ -18,4 +18,5 @@ resource cognitiveService 'Microsoft.CognitiveServices/accounts@2021-10-01' = {
   }
 }
 
+output name string = cognitiveService.name
 output url string = cognitiveService.properties.endpoint
