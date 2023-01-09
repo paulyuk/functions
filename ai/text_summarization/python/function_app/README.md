@@ -48,3 +48,12 @@ func start
 3) Copy any .txt document file with text into the `test-samples-trigger` container
 
 You will see AI analysis happen in the Terminal standard out.  The analysis will be saved in a .txt file in the `test-samples-output` blob container.
+
+## Deploy to Azure
+
+The easiest way to deploy this app is using the [Azure Dev CLI aka AZD](https://aka.ms/azd).  If you open this repo in GitHub CodeSpaces the AZD tooling is already preinstalled.
+
+To provision and deploy:
+```bash
+azd up
+```
