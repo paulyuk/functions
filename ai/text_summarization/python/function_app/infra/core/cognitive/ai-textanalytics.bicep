@@ -1,7 +1,7 @@
 param aiResourceName string
 param location string = resourceGroup().location
 param tags object = {}
-param sku string = 'F0'
+param sku string = 'S'
 
 param principalIds array = []
 

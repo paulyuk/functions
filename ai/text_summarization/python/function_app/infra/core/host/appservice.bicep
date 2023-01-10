@@ -39,6 +39,9 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
   tags: tags
   kind: kind
   properties: {
+    //py
+    reserved: true
+    //--
     serverFarmId: appServicePlanId
     siteConfig: {
       linuxFxVersion: linuxFxVersion
@@ -63,8 +66,10 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
     name: 'appsettings'
     properties: union(appSettings,
       {
-        SCM_DO_BUILD_DURING_DEPLOYMENT: string(scmDoBuildDuringDeployment)
-        ENABLE_ORYX_BUILD: string(enableOryxBuild)
+        //py
+        //SCM_DO_BUILD_DURING_DEPLOYMENT: string(scmDoBuildDuringDeployment)
+        //ENABLE_ORYX_BUILD: string(enableOryxBuild)
+        //--
       },
       !empty(applicationInsightsName) ? { APPLICATIONINSIGHTS_CONNECTION_STRING: applicationInsights.properties.ConnectionString } : {},
       !empty(keyVaultName) ? { AZURE_KEY_VAULT_ENDPOINT: keyVault.properties.vaultUri } : {})

@@ -59,9 +59,10 @@ module api './app/api.bicep' = {
     appServicePlanId: appServicePlan.outputs.id
     keyVaultName: keyVault.outputs.name
     storageAccountName: storage.outputs.name
+    aiResourceName: !empty(aiResourceName) ? aiResourceName : '${abbrs.cognitiveServicesTextAnalytics}-${resourceToken}'
     appSettings: {
-      AI_SECRET: cognitiveService.listKeys().key1
-      AI_URL: ai.outputs.url
+      //AI_SECRET: cognitiveService.listKeys().key1
+      //AI_URL: ai.outputs.url
       AzureWebJobsFeatureFlags: 'EnableWorkerIndexing'
     }
   }
@@ -126,11 +127,6 @@ module monitoring './core/monitor/monitoring.bicep' = {
     applicationInsightsName: !empty(applicationInsightsName) ? applicationInsightsName : '${abbrs.insightsComponents}${resourceToken}'
     applicationInsightsDashboardName: !empty(applicationInsightsDashboardName) ? applicationInsightsDashboardName : '${abbrs.portalDashboards}${resourceToken}'
   }
-}
-
-resource cognitiveService 'Microsoft.CognitiveServices/accounts@2021-10-01' existing =  {
-  name: !empty(aiResourceName) ? aiResourceName : '${abbrs.cognitiveServicesTextAnalytics}-${resourceToken}'
-  scope: rg
 }
 
 // Data outputs

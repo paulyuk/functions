@@ -60,7 +60,7 @@ def test_function(myblob: func.InputStream, outputblob: func.Out[str]):
 
    document = [myblob.read().decode('utf-8')]
    summarized_text = ai_summarize_txt(client, document)
-   logging.info(f"\n *****Summary***** \n{summarized_text}");
+   logging.info(f"\n *****Summary  PAULTEST***** \n{summarized_text}");
    outputblob.set(summarized_text)
 
    #return summarized_text
