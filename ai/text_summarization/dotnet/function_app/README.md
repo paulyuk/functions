@@ -1,5 +1,5 @@
 # Azure Functions
-## Text Summarization using AI Cognitive Language Service
+## Text Summarization using AI Cognitive Language Service (C#-Isolated)
 
 This sample shows how to take text documents as a input via BlobTrigger, does Text Summarization processing using the AI Congnitive Language service, and then outputs to another text document using BlobOutput binding.  
 
