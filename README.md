@@ -5,4 +5,4 @@ Samples, quickstarts, and utilities for Azure Functions
 
 | Sample      | Folder | Description    |
 | :---        |    :----:   |          ---: |
-| AI - Text Summarization      | [ai/text_summerazation/dotnet](ai/text_summarization/dotnet/function_app/README.md) [ai/text_summerazation/python](ai/text_summarization/python/function_app/README.md)       | Uses AI Congitive Language services to summarize a text document |
+| AI - Text Summarization      | [ai/text_summarization/dotnet](ai/text_summarization/dotnet/function_app/README.md) [ai/text_summerazation/python](ai/text_summarization/python/function_app/README.md)       | Uses AI Congitive Language services to summarize a text document in C#-isolated and Python v2 programming models|
