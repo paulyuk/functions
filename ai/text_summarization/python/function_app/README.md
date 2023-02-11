@@ -37,6 +37,20 @@ Search for Environment Variables in Settings, create new System Variables simila
 | AI_URL | *Paste from step 4* |
 | AI_SECRET | *Paste from step 4* |
 6) [Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/) or storage explorer features of [Azure Portal](https://portal.azure.com)
+7) Add this local.settings.json file to the text_summarize folder to simplify local development
+```json
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "blobstorage": "UseDevelopmentStorage=true",
+    "AI_URL": "",
+    "AI_SECRET": ""
+  }
+}
+```
 
 ### Using Functions CLI
 1) Open a new terminal and do the following:

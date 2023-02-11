@@ -37,7 +37,18 @@ Search for Environment Variables in Settings, create new System Variables simila
 | AI_URL | *Paste from step 4* |
 | AI_SECRET | *Paste from step 4* |
 6) [Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/) or storage explorer features of [Azure Portal](https://portal.azure.com)
-
+7) Add this local.settings.json file to the text_summarize folder to simplify local development.  Optionally fill in the AI_URL and AI_SECRET values per step 4.  This file will be gitignored to protect secrets from committing to your repo.  
+```json
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+        "AI_URL": "",
+        "AI_SECRET": ""
+    }
+}
+```
 
 ### Using Visual Studio
 1) Open `text_summarization.sln` using Visual Studio 2022 or later.
