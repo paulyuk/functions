@@ -78,7 +78,7 @@ namespace Example
                 }
             }
 
-            logger.LogInformation("Returning summarized text: " + Newline + summarizedText);
+            logger.LogInformation("Returning summarized text: " + Newline() + summarizedText);
             return summarizedText;
         }
 
