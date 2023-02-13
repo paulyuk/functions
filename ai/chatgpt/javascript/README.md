@@ -8,7 +8,7 @@ This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calcul
 ## Run on your local environment
 
 ### Pre-reqs
-1) [Node.js 16 or 18](https://www.nodejs.org/) required 
+1) [Node.js 16 or 18](https://www.nodejs.org/) 
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
 3) [OpenAPI API key](https://platform.openai.com/account/api-keys) 
 4) Export these secrets as Env Vars using values from Step 3.
@@ -50,9 +50,9 @@ func start
 
 Terminal:
 ```bash
-curl -i -X POST host:port/post-file \
-  -H "Content-Type: text/xml" \
-  --data-binary "testdata.json"
+curl -i -X POST http://localhost:7071/api/chat/ \
+  -H "Content-Type: text/json" \
+  --data-binary "@testdata.json"
 ```
 
 test.http
