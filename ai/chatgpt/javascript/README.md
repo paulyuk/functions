@@ -68,7 +68,7 @@ content-type: application/json
 
 You will see chat happen in the Terminal standard out, the HTTP response, and saved off to a Blob for state management in the `samples-chatgpt-output` container.  
 
-## The Code
+## Source Code
 
 The key code that makes this work is as follows in `./chatgpt/index.js`.  You can customize this or learn more snippets using [Examples](https://platform.openai.com/examples) and [OpenAPI Playground](https://platform.openai.com/playground/).
 
