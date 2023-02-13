@@ -1,6 +1,6 @@
 module.exports = async function (context, req) {
 
-  context.log('JavaScript HTTP trigger function processed a request.');
+  context.log("JavaScript HTTP trigger function processed a request.");
 
   const prompt = (req.query.prompt || (req.body && req.body.prompt));
 
@@ -54,10 +54,10 @@ module.exports = async function (context, req) {
       context.res.status(error.response.status).json(error.response.data);
       return;
     } else {
-      console.error(`Error with OpenAI API request: ${error.message}`);
+      console.error("Error with OpenAI API request: ${error.message}");
       context.res.status(500).json({
         error: {
-          message: 'An error occurred during your request.',
+          message: "An error occurred during your request.",
         }
       });
       return;
@@ -74,7 +74,7 @@ module.exports = async function (context, req) {
     // prompt template is important to set some context and training up front in addition to user driven input
 
     // Freeform question
-    const promptTemplate = `${capitalizedPrompt}` 
+    const promptTemplate = `${capitalizedPrompt}`; 
 
     // Chat
     //const promptTemplate = `The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: ${capitalizedPrompt}` 
