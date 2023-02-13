@@ -55,6 +55,13 @@ curl -i -X POST http://localhost:7071/api/chat/ \
   --data-binary "@testdata.json"
 ```
 
+testdata.json
+```json
+{
+    "prompt": "Write a poem about Azure Functions.  Include two reasons why users love them."
+}
+```
+
 test.http
 ```bash
 
