@@ -2,17 +2,6 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "func",
-			"label": "func: host start",
-			"command": "host start",
-			"problemMatcher": "$func-python-watch",
-			"isBackground": true,
-			"dependsOn": "pip install (functions)",
-			"options": {
-				"cwd": "${workspaceFolder}/ai/text_summarization/python/function_app/text_summarize"
-			}
-		},
-		{
 			"label": "pip install (functions)",
 			"type": "shell",
 			"osx": {
@@ -27,6 +16,34 @@
 			"problemMatcher": [],
 			"options": {
 				"cwd": "${workspaceFolder}/ai/text_summarization/python/function_app/text_summarize"
+			}
+		},
+		{
+			"type": "func",
+			"label": "func: host start",
+			"command": "host start",
+			"problemMatcher": "$func-node-watch",
+			"isBackground": true,
+			"dependsOn": "npm install (functions)",
+			"options": {
+				"cwd": "${workspaceFolder}/ai/chatgpt/javascript"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "npm install (functions)",
+			"command": "npm install",
+			"options": {
+				"cwd": "${workspaceFolder}/ai/chatgpt/javascript"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "npm prune (functions)",
+			"command": "npm prune --production",
+			"problemMatcher": [],
+			"options": {
+				"cwd": "${workspaceFolder}/ai/chatgpt/javascript"
 			}
 		}
 	]
