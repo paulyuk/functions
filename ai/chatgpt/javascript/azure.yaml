@@ -6,5 +6,5 @@ metadata:
 services:
   api:
     project: ./chat/
-    language: javascript
+    language: js
     host: function

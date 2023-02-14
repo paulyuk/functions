@@ -49,7 +49,6 @@ module api './app/api.bicep' = {
     appServicePlanId: appServicePlan.outputs.id
     keyVaultName: keyVault.outputs.name
     storageAccountName: storage.outputs.name
-    aiResourceName: !empty(aiResourceName) ? aiResourceName : '${abbrs.cognitiveServicesTextAnalytics}-${resourceToken}'
     appSettings: {
       OPEN_AI_KEY: openAIKey
       //AzureWebJobsFeatureFlags: 'EnableWorkerIndexing'
