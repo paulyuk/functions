@@ -50,7 +50,7 @@ module api './app/api.bicep' = {
     keyVaultName: keyVault.outputs.name
     storageAccountName: storage.outputs.name
     appSettings: {
-      OPEN_AI_KEY: openAIKey
+      OPENAI_API_KEY: openAIKey
       //AzureWebJobsFeatureFlags: 'EnableWorkerIndexing'
     }
   }

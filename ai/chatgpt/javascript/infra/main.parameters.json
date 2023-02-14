@@ -12,7 +12,7 @@
       "value": "${AZURE_PRINCIPAL_ID}"
     },
     "openAIKey": {
-      "value": "${OPEN_AI_KEY}"
+      "value": "${OPENAI_API_KEY}"
     }
   }
 }
