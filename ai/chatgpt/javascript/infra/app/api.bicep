@@ -28,9 +28,10 @@ module api '../core/host/functions.bicep' = {
     minimumElasticInstanceCount: 0
     //--py
     runtimeName: 'node'
-    runtimeVersion: '18'
+    runtimeVersion: '16'
     storageAccountName: storageAccountName
     scmDoBuildDuringDeployment: false
+    enableOryxBuild: false
   }
 }
 
