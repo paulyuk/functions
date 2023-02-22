@@ -8,7 +8,7 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 app = func.FunctionApp()
 
 @app.function_name(name='chat')
-@app.route(route='req')
+@app.route(route='chat')
 def main(req):
     prompt = req.params.get('prompt') 
     if not prompt: 
@@ -23,6 +23,7 @@ def main(req):
         model='text-davinci-003',
         prompt=generate_prompt(prompt),
         temperature=0.9,
+        max_tokens=200
     )
     return completion.choices[0].text
 
