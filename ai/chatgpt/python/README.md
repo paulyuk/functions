@@ -1,5 +1,5 @@
 # Azure Functions
-## Chat using ChatGPT (Node.js Function)
+## Chat using ChatGPT (Python v2 Function)
 
 This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calculates the completions using OpenAI ChatGPT service, and then returns the output plus caches in a Blob state store.  
 
@@ -8,7 +8,7 @@ This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calcul
 ## Run on your local environment
 
 ### Pre-reqs
-1) [Node.js 16 or 18](https://www.nodejs.org/) 
+1) [Python 3.8+](https://www.python.org/) 
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
 3) [OpenAPI API key](https://platform.openai.com/account/api-keys) 
 4) Export these secrets as Env Vars using values from Step 3.
@@ -31,8 +31,9 @@ Search for Environment Variables in Settings, create new System Variables simila
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "",
-    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "OPENAI_API_KEY": "*Paste from step 3*"
   }
 }
@@ -43,7 +44,7 @@ Search for Environment Variables in Settings, create new System Variables simila
 
 ```bash
 cd chat
-npm install
+pip3 install -r requirements.text
 func start
 ```
 2) Using your favorite REST client, e.g. [RestClient in VS Code](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), PostMan, curl, make a post.  `test.http` has been provided to run this quickly.   
@@ -77,15 +78,16 @@ You will see chat happen in the Terminal standard out, the HTTP response, and sa
 
 ## Source Code
 
-The key code that makes this work is as follows in `./chat/index.js`.  You can customize this or learn more snippets using [Examples](https://platform.openai.com/examples) and [OpenAPI Playground](https://platform.openai.com/playground/).
+The key code that makes this work is as follows in `./chat/function_app.py`.  You can customize this or learn more snippets using [Examples](https://platform.openai.com/examples) and [OpenAPI Playground](https://platform.openai.com/playground/).
 
-```javascript
-    completion = await openaiClient.createCompletion({
-      model: "text-davinci-003",
-      prompt: generatePrompt(prompt),
-      temperature: 0.9,
-      max_tokens: 200
-    });
+```python
+    completion = openai.Completion.create(
+        model='text-davinci-003',
+        prompt=generate_prompt(prompt),
+        temperature=0.9,
+        max_tokens=200
+    )
+    return completion.choices[0].text
 ```
 
 ## Deploy to Azure
