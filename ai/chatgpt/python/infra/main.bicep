@@ -21,7 +21,7 @@ param keyVaultName string = ''
 param logAnalyticsName string = ''
 param resourceGroupName string = ''
 param storageAccountName string = ''
-param aiResourceName string = ''
+param openAIKey string
 
 @description('Id of the user or app to assign application roles')
 param principalId string = ''
@@ -49,10 +49,8 @@ module api './app/api.bicep' = {
     appServicePlanId: appServicePlan.outputs.id
     keyVaultName: keyVault.outputs.name
     storageAccountName: storage.outputs.name
-    aiResourceName: !empty(aiResourceName) ? aiResourceName : '${abbrs.cognitiveServicesTextAnalytics}-${resourceToken}'
     appSettings: {
-      //AI_SECRET: cognitiveService.listKeys().key1
-      //AI_URL: ai.outputs.url
+      OPENAI_API_KEY: openAIKey
       AzureWebJobsFeatureFlags: 'EnableWorkerIndexing'
     }
   }

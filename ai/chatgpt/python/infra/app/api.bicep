@@ -9,8 +9,6 @@ param appSettings object = {}
 param keyVaultName string
 param serviceName string = 'api'
 param storageAccountName string
-param aiResourceName string
-
 
 module api '../core/host/functions.bicep' = {
   name: '${serviceName}-functions-python-module'
@@ -31,7 +29,6 @@ module api '../core/host/functions.bicep' = {
     runtimeName: 'python'
     runtimeVersion: '3.9'
     storageAccountName: storageAccountName
-    aiResourceName: aiResourceName
     scmDoBuildDuringDeployment: false
   }
 }
