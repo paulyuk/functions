@@ -5,5 +5,7 @@ Samples, quickstarts, and utilities for Azure Functions
 
 | Sample      | Language | Description    |
 | :---        |    :---   |          :--- |
-| AI - Text Summarization      | [dotnet](ai/text_summarization/dotnet/function_app/README.md), [python](ai/text_summarization/python/function_app/README.md)       | Uses AI Congitive Language services to summarize a text document in C#-isolated and Python v2 programming models|
+| AI - Text Summarization      | [dotnet*](https://github.com/Azure-Samples/function-csharp-ai-textsummarize), [python*](https://github.com/Azure-Samples/function-python-ai-textsummarize)       | Uses AI Congitive Language services to summarize a text document in C#-isolated and Python v2 programming models|
 | AI - ChatGPT      | [javascript](ai/chatgpt/javascript/README.md), [python](ai/chatgpt/python/README.md) | Uses OpenAPI ChatGPT models to enable chat and multiple other prompt styles|
+
+* Moved to office Azure-Samples repos
