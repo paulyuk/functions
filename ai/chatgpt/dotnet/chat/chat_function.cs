@@ -12,9 +12,11 @@ namespace AI_Functions
     {
         private readonly ILogger _logger;
 
-        // must export and set these Env vars with your AI Cognitive Language resource values
+        // must export and set OPEN_API_KEY using https://platform.openai.com/account/api-keys
+        private static readonly string OPENAI_API_KEY = Environment.GetEnvironmentVariable("OPENAI_API_KEY") ?? "";
+
+        // optional - setting OPEN_API_URL is not required and will use default api URL
         private static readonly string OPENAI_API_URL = Environment.GetEnvironmentVariable("OPENAI_API_URL") ?? "https://api.openai.com";
-        private static readonly string OPENAI_API_KEY = Environment.GetEnvironmentVariable("OPENAI_API_KEY") ?? "SETENVVAR!";
 
         public chat_function(ILoggerFactory loggerFactory)
         {
@@ -31,6 +33,13 @@ namespace AI_Functions
 
             HttpResponseData response;
 
+            if (OPENAI_API_KEY == "") {
+                    logger.LogError("Missing env var OPENAI_API_KEY must be set.");
+                    response = req.CreateResponse(HttpStatusCode.InternalServerError);
+                    await response.WriteStringAsync("Missing env var OPENAI_API_KEY must be set."); 
+                    return response;
+            }
+
             try {
                 var requestBodyJson = await new StreamReader(req.Body).ReadToEndAsync();
 
@@ -39,8 +48,9 @@ namespace AI_Functions
                 string prompt = ""; 
 
                 if ((requestBody == null)||(requestBody.prompt == null)) {
-                    logger.LogError($"Missing value for prompt in request body.");
-                    response = req.CreateResponse(HttpStatusCode.PartialContent);
+                    logger.LogError("Missing value for prompt in request body.");
+                    response = req.CreateResponse(HttpStatusCode.NotAcceptable);
+                    await response.WriteStringAsync("Missing value for prompt in request body.");
 
                     return response;
                 } else {
