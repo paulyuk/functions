@@ -52,7 +52,7 @@ namespace AI_Functions
             //     : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
             
                 // call OpenAI ChatGPT API here with desired chat prompt
-                var completion = await OpenAICreateCompletion(prompt, logger);
+                var completion = await OpenAICreateCompletion("text-davinci-003", GeneratePrompt(prompt), 0.9m, 64, logger);
 
                 var choice = completion.choices[0];
                 logger.LogInformation($"Completions result: {choice}");
@@ -69,14 +69,34 @@ namespace AI_Functions
             return response;
         }
 
-        static async Task<CompletionResponse> OpenAICreateCompletion(string prompt, ILogger logger)
+        // Generates prompts from templates -- which is important to set some context and training 
+        // up front in addition to user driven input
+        static string GeneratePrompt(string prompt)
+        {
+            // Freeform question
+            var promptTemplate = prompt; 
+
+            // Chat
+            //var promptTemplate = `The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: ${capitalizedPrompt}` 
+
+            // Classification
+            //var promptTemplate = `The following is a list of companies and the categories they fall into:\n\nApple, Facebook, Fedex\n\nApple\nCategory: ` 
+
+            // Natural language to Python
+            //var promptTemplate = '\"\"\"\n1. Create a list of first names\n2. Create a list of last names\n3. Combine them randomly into a list of 100 full names\n\"\"\"'
+
+            return promptTemplate;
+        }
+
+
+        static async Task<CompletionResponse> OpenAICreateCompletion(string model, string prompt, decimal temperature, int max_tokens, ILogger logger)
         {
             var client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             // Adding app id as part of the header
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {OPENAI_API_KEY}");
 
-            var completion = CompletionRequest.CreateDefaultCompletionRequest(prompt);
+            var completion = CompletionRequest.CreateDefaultCompletionRequest(model, prompt, temperature, max_tokens);
             logger.LogInformation($"Completion Request Body: {completion}");
            
             var completionJson = JsonSerializer.Serialize<CompletionRequest>(completion);
@@ -108,6 +128,11 @@ namespace AI_Functions
                                     decimal presence_penalty
                                     )
     {
+
+        public static CompletionRequest CreateDefaultCompletionRequest(string model, string prompt, decimal temperature, int max_tokens) {
+            return new CompletionRequest(model, prompt, temperature, max_tokens, 1.0m, 0.0m, 0.0m);
+        }
+
         public static CompletionRequest CreateDefaultCompletionRequest(string prompt) {
             return new CompletionRequest("text-davinci-003", prompt, 0.9m, 64, 1.0m, 0.0m, 0.0m);
         }

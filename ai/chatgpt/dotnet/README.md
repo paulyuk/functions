@@ -92,25 +92,15 @@ The key code that makes this work is as follows in `./chat/chat_function.cs`.  C
 
 ```csharp
 // call OpenAI ChatGPT API here with desired chat prompt
-var completion = await OpenAICreateCompletion(prompt, logger);
+var completion = await OpenAICreateCompletion("text-davinci-003", GeneratePrompt(prompt), 0.9m, 64, logger);
 
 var choice = completion.choices[0];
 logger.LogInformation($"Completions result: {choice}");
 
-// Completion request is defined here via Record initializer
-public record CompletionRequest(string model, 
-                                string prompt,
-                                decimal temperature,
-                                int max_tokens,
-                                decimal top_p,
-                                decimal frequency_penalty,
-                                decimal presence_penalty
-                                )
-{
-    public static CompletionRequest CreateDefaultCompletionRequest(string prompt) {
-        return new CompletionRequest("text-davinci-003", prompt, 0.9m, 64, 1.0m, 0.0m, 0.0m);
-    }
-}
+response = req.CreateResponse(HttpStatusCode.OK);
+await response.WriteAsJsonAsync<Choice>(choice);
+
+return response;
 ```
 
 ## Deploy to Azure
