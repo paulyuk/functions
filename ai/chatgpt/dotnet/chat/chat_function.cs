@@ -51,23 +51,25 @@ namespace AI_Functions
             //     ? (ActionResult)new OkObjectResult($"Hello, {name}")
             //     : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
             
-                    var completions = await CreateCompletions(prompt, logger);
-                    var choice = completions.choices[0];
-                    logger.LogInformation($"Completions result: {choice}");
+                // call OpenAI ChatGPT API here with desired chat prompt
+                var completion = await OpenAICreateCompletion(prompt, logger);
 
-                    response = req.CreateResponse(HttpStatusCode.OK);
-                    await response.WriteAsJsonAsync<Choice>(choice);
-                }   
+                var choice = completion.choices[0];
+                logger.LogInformation($"Completions result: {choice}");
+
+                response = req.CreateResponse(HttpStatusCode.OK);
+                await response.WriteAsJsonAsync<Choice>(choice);
+            }   
             catch (Exception ex)
             {
-                logger.LogError($"Exception thrown: {ex.Message}");
+                logger.LogError($"Exception thrown: {ex.ToString()}");
                 response = req.CreateResponse(HttpStatusCode.InternalServerError);
             }
 
             return response;
         }
 
-        static async Task<CompletionResponse> CreateCompletions(string prompt, ILogger logger)
+        static async Task<CompletionResponse> OpenAICreateCompletion(string prompt, ILogger logger)
         {
             var client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
@@ -75,19 +77,19 @@ namespace AI_Functions
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {OPENAI_API_KEY}");
 
             var completion = CompletionRequest.CreateDefaultCompletionRequest(prompt);
-
+            logger.LogInformation($"Completion Request Body: {completion}");
+           
             var completionJson = JsonSerializer.Serialize<CompletionRequest>(completion);
+            logger.LogInformation($"Completion Request Body Json: {completionJson}");
+
             var content = new StringContent(completionJson, Encoding.UTF8, "application/json");
 
-            var response = await client.PostAsync($"{OPENAI_API_URL}/v1/completions", content);
-            //Console.WriteLine("Order passed: " + order);
+            var baseUrl = $"{OPENAI_API_URL}/v1/completions";
+            var response = await client.PostAsync(baseUrl, content);
+            logger.LogInformation($"POST to REST API at: {baseUrl}");
 
-            var responseContent = response.Content.ToString();
-
-            logger.LogInformation("Response code: \n" + response.StatusCode.ToString());       
-            logger.LogInformation("Response: \n" + responseContent);  
-
-            var completionResponse = JsonSerializer.Deserialize<CompletionResponse>(responseContent??"");
+            logger.LogInformation("Response code: \n" + response.StatusCode);       
+            var completionResponse = JsonSerializer.Deserialize<CompletionResponse>(response.Content.ReadAsStream());
 
             return completionResponse;     
         }
@@ -99,15 +101,15 @@ namespace AI_Functions
 
     public record CompletionRequest(string model, 
                                     string prompt,
-                                    double temperature,
-                                    double max_tokens,
-                                    double top_p,
-                                    double frequency_penalty,
-                                    double presence_penalty
+                                    decimal temperature,
+                                    int max_tokens,
+                                    decimal top_p,
+                                    decimal frequency_penalty,
+                                    decimal presence_penalty
                                     )
     {
         public static CompletionRequest CreateDefaultCompletionRequest(string prompt) {
-            return new CompletionRequest("text-davinci-003", prompt, 0.9, 64, 1.0, 0.0, 0.0);
+            return new CompletionRequest("text-davinci-003", prompt, 0.9m, 64, 1.0m, 0.0m, 0.0m);
         }
 
         public static CompletionRequest CreateDefaultCompletionRequest() {
@@ -124,8 +126,6 @@ namespace AI_Functions
                                     );
 
     public record Choice(string text, int index, string logprobs, string finish_reason);
-
-    //public record Choices(Choice[] choices);
 
     public record Usage(int prompt_tokens, int completion_tokens, int total_tokens);
 
