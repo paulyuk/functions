@@ -56,10 +56,6 @@ namespace AI_Functions
                 } else {
                     prompt = requestBody.prompt;
                 }
-
-            // return name != null
-            //     ? (ActionResult)new OkObjectResult($"Hello, {name}")
-            //     : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
             
                 // call OpenAI ChatGPT API here with desired chat prompt
                 var completion = await OpenAICreateCompletion("text-davinci-003", GeneratePrompt(prompt), 0.9m, 64, logger);
