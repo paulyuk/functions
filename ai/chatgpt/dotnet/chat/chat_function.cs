@@ -10,19 +10,11 @@ namespace AI_Functions
 {
     public class chat_function
     {
-        private readonly ILogger _logger;
-
         // must export and set OPEN_API_KEY using https://platform.openai.com/account/api-keys
         private static readonly string OPENAI_API_KEY = Environment.GetEnvironmentVariable("OPENAI_API_KEY") ?? "";
 
         // optional - setting OPEN_API_URL is not required and will use default api URL
         private static readonly string OPENAI_API_URL = Environment.GetEnvironmentVariable("OPENAI_API_URL") ?? "https://api.openai.com";
-
-        public chat_function(ILoggerFactory loggerFactory)
-        {
-            _logger = loggerFactory.CreateLogger<chat_function>();
-        }
-        
 
         [Function("chat")]
         public static async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequestData req,
