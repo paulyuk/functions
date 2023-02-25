@@ -1,9 +1,8 @@
 {
   "profiles": {
-    "text_summarization": {
+    "chatgpt": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7080",
-      "launchBrowser": false
+      "commandLineArgs": "--port 7080"
     }
   }
 }
