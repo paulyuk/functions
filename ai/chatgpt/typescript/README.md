@@ -1,5 +1,5 @@
 # Azure Functions
-## Chat using ChatGPT (Node.js Function)
+## Chat using ChatGPT (Node.js TypeScript Function)
 
 This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calculates the completions using OpenAI ChatGPT service, and then returns the output plus caches in a Blob state store.  
 
@@ -8,7 +8,7 @@ This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calcul
 ## Run on your local environment
 
 ### Pre-reqs
-1) [Node.js 16 or 18](https://www.nodejs.org/) 
+1) [Node.js 16 or 18](https://www.nodejs.org/) and [TypeScript 4.9](https://www.typescriptlang.org/download)
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
 3) [OpenAPI API key](https://platform.openai.com/account/api-keys) 
 4) Export these secrets as Env Vars using values from Step 3.

@@ -1,5 +1,5 @@
 # Azure Functions
-## Chat using ChatGPT (Node.js Function)
+## Chat using ChatGPT (Node.js JavaScript Function)
 
 This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calculates the completions using OpenAI ChatGPT service, and then returns the output plus caches in a Blob state store.  
 
