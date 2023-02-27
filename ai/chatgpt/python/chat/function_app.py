@@ -10,6 +10,8 @@ app = func.FunctionApp()
 @app.function_name(name='chat')
 @app.route(route='chat')
 def main(req):
+    if not open.api_key:
+        func.HttpResponse("OpenAI API key not configured, please follow instructions in README.md", 406)
     prompt = req.params.get('prompt') 
     if not prompt: 
         try: 
