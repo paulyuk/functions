@@ -77,9 +77,9 @@ You will see chat happen in the Terminal standard out, the HTTP response, and sa
 
 ## Source Code
 
-The key code that makes this work is as follows in `./chat/index.js`.  You can customize this or learn more snippets using [Examples](https://platform.openai.com/examples) and [OpenAPI Playground](https://platform.openai.com/playground/).
+The key code that makes this work is as follows in `./chat/index.ts`.  You can customize this or learn more snippets using [Examples](https://platform.openai.com/examples) and [OpenAPI Playground](https://platform.openai.com/playground/).
 
-```javascript
+```typescript
     completion = await openaiClient.createCompletion({
       model: "text-davinci-003",
       prompt: generatePrompt(prompt),
