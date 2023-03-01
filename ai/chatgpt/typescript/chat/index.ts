@@ -1,7 +1,7 @@
-import { AzureFunction, Context, HttpRequest } from "@azure/functions"
-import { Configuration, OpenAIApi } from "openai" 
+import { Context, HttpRequest } from '@azure/functions'
+import { Configuration, OpenAIApi } from 'openai' 
 
-const chat: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
+export default async function (context: Context, req: HttpRequest): Promise<void> {
     context.log('HTTP trigger function processed a request.');
 
     const OPENAI_API_KEY = process.env.OPENAI_API_KEY
@@ -19,7 +19,7 @@ const chat: AzureFunction = async function (context: Context, req: HttpRequest):
         apiKey: process.env.OPENAI_API_KEY,
     });
 
-    const prompt = (req.query.prompt || (req.body && req.body.prompt));
+    const prompt: string | undefined = (req.query.prompt || (req.body && req.body.prompt));
     if (!prompt) {
         context.res.status(500).json({
           error: {
@@ -29,17 +29,18 @@ const chat: AzureFunction = async function (context: Context, req: HttpRequest):
         return;
     }
 
-    const openaiClient = new OpenAIApi(configuration);
-
-    let completion;
     try {
-      completion = await openaiClient.createCompletion({
-        model: "text-davinci-003",
+      const openaiClient = new OpenAIApi(configuration);
+      const completion = await openaiClient.createCompletion({
+        model: 'text-davinci-003',
         prompt: generatePrompt(prompt),
         temperature: 0.9,
         max_tokens: 200
       });
-  
+
+      console.log('Completion result: /n' + completion.data.choices[0].text);
+      context.res.status(200).json({ result: completion.data.choices[0].text });
+    
     } catch(error) {
       // Consider adjusting the error handling logic for your use case
       if (error.response) {
@@ -47,7 +48,7 @@ const chat: AzureFunction = async function (context: Context, req: HttpRequest):
         context.res.status(error.response.status).json(error.response.data);
         return;
       } else {
-        console.error("Error with OpenAI API request: ${error.message}");
+        console.error('Error with OpenAI API request: ${error.message}');
         context.res.status(500).json({
           error: {
             message: "An error occurred during your request.",
@@ -57,10 +58,8 @@ const chat: AzureFunction = async function (context: Context, req: HttpRequest):
       }
     }
 
-    console.log("Completion result: /n" + completion.data.choices[0].text);
-    context.res.status(200).json({ result: completion.data.choices[0].text });
 
-    function generatePrompt(prompt) {
+    function generatePrompt(prompt: string): string {
         const capitalizedPrompt =
           prompt[0].toUpperCase() + prompt.slice(1).toLowerCase();
     
@@ -81,5 +80,3 @@ const chat: AzureFunction = async function (context: Context, req: HttpRequest):
         return promptTemplate;
       }
 };
-
-export default chat;
