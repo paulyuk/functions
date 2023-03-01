@@ -2,24 +2,28 @@ import azure.functions as func
 import logging
 import os
 
-import openai
-openai.api_key = os.getenv('OPENAI_API_KEY')
-
 app = func.FunctionApp()
 
 @app.function_name(name='chat')
 @app.route(route='chat')
 def main(req):
-    if not open.api_key:
-        func.HttpResponse("OpenAI API key not configured, please follow instructions in README.md", 406)
+
+    if 'OPENAI_API_KEY' not in os.environ:
+        raise RuntimeError("No 'OPENAI_API_KEY' env var set.  Please see Readme.")
+
+    import openai
+    openai.api_key = os.getenv('OPENAI_API_KEY')
+
     prompt = req.params.get('prompt') 
     if not prompt: 
         try: 
             req_body = req.get_json() 
         except ValueError: 
-            pass 
+            raise RuntimeError("prompt data must be set in POST.") 
         else: 
             prompt = req_body.get('prompt') 
+            if not prompt:
+                raise RuntimeError("prompt data must be set in POST.")
 
     completion = openai.Completion.create(
         model='text-davinci-003',
