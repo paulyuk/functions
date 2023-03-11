@@ -9,5 +9,10 @@
     "azureFunctions.projectLanguageModel": 2,
     "azureFunctions.templateFilter": "All",
     "azureFunctions.postDeployTask": "npm install (functions)",
-    "azureFunctions.preDeployTask": "npm prune (functions)"
+    "azureFunctions.preDeployTask": "npm prune (functions)",
+    "files.exclude": {
+        "__azurite*": true,
+        "__blobstorage__": true,
+        "__queuestorage__": true
+    }
 }

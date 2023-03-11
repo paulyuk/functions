@@ -1,4 +1,4 @@
-package com.function.ai.chatgpt;
+package com.function;
 
 import com.microsoft.azure.functions.ExecutionContext;
 import com.microsoft.azure.functions.HttpMethod;

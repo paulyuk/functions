@@ -1,5 +1,6 @@
-package com.function.ai.chatgpt;
+package com.function;
 
+import com.function.Function;
 import com.microsoft.azure.functions.*;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
