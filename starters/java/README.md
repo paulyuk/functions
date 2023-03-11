@@ -35,7 +35,7 @@ mvn clean package
 mvn azure-functions:run
 ```
 
-Note this is functionally equivent to doing a `func start` in the `./target/azure-functions/<function name>/` folder. 
+Note this is functionally equivalent to doing a `func start` in the `./target/azure-functions/<function name>/` folder. 
 
 ## Source Code
 
