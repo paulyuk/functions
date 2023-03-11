@@ -1,6 +1,6 @@
 
 
-POST http://localhost:7071/api/HttpExample HTTP/1.1
+POST http://localhost:7071/api/chat HTTP/1.1
 content-type: application/json
 
 {
