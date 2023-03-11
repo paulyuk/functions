@@ -73,15 +73,15 @@ To provision all resources:
 azd provision
 ```
 
-Take note of the <APP_NAME> of the function app that was just provisioned. The default for this template
-is `javafunc-1677374721012`. 
+The <APP_NAME> of the Function is an output of the bicep provisioning in the `$SERVICE_API_NAME` environment
+variable.
 
-To deploy the appication:
+To export environment variables from provisioning:
 ```bash
-func azure functionapp publish <APP_NAME>
+set -o allexport; source ./.azure/testjava/.env; set +o allexport
 ```
 
-Using defaults in this template:
+To deploy the application:
 ```bash
-func azure functionapp publish javafunc-1677374721012
+func azure functionapp publish $SERVICE_API_NAME
 ```
