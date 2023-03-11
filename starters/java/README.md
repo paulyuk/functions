@@ -73,7 +73,7 @@ To provision all resources:
 azd provision
 ```
 
-The <APP_NAME> of the Function is an output of the bicep provisioning in the `$SERVICE_API_NAME` environment
+The `<APP_NAME>` of the Function is an output of the azd/bicep provisioning in the `$SERVICE_API_NAME` environment
 variable.
 
 To export environment variables from provisioning:
@@ -83,5 +83,6 @@ set -o allexport; source ./.azure/testjava/.env; set +o allexport
 
 To deploy the application:
 ```bash
+cd target/azure-functions/javafunc-1677374721012
 func azure functionapp publish $SERVICE_API_NAME
 ```
