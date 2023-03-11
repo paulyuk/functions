@@ -32,10 +32,10 @@ mvn clean package
 2) Start the function app
 
 ```bash
-mvn azure-functions:start
+mvn azure-functions:run
 ```
 
-Note this is functionally equivent to doing a `func start` in the ./target/azure-functions/<function name>/ folder. 
+Note this is functionally equivent to doing a `func start` in the `./target/azure-functions/<function name>/` folder. 
 
 ## Source Code
 
@@ -73,9 +73,15 @@ To provision all resources:
 azd provision
 ```
 
-Take note of the <APP_NAME> of the function app that was just provisioned
+Take note of the <APP_NAME> of the function app that was just provisioned. The default for this template
+is `javafunc-1677374721012`. 
 
 To deploy the appication:
 ```bash
 func azure functionapp publish <APP_NAME>
+```
+
+Using defaults in this template:
+```bash
+func azure functionapp publish javafunc-1677374721012
 ```
