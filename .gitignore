@@ -536,3 +536,6 @@ __azurite_db_table__.json
 __azurite_db_queue_extent__.json
 __blobstorage__
 __queuestorage__
+
+# Azure Functions
+local.settings.json

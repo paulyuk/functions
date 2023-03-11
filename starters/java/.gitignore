@@ -55,3 +55,6 @@ bin/
 build/
 
 .gradle/
+
+# Azure Functions
+local.settings.json
