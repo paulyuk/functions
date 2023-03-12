@@ -34,7 +34,6 @@ target/
 .project
 .settings/
 .checkstyle
-.vscode/
 
 # macOS
 .DS_Store
