@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
 
-name: chatgpt-cs-ai-func
+name: starter-dotnet7-func
 metadata:
-  template: chatgpt-cs-ai-funcc@0.0.1-beta
+  template: starter-dotnet7-func@0.0.1-beta
 services:
   api:
     project: ./chat/
