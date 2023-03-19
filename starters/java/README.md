@@ -75,7 +75,7 @@ content-type: application/json
 The key code that makes this work is as follows in `./src/main/java/com/function/Function.java`.  You can customize this or learn more snippets using [Azure Functions Java developer guide](https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference-java?tabs=bash%2Cconsumption).  
 
 ```java
-    @FunctionName("HttpExample")
+    @FunctionName("http")
     public HttpResponseMessage run(
             @HttpTrigger(
                 name = "req",
