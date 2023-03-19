@@ -41,6 +41,35 @@ mvn azure-functions:run
 
 Note this is functionally equivalent to doing a `func start` in the `./target/azure-functions/<function name>/` folder. 
 
+3) Test a Web hook or GET using the browser to open http://localhost:7071/api/http
+
+4) Test a POST using your favorite REST client, e.g. [RestClient in VS Code](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), PostMan, curl.  `test.http` has been provided to run this quickly.   
+
+Terminal:
+```bash
+curl -i -X POST http://localhost:7071/api/chat/ \
+  -H "Content-Type: text/json" \
+  --data-binary "@testdata.json"
+```
+
+testdata.json
+```json
+{
+  "name": "Awesome Developer"
+}
+```
+
+test.http
+```bash
+
+POST http://localhost:7071/api/chat HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Awesome Developer"
+}
+```
+
 ## Source Code
 
 The key code that makes this work is as follows in `./src/main/java/com/function/Function.java`.  You can customize this or learn more snippets using [Azure Functions Java developer guide](https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference-java?tabs=bash%2Cconsumption).  

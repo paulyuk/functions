@@ -47,7 +47,7 @@ curl -i -X POST http://localhost:7071/api/chat/ \
 testdata.json
 ```json
 {
-    "prompt": "Write a poem about Azure Functions.  Include two reasons why users love them."
+  "name": "Awesome Developer"
 }
 ```
 
@@ -58,7 +58,7 @@ POST http://localhost:7071/api/chat HTTP/1.1
 content-type: application/json
 
 {
-    "prompt": "Write a poem about Azure Functions.  Include two reasons why users love them."
+  "name": "Awesome Developer"
 }
 ```
 
