@@ -10,9 +10,6 @@
     },
     "principalId": {
       "value": "${AZURE_PRINCIPAL_ID}"
-    },
-    "openAIKey": {
-      "value": "${OPENAI_API_KEY}"
     }
   }
 }

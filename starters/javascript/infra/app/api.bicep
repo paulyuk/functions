@@ -23,10 +23,6 @@ module api '../core/host/functions.bicep' = {
     applicationInsightsName: applicationInsightsName
     appServicePlanId: appServicePlanId
     keyVaultName: keyVaultName
-    //py
-    numberOfWorkers: 1
-    minimumElasticInstanceCount: 0
-    //--py
     runtimeName: 'node'
     runtimeVersion: '16'
     storageAccountName: storageAccountName

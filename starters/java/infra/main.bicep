@@ -21,7 +21,6 @@ param keyVaultName string = ''
 param logAnalyticsName string = ''
 param resourceGroupName string = ''
 param storageAccountName string = ''
-param openAIKey string
 
 @description('Id of the user or app to assign application roles')
 param principalId string = ''
@@ -50,7 +49,6 @@ module api './app/api.bicep' = {
     keyVaultName: keyVault.outputs.name
     storageAccountName: storage.outputs.name
     appSettings: {
-      OPENAI_API_KEY: openAIKey
       //AzureWebJobsFeatureFlags: 'EnableWorkerIndexing'
     }
   }
@@ -117,9 +115,6 @@ module monitoring './core/monitor/monitoring.bicep' = {
   }
 }
 
-// Data outputs
-//output AZURE_SQL_CONNECTION_STRING_KEY string = sqlServer.outputs.connectionStringKey
-
 // App outputs
 output APPLICATIONINSIGHTS_CONNECTION_STRING string = monitoring.outputs.applicationInsightsConnectionString
 output AZURE_KEY_VAULT_ENDPOINT string = keyVault.outputs.endpoint
@@ -127,5 +122,4 @@ output AZURE_KEY_VAULT_NAME string = keyVault.outputs.name
 output AZURE_LOCATION string = location
 output AZURE_TENANT_ID string = tenant().tenantId
 output SERVICE_API_NAME string = api.outputs.SERVICE_API_NAME
-output REACT_APP_API_BASE_URL string = api.outputs.SERVICE_API_URI
-output REACT_APP_APPLICATIONINSIGHTS_CONNECTION_STRING string = monitoring.outputs.applicationInsightsConnectionString
+output SERVICE_API_BASE_URL string = api.outputs.SERVICE_API_URI
