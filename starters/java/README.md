@@ -11,7 +11,7 @@ This sample template provides an "empty starting point" function that is ready t
 1) [Java 17 JDK and $JAVA_HOME set](https://www.microsoft.com/openjdk) 
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
 3) [Maven](https://platform.openai.com/account/api-keys) 
-4) Add this local.settings.json file to this folder to simplify local development and include Key from step 3
+4) Add this local.settings.json file to this folder to simplify local development
 ```json
 {
   "IsEncrypted": false,
@@ -21,6 +21,10 @@ This sample template provides an "empty starting point" function that is ready t
     "JAVA_HOME": "/usr"
     }
 }
+```
+5) Start Azurite storage emulator
+```bash
+docker run -p 10000:10000 -p 10001:10001 -p 10002:10002 mcr.microsoft.com/azure-storage/azurite
 ```
 
 ### Using Functions CLI
