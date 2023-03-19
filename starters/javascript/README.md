@@ -72,7 +72,7 @@ You will see chat happen in the Terminal standard out, the HTTP response, and sa
 
 ## Source Code
 
-The key code that makes this work is as follows in `./src/functions/index.js`.  
+The key code that makes this work is as follows in [src/functions/http.js](src/functions/http.js).  
 
 ```javascript
 const { app } = require('@azure/functions');
