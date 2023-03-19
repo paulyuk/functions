@@ -7,6 +7,6 @@ Samples, quickstarts, and utilities for Azure Functions
 | :---        |    :---   |          :--- |
 | AI - Text Summarization      | [dotnet*](https://github.com/Azure-Samples/function-csharp-ai-textsummarize), [python*](https://github.com/Azure-Samples/function-python-ai-textsummarize)       | Uses AI Congitive Language services to summarize a text document in C#-isolated and Python v2 programming models|
 | AI - ChatGPT      | [javascript](ai/chatgpt/javascript/README.md), [typescript](ai/chatgpt/typescript/README.md), [dotnet](ai/chatgpt/dotnet/README.md), [python](ai/chatgpt/python/README.md) | Uses OpenAPI ChatGPT models to enable chat and multiple other prompt styles|
-| Starter Templates      | [java](starters/java/README.md), [dotnet](starters/dotnet/README.md) | Basic "empty" templates that are ready to code, run, and deploy to Azure|
+| Starter Templates      | [java](starters/java/README.md), [dotnet](starters/dotnet/README.md), [javascript](starters/javascript/README.md) | Basic "empty" templates that are ready to code, run, and deploy to Azure|
 
 (*) Moved to official Azure-Samples repos
