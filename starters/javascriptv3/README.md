@@ -71,7 +71,7 @@ You will see chat happen in the Terminal standard out, the HTTP response, and sa
 
 ## Source Code
 
-The key code that makes this work is as follows in [src/functions/http.js](src/functions/http.js).  
+The key code that makes this work is as follows in [http/index.js](http/index.js).  
 
 ```javascript
 module.exports = async function (context, req) {
