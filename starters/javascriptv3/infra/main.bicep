@@ -49,7 +49,6 @@ module api './app/api.bicep' = {
     keyVaultName: keyVault.outputs.name
     storageAccountName: storage.outputs.name
     appSettings: {
-      AzureWebJobsFeatureFlags: 'EnableWorkerIndexing'
     }
   }
 }
