@@ -6,5 +6,6 @@ metadata:
 services:
   api:
     project: .
+    dist: target
     language: java
     host: function
