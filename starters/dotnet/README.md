@@ -79,34 +79,30 @@ The key code that makes this work is as follows in `./http/http.cs`.  The async 
 a `name` value in the request body as JSON.  
 
 ```csharp
-       [Function("http")]
-        public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req)
-        {
-            _logger.LogInformation("C# HTTP trigger function processed a request.");
+[Function("http")]
+public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req)
+{
+    _logger.LogInformation("C# HTTP trigger function processed a request.");
 
-            var response = req.CreateResponse(HttpStatusCode.OK);
-            response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
+    string? name = HttpUtility.ParseQueryString(req.Url.Query)["name"];
 
-            string name;
-            //string reqstring = req.ReadAsString();
-            string reqstring = "{ }";
-            if ((req != null) && (reqstring?.Length > 0)) {
-                RequestPayload payload = await req.ReadFromJsonAsync<RequestPayload>();
-                name = payload?.Name ?? "";
-
-                if (name != "") {
-                    _logger.LogInformation($"Received: \n{name}\n");
-                    response.WriteString($"Welcome to Azure Functions, {name}!.");  
-                } else {
-                    response.WriteString("Welcome to Azure Functions!"); 
-                }
-            } else {
-                response.WriteString("Welcome to Azure Functions!"); 
-            }
-
-            return response;
-        }
+    if (req.Body.Length > 0) {
+        RequestPayload? payload = await req.ReadFromJsonAsync<RequestPayload>();
+        name = payload?.Name;
     }
+
+    string helloMsg = name is null
+        ? "Welcome to Azure Functions!"
+        : $"Welcome to Azure Functions, {name}!";
+
+    _logger.LogInformation(helloMsg);
+
+    var response = req.CreateResponse(HttpStatusCode.OK);
+    response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
+    response.WriteString(helloMsg);  
+
+    return response;
+}
 ```
 
 ## Deploy to Azure
