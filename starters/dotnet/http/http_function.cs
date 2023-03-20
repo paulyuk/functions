@@ -28,7 +28,7 @@ namespace Company.Function
 
             string helloMsg = "Welcome to Azure Functions!";
             if (req.Body.Length > 0) {
-                RequestPayload payload = await req.ReadFromJsonAsync<RequestPayload>();
+                RequestPayload? payload = await req.ReadFromJsonAsync<RequestPayload>();
                 name = payload?.Name ?? name;
 
                 if (name != "") {
