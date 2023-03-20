@@ -103,7 +103,7 @@ The easiest way to deploy this app is using the [Azure Dev CLI aka AZD](https://
 
 To provision all resources:
 ```bash
-azd provision
+azd provision -e "java-function-starter"
 ```
 
 The `<APP_NAME>` of the Function is an output of the azd/bicep provisioning in the `$SERVICE_API_NAME` environment
@@ -111,7 +111,7 @@ variable.
 
 To export environment variables from provisioning:
 ```bash
-set -o allexport; source ./.azure/testjava/.env; set +o allexport
+set -o allexport; source ./.azure/java-function-starter/.env; set +o allexport
 ```
 
 To deploy the application:
