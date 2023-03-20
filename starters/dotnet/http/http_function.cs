@@ -1,5 +1,6 @@
 using System.Net;
 using System.Text.Json.Serialization;
+using System.Web;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
@@ -20,25 +21,21 @@ namespace Company.Function
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
-            var response = req.CreateResponse(HttpStatusCode.OK);
-            response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
-
-            var query = System.Web.HttpUtility.ParseQueryString(req.Url.Query);
-            string name = query["name"] ?? "";
+            string? name = HttpUtility.ParseQueryString(req.Url.Query)["name"];
 
             if (req.Body.Length > 0) {
                 RequestPayload? payload = await req.ReadFromJsonAsync<RequestPayload>();
-                name = payload?.Name ?? name;
+                name = payload?.Name;
             }
 
-            string helloMsg = "Welcome to Azure Functions!";
-
-            if (name != "") {
-                helloMsg = $"Welcome to Azure Functions, {name}!";
-                _logger.LogInformation(helloMsg);
-            }
+            string helloMsg = name is null
+                ? "Welcome to Azure Functions!"
+                : $"Welcome to Azure Functions, {name}!";
 
             _logger.LogInformation(helloMsg);
+
+            var response = req.CreateResponse(HttpStatusCode.OK);
+            response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
             response.WriteString(helloMsg);  
 
             return response;
