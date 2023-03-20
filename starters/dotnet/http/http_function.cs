@@ -23,21 +23,24 @@ namespace Company.Function
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
 
-            string name;
-            //string reqstring = req.ReadAsString();
-            string reqstring = "{ }";
-            if ((req != null) && (reqstring?.Length > 0)) {
+            var query = System.Web.HttpUtility.ParseQueryString(req.Url.Query);
+            string name = query["name"] ?? "";
+
+            string helloMsg = "Welcome to Azure Functions!";
+            if (req.Body.Length > 0) {
                 RequestPayload payload = await req.ReadFromJsonAsync<RequestPayload>();
-                name = payload?.Name ?? "";
+                name = payload?.Name ?? name;
 
                 if (name != "") {
-                    _logger.LogInformation($"Received: \n{name}\n");
-                    response.WriteString($"Welcome to Azure Functions, {name}!.");  
+                    helloMsg = $"Welcome to Azure Functions, {name}!";
+                    _logger.LogInformation(helloMsg);
+                    response.WriteString(helloMsg);  
                 } else {
-                    response.WriteString("Welcome to Azure Functions!"); 
+                    _logger.LogInformation(helloMsg);
+                    response.WriteString(helloMsg); 
                 }
             } else {
-                response.WriteString("Welcome to Azure Functions!"); 
+                response.WriteString(helloMsg); 
             }
 
             return response;
