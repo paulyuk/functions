@@ -5,6 +5,6 @@ metadata:
   template: starter-dotnet7-func@0.0.1-beta
 services:
   api:
-    project: ./chat/
+    project: ./http/
     language: dotnet
     host: function
