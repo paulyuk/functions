@@ -62,8 +62,6 @@ content-type: application/json
 }
 ```
 
-You will see chat happen in the Terminal standard out, the HTTP response, and saved off to a Blob for state management in the `samples-chatgpt-output` container.  
-
 ### Using Visual Studio Code
 1) Open this folder in a new terminal
 2) Open VS Code by entering `code .` in the terminal
