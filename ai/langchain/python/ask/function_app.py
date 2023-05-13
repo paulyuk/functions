@@ -9,8 +9,11 @@ app = func.FunctionApp()
 @app.route(route='chat')
 def main(req):
 
-    if 'OPENAI_API_KEY' not in os.environ:
-        raise RuntimeError("No 'OPENAI_API_KEY' env var set.  Please see Readme.")
+    OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+    AZURE_OPENAI_KEY = os.environ.get("AZURE_OPENAI_KEY")
+    AZURE_OPENAI_ENDPOINT = os.environ.get("AZURE_OPENAI_ENDPOINT")
+    if 'AZURE_OPENAI_KEY' not in os.environ:
+        raise RuntimeError("No 'AZURE_OPENAI_KEY' env var set.  Please see Readme.")
 
     # Replace these with your own values, either in environment variables or directly here
     AZURE_OPENAI_SERVICE = os.environ.get("AZURE_OPENAI_SERVICE") or "myopenai"
