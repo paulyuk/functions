@@ -10,7 +10,7 @@ This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calcul
 ### Pre-reqs
 1) [Python 3.8+](https://www.python.org/) 
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
-3) [OpenAPI API key](https://platform.openai.com/account/api-keys) 
+3) [Azure OpenAPI API key](https://portal.azure.com) 
 4) Export these secrets as Env Vars using values from Step 3.
 
 Mac/Linux
@@ -34,7 +34,11 @@ Search for Environment Variables in Settings, create new System Variables simila
     "FUNCTIONS_WORKER_RUNTIME": "python",
     "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-    "OPENAI_API_KEY": "*Paste from step 3*"
+      "AZURE_OPENAI_KEY": "...",
+      "AZURE_OPENAI_ENDPOINT": "https://....openai.azure.com/",
+      "AZURE_OPENAI_SERVICE": "...",
+      "AZURE_OPENAI_GPT_DEPLOYMENT": "...",
+      "AZURE_OPENAI_CHATGPT_DEPLOYMENT": "...",
   }
 }
 ```
