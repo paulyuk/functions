@@ -1,10 +1,10 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
 
-name: starter-dotnet7-func
+name: langchain-py-ai-func
 metadata:
-  template: starter-dotnet7-func@0.0.1-beta
+  template: chatgpt-py-ai-func@0.0.1-beta
 services:
   api:
-    project: ./http/
-    language: dotnet
+    project: ./ask/
+    language: python
     host: function
