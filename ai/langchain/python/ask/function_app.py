@@ -9,7 +9,7 @@ app = func.FunctionApp()
 @app.route(route='chat')
 def main(req):
 
-    OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+    # OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
     AZURE_OPENAI_KEY = os.environ.get("AZURE_OPENAI_KEY")
     AZURE_OPENAI_ENDPOINT = os.environ.get("AZURE_OPENAI_ENDPOINT")
     if 'AZURE_OPENAI_KEY' not in os.environ:
@@ -18,10 +18,13 @@ def main(req):
     # Replace these with your own values, either in environment variables or directly here
     AZURE_OPENAI_SERVICE = os.environ.get("AZURE_OPENAI_SERVICE") or "myopenai"
     AZURE_OPENAI_GPT_DEPLOYMENT = os.environ.get("AZURE_OPENAI_GPT_DEPLOYMENT") or "davinci"
-    AZURE_OPENAI_CHATGPT_DEPLOYMENT = os.environ.get("AZURE_OPENAI_CHATGPT_DEPLOYMENT") or "chat"
+    AZURE_OPENAI_CHATGPT_DEPLOYMENT = os.environ.get("AZURE_OPENAI_CHATGPT_DEPLOYMENT") or "chat" #GPT turbo
 
     import openai
-    openai.api_key = os.getenv('OPENAI_API_KEY')
+    openai.api_key = os.getenv('AZURE_OPENAI_KEY')
+    openai.api_base = os.getenv("AZURE_OPENAI_ENDPOINT") # your endpoint should look like the following https://YOUR_RESOURCE_NAME.openai.azure.com/
+    openai.api_type = 'azure'
+    openai.api_version = '2022-12-01' # this may change in the future
 
     prompt = req.params.get('prompt') 
     if not prompt: 
@@ -35,7 +38,7 @@ def main(req):
                 raise RuntimeError("prompt data must be set in POST.")
 
     completion = openai.Completion.create(
-        model='text-davinci-003',
+        engine=AZURE_OPENAI_CHATGPT_DEPLOYMENT,
         prompt=generate_prompt(prompt),
         temperature=0.9,
         max_tokens=200
