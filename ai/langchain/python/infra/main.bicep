@@ -21,7 +21,7 @@ param keyVaultName string = ''
 param logAnalyticsName string = ''
 param resourceGroupName string = ''
 param storageAccountName string = ''
-param openAIKey string
+param aiResourceName string = ''
 
 @description('Id of the user or app to assign application roles')
 param principalId string = ''
@@ -37,6 +37,16 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   tags: tags
 }
 
+module ai 'app/ai.bicep' = {
+  name: 'ai'
+  scope: rg
+  params: {
+    name: !empty(aiResourceName) ? aiResourceName : '${abbrs.cognitiveServicesAccounts}-${resourceToken}'
+    location: location
+    tags: tags
+  }
+}
+
 // The application backend
 module api './app/api.bicep' = {
   name: 'api'
@@ -50,7 +60,10 @@ module api './app/api.bicep' = {
     keyVaultName: keyVault.outputs.name
     storageAccountName: storage.outputs.name
     appSettings: {
-      OPENAI_API_KEY: openAIKey
+      AZURE_OPENAI_KEY: openai.listKeys().key1
+      AZURE_OPENAI_ENDPOINT: ai.outputs.url
+      AZURE_OPENAI_SERVICE: ai.outputs.name
+      AZURE_OPENAI_CHATGPT_DEPLOYMENT: ai.outputs.deploymentName
       AzureWebJobsFeatureFlags: 'EnableWorkerIndexing'
     }
   }
@@ -117,6 +130,11 @@ module monitoring './core/monitor/monitoring.bicep' = {
   }
 }
 
+resource openai 'Microsoft.CognitiveServices/accounts@2021-10-01' existing =  {
+  name: !empty(aiResourceName) ? aiResourceName : '${abbrs.cognitiveServicesTextAnalytics}-${resourceToken}'
+  scope: rg
+}
+
 // Data outputs
 //output AZURE_SQL_CONNECTION_STRING_KEY string = sqlServer.outputs.connectionStringKey
 
@@ -128,3 +146,7 @@ output AZURE_LOCATION string = location
 output AZURE_TENANT_ID string = tenant().tenantId
 output REACT_APP_API_BASE_URL string = api.outputs.SERVICE_API_URI
 output REACT_APP_APPLICATIONINSIGHTS_CONNECTION_STRING string = monitoring.outputs.applicationInsightsConnectionString
+output AZURE_OPENAI_KEY string = openai.listKeys().key1
+output AZURE_OPENAI_ENDPOINT string = ai.outputs.url
+output AZURE_OPENAI_SERVICE string = ai.outputs.name
+output AZURE_OPENAI_CHATGPT_DEPLOYMENT string = ai.outputs.deploymentName
