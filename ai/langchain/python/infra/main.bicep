@@ -61,9 +61,10 @@ module api './app/api.bicep' = {
     storageAccountName: storage.outputs.name
     appSettings: {
       AZURE_OPENAI_KEY: openai.listKeys().key1
-      AZURE_OPENAI_ENDPOINT: ai.outputs.url
-      AZURE_OPENAI_SERVICE: ai.outputs.name
-      AZURE_OPENAI_CHATGPT_DEPLOYMENT: ai.outputs.deploymentName
+      AZURE_OPENAI_ENDPOINT: ai.outputs.AZURE_OPENAI_ENDPOINT
+      AZURE_OPENAI_SERVICE: ai.outputs.AZURE_OPENAI_SERVICE
+      AZURE_OPENAI_CHATGPT_DEPLOYMENT: ai.outputs.AZURE_OPENAI_CHATGPT_DEPLOYMENT
+      AZURE_OPENAI_GPT_DEPLOYMENT: ai.outputs.AZURE_OPENAI_GPT_DEPLOYMENT
       AzureWebJobsFeatureFlags: 'EnableWorkerIndexing'
     }
   }
@@ -131,7 +132,7 @@ module monitoring './core/monitor/monitoring.bicep' = {
 }
 
 resource openai 'Microsoft.CognitiveServices/accounts@2021-10-01' existing =  {
-  name: !empty(aiResourceName) ? aiResourceName : '${abbrs.cognitiveServicesTextAnalytics}-${resourceToken}'
+  name: !empty(aiResourceName) ? aiResourceName : '${abbrs.cognitiveServicesAccounts}-${resourceToken}'
   scope: rg
 }
 
@@ -146,7 +147,8 @@ output AZURE_LOCATION string = location
 output AZURE_TENANT_ID string = tenant().tenantId
 output REACT_APP_API_BASE_URL string = api.outputs.SERVICE_API_URI
 output REACT_APP_APPLICATIONINSIGHTS_CONNECTION_STRING string = monitoring.outputs.applicationInsightsConnectionString
-output AZURE_OPENAI_KEY string = openai.listKeys().key1
-output AZURE_OPENAI_ENDPOINT string = ai.outputs.url
-output AZURE_OPENAI_SERVICE string = ai.outputs.name
-output AZURE_OPENAI_CHATGPT_DEPLOYMENT string = ai.outputs.deploymentName
+//output AZURE_OPENAI_KEY string = openai.listKeys().key1
+output AZURE_OPENAI_ENDPOINT string = ai.outputs.AZURE_OPENAI_ENDPOINT
+output AZURE_OPENAI_SERVICE string = ai.outputs.AZURE_OPENAI_SERVICE
+output AZURE_OPENAI_CHATGPT_DEPLOYMENT string = ai.outputs.AZURE_OPENAI_CHATGPT_DEPLOYMENT
+output AZURE_OPENAI_GPT_DEPLOYMENT string = ai.outputs.AZURE_OPENAI_GPT_DEPLOYMENT
