@@ -1,7 +1,7 @@
 # Azure Functions
-## Chat using ChatGPT (Python v2 Function)
+## LangChain with Azure OpenAI and ChatGPT (Python v2 Function)
 
-This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calculates the completions using OpenAI ChatGPT service, and then returns the output plus caches in a Blob state store.  
+This sample shows how to take a human prompt as HTTP Get or Post input, calculates the completions using chains of human input and templates.  This is a starting point that can be used for more sophisticated chains.  
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=575770869)
 
@@ -32,7 +32,7 @@ This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calcul
 1) Open a new terminal and do the following:
 
 ```bash
-cd chat
+cd ask
 pip3 install -r requirements.text
 func start
 ```
@@ -55,7 +55,7 @@ testdata.json
 test.http
 ```bash
 
-POST http://localhost:7071/api/chat HTTP/1.1
+POST http://localhost:7071/api/ask HTTP/1.1
 content-type: application/json
 
 {
