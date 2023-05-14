@@ -11,7 +11,7 @@ This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calcul
 1) [Python 3.8+](https://www.python.org/) 
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
 3) [Azure OpenAPI API key, endpoint, and deployment](https://portal.azure.com) 
-4) Add this local.settings.json file to the text_summarize folder to simplify local development and include Key from step 3
+4) Add this local.settings.json file to the ask function folder to simplify local development and include Key from step 3
 ```json
 {
   "IsEncrypted": false,
@@ -23,6 +23,7 @@ This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calcul
     "AZURE_OPENAI_ENDPOINT": "https://<service_name>.openai.azure.com/",
     "AZURE_OPENAI_SERVICE": "...",
     "AZURE_OPENAI_CHATGPT_DEPLOYMENT": "...",
+    "USE_LANGCHAIN": "True"
   }
 }
 ```
