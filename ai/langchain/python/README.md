@@ -10,23 +10,8 @@ This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calcul
 ### Pre-reqs
 1) [Python 3.8+](https://www.python.org/) 
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
-3) [Azure OpenAPI API key](https://portal.azure.com) 
-4) Export these secrets as Env Vars using values from Step 3.
-
-Mac/Linux
-```bash
-export OPENAI_API_KEY=*Paste from step 3*
-```
-
-Windows
-
-Search for Environment Variables in Settings, create new System Variables similarly to [these instructions](https://docs.oracle.com/en/database/oracle/machine-learning/oml4r/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html#GUID-DD6F9982-60D5-48F6-8270-A27EC53807D0):
-
-| Variable | Value |
-| -------- | ----- |
-| OPENAI_API_KEY | *Paste from step 3* |
-
-5) Add this local.settings.json file to the text_summarize folder to simplify local development and include Key from step 3
+3) [Azure OpenAPI API key, endpoint, and deployment](https://portal.azure.com) 
+4) Add this local.settings.json file to the text_summarize folder to simplify local development and include Key from step 3
 ```json
 {
   "IsEncrypted": false,
@@ -34,11 +19,10 @@ Search for Environment Variables in Settings, create new System Variables simila
     "FUNCTIONS_WORKER_RUNTIME": "python",
     "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-      "AZURE_OPENAI_KEY": "...",
-      "AZURE_OPENAI_ENDPOINT": "https://....openai.azure.com/",
-      "AZURE_OPENAI_SERVICE": "...",
-      "AZURE_OPENAI_GPT_DEPLOYMENT": "...",
-      "AZURE_OPENAI_CHATGPT_DEPLOYMENT": "...",
+    "AZURE_OPENAI_KEY": "...",
+    "AZURE_OPENAI_ENDPOINT": "https://<service_name>.openai.azure.com/",
+    "AZURE_OPENAI_SERVICE": "...",
+    "AZURE_OPENAI_CHATGPT_DEPLOYMENT": "...",
   }
 }
 ```
@@ -55,7 +39,7 @@ func start
 
 Terminal:
 ```bash
-curl -i -X POST http://localhost:7071/api/chat/ \
+curl -i -X POST http://localhost:7071/api/ask/ \
   -H "Content-Type: text/json" \
   --data-binary "@testdata.json"
 ```
@@ -63,7 +47,7 @@ curl -i -X POST http://localhost:7071/api/chat/ \
 testdata.json
 ```json
 {
-    "prompt": "Write a poem about Azure Functions.  Include two reasons why users love them."
+    "prompt": "What is a good feature of Azure Functions?"
 }
 ```
 
@@ -74,7 +58,7 @@ POST http://localhost:7071/api/chat HTTP/1.1
 content-type: application/json
 
 {
-    "prompt": "Write a poem about Azure Functions.  Include two reasons why users love them."
+    "prompt": "What is a good feature of Azure Functions?"
 }
 ```
 
@@ -82,16 +66,20 @@ You will see chat happen in the Terminal standard out, the HTTP response, and sa
 
 ## Source Code
 
-The key code that makes this work is as follows in `./chat/function_app.py`.  You can customize this or learn more snippets using [Examples](https://platform.openai.com/examples) and [OpenAPI Playground](https://platform.openai.com/playground/).
+The key code that makes this work is as follows in `./ask/function_app.py`.  You can customize this or learn more snippets using the [LangChain Quickstart Guide](https://python.langchain.com/en/latest/getting_started/getting_started.html).
 
 ```python
-    completion = openai.Completion.create(
-        model='text-davinci-003',
-        prompt=generate_prompt(prompt),
-        temperature=0.9,
-        max_tokens=200
-    )
-    return completion.choices[0].text
+llm = AzureOpenAI(deployment_name=AZURE_OPENAI_CHATGPT_DEPLOYMENT, temperature=0.3, openai_api_key=AZURE_OPENAI_KEY)
+
+llm_prompt = PromptTemplate(
+    input_variables=["human_prompt"],
+    template="The following is a conversation with an AI assistant. The assistant is helpful.\n\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: {human_prompt}?",
+)
+
+from langchain.chains import LLMChain
+chain = LLMChain(llm=llm, prompt=llm_prompt)
+
+return chain.run(prompt) # prompt is human input from request body
 ```
 
 ## Deploy to Azure
