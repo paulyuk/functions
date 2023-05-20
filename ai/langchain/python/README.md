@@ -11,7 +11,7 @@ This sample shows how to take a human prompt as HTTP Get or Post input, calculat
 1) [Python 3.8+](https://www.python.org/) 
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
 3) [Azure OpenAPI API key, endpoint, and deployment](https://portal.azure.com) 
-4) Add this local.settings.json file to the ask function folder to simplify local development and include Key from step 3
+4) Add this `local.settings.json` file to the current function folder to simplify local development and include Key from step 3
 ```json
 {
   "IsEncrypted": false,
@@ -32,7 +32,6 @@ This sample shows how to take a human prompt as HTTP Get or Post input, calculat
 1) Open a new terminal and do the following:
 
 ```bash
-cd ask
 pip3 install -r requirements.text
 func start
 ```
@@ -63,11 +62,21 @@ content-type: application/json
 }
 ```
 
-You will see chat happen in the Terminal standard out, the HTTP response, and saved off to a Blob for state management in the `samples-chatgpt-output` container.  
+### Using Visual Studio Code
+
+1) In the current folder, open Visual Studio Code
+
+```bash
+code .
+```
+
+2) Run (F5)
+
+3) Test using steps above
 
 ## Source Code
 
-The key code that makes this work is as follows in `./ask/function_app.py`.  You can customize this or learn more snippets using the [LangChain Quickstart Guide](https://python.langchain.com/en/latest/getting_started/getting_started.html).
+The key code that makes this work is as follows in `./function_app.py`.  You can customize this or learn more snippets using the [LangChain Quickstart Guide](https://python.langchain.com/en/latest/getting_started/getting_started.html).
 
 ```python
 llm = AzureOpenAI(deployment_name=AZURE_OPENAI_CHATGPT_DEPLOYMENT, temperature=0.3, openai_api_key=AZURE_OPENAI_KEY)
