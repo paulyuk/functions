@@ -64,7 +64,7 @@ content-type: application/json
 }
 ```
 
-### Using VS Code
+### Using Visual Studio Code
 1) Open this repo in VS Code:
 ```bash
 code .
@@ -72,12 +72,14 @@ code .
 
 2) Follow the prompts to load Function.  It is recommended to Initialize the Functions Project for VS Code, and also to enable a virtual environment for your chosen version of Python.  
 
-2) Run and Debug `F5` the app
+3) Run and Debug `F5` the app
+
+4) Test using same REST client steps above
 
 
 ## Source Code
 
-The key code that makes this work is as follows in `./ask/function_app.py`.  You can customize this or learn more snippets using the [LangChain Quickstart Guide](https://python.langchain.com/en/latest/getting_started/getting_started.html).
+The key code that makes this work is as follows in `./function_app.py`.  You can customize this or learn more snippets using the [LangChain Quickstart Guide](https://python.langchain.com/en/latest/getting_started/getting_started.html).
 
 ```python
 llm = AzureOpenAI(deployment_name=AZURE_OPENAI_CHATGPT_DEPLOYMENT, temperature=0.3, openai_api_key=AZURE_OPENAI_KEY)
