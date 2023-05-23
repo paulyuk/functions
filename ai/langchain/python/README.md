@@ -11,7 +11,9 @@ This sample shows how to take a human prompt as HTTP Get or Post input, calculat
 1) [Python 3.8+](https://www.python.org/) 
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
 3) [Azure OpenAPI API key, endpoint, and deployment](https://portal.azure.com) 
-4) Add this local.settings.json file to the ask function folder to simplify local development and include Key from step 3
+4) Add this `local.settings.json` file to this folder to simplify local development and include Key from step 3
+
+`./local.settings.json`
 ```json
 {
   "IsEncrypted": false,
@@ -32,7 +34,6 @@ This sample shows how to take a human prompt as HTTP Get or Post input, calculat
 1) Open a new terminal and do the following:
 
 ```bash
-cd ask
 pip3 install -r requirements.text
 func start
 ```
@@ -45,14 +46,14 @@ curl -i -X POST http://localhost:7071/api/ask/ \
   --data-binary "@testdata.json"
 ```
 
-testdata.json
+`testdata.json`
 ```json
 {
     "prompt": "What is a good feature of Azure Functions?"
 }
 ```
 
-test.http
+`test.http`
 ```bash
 
 POST http://localhost:7071/api/ask HTTP/1.1
@@ -63,7 +64,16 @@ content-type: application/json
 }
 ```
 
-You will see chat happen in the Terminal standard out, the HTTP response, and saved off to a Blob for state management in the `samples-chatgpt-output` container.  
+### Using VS Code
+1) Open this repo in VS Code:
+```bash
+code .
+```
+
+2) Follow the prompts to load Function.  It is recommended to Initialize the Functions Project for VS Code, and also to enable a virtual environment for your chosen version of Python.  
+
+2) Run and Debug `F5` the app
+
 
 ## Source Code
 
