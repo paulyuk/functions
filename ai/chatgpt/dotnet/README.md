@@ -43,7 +43,6 @@ Search for Environment Variables in Settings, create new System Variables simila
 1) Open a new terminal and do the following:
 
 ```bash
-cd chat
 func start
 ```
 2) Using your favorite REST client, e.g. [RestClient in VS Code](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), PostMan, curl, make a post.  `test.http` has been provided to run this quickly.   
@@ -88,7 +87,7 @@ You will see chat happen in the Terminal standard out, the HTTP response, and sa
 
 ## Source Code
 
-The key code that makes this work is as follows in `./chat/chat_function.cs`.  C# uses an HTTP REST API wrapper function called `OpenAICreateCompletion` plus user defined Record types for convenience and type safety.  You can customize this or learn more snippets using [Examples](https://platform.openai.com/examples) and [OpenAPI Playground](https://platform.openai.com/playground/).  Choose CURL/HTTP as the language and set `CreateDefaultCompletionRequest` values accordingly.  
+The key code that makes this work is as follows in `./chat_function.cs`.  C# uses an HTTP REST API wrapper function called `OpenAICreateCompletion` plus user defined Record types for convenience and type safety.  You can customize this or learn more snippets using [Examples](https://platform.openai.com/examples) and [OpenAPI Playground](https://platform.openai.com/playground/).  Choose CURL/HTTP as the language and set `CreateDefaultCompletionRequest` values accordingly.  
 
 ```csharp
 // call OpenAI ChatGPT API here with desired chat prompt

@@ -7,14 +7,7 @@
 			"command": "host start",
 			"problemMatcher": "$func-node-watch",
 			"isBackground": true,
-			"dependsOn": "npm build (functions)"
-		},
-		{
-			"type": "shell",
-			"label": "npm build (functions)",
-			"command": "npm run build",
-			"dependsOn": "npm install (functions)",
-			"problemMatcher": "$tsc"
+			"dependsOn": "npm install (functions)"
 		},
 		{
 			"type": "shell",
@@ -25,7 +18,6 @@
 			"type": "shell",
 			"label": "npm prune (functions)",
 			"command": "npm prune --production",
-			"dependsOn": "npm build (functions)",
 			"problemMatcher": []
 		}
 	]

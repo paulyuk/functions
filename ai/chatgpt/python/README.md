@@ -43,7 +43,6 @@ Search for Environment Variables in Settings, create new System Variables simila
 1) Open a new terminal and do the following:
 
 ```bash
-cd chat
 pip3 install -r requirements.text
 func start
 ```

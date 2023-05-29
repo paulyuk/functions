@@ -8,8 +8,8 @@ This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calcul
 ## Run on your local environment
 
 ### Pre-reqs
-1) [Node.js 16 or 18](https://www.nodejs.org/) 
-2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
+1) [Node.js 18 or higher](https://www.nodejs.org/) 
+2) [Azure Functions Core Tools 4.0.5198 or higher](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
 3) [OpenAPI API key](https://platform.openai.com/account/api-keys) 
 4) Export these secrets as Env Vars using values from Step 3.
 
@@ -42,7 +42,6 @@ Search for Environment Variables in Settings, create new System Variables simila
 1) Open a new terminal and do the following:
 
 ```bash
-cd chat
 npm install
 func start
 ```
@@ -77,7 +76,7 @@ You will see chat happen in the Terminal standard out, the HTTP response, and sa
 
 ## Source Code
 
-The key code that makes this work is as follows in `./chat/index.js`.  You can customize this or learn more snippets using [Examples](https://platform.openai.com/examples) and [OpenAPI Playground](https://platform.openai.com/playground/).
+The key code that makes this work is as follows in `.src/functions/chat.js`.  You can customize this or learn more snippets using [Examples](https://platform.openai.com/examples) and [OpenAPI Playground](https://platform.openai.com/playground/).
 
 ```javascript
     completion = await openaiClient.createCompletion({
