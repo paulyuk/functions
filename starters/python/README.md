@@ -29,7 +29,7 @@ docker run -p 10000:10000 -p 10001:10001 -p 10002:10002 mcr.microsoft.com/azure-
 ### Using Functions CLI
 1) Create python VEnv to keep dependencies tidy and avoid package collisions
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 ```
 
