@@ -10,6 +10,7 @@ This sample template provides an "empty starting point" function that is ready t
 ### Pre-reqs
 1) [Python 3.8+](https://www.python.org/) 
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
+* [Apple Silicon (Mac M1, M2) instructions](https://gist.github.com/paulyuk/683dc466a17f5308d643d8a3dcb39ee9)
 3) Add this local.settings.json file to the text_summarize folder to simplify local development
 ```json
 {
