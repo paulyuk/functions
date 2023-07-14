@@ -10,6 +10,7 @@ This sample template provides an "empty starting point" function that is ready t
 ### Pre-reqs
 1) [Python 3.8+](https://www.python.org/) 
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
+* [Apple Silicon (Mac M1, M2) instructions](https://gist.github.com/paulyuk/683dc466a17f5308d643d8a3dcb39ee9)
 3) Add this local.settings.json file to the text_summarize folder to simplify local development
 ```json
 {
@@ -27,15 +28,21 @@ docker run -p 10000:10000 -p 10001:10001 -p 10002:10002 mcr.microsoft.com/azure-
 ```
 
 ### Using Functions CLI
-1) Open a new terminal and do the following:
+1) Create python VEnv to keep dependencies tidy and avoid package collisions
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+2) Open a new terminal and do the following:
 
 ```bash
 pip3 install -r requirements.txt
 func start
 ```
-2) Test a Web hook or GET using the browser to open http://localhost:7071/api/http
+3) Test a Web hook or GET using the browser to open http://localhost:7071/api/http
 
-3) Test a POST using your favorite REST client, e.g. [RestClient in VS Code](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), PostMan, curl.  `test.http` has been provided to run this quickly.   
+4) Test a POST using your favorite REST client, e.g. [RestClient in VS Code](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), PostMan, curl.  `test.http` has been provided to run this quickly.   
 
 Terminal:
 ```bash
