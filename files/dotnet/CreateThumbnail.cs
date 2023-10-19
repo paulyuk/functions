@@ -19,8 +19,8 @@ namespace dotnet
         const int thumbnailHeight = 720;
 
         [Function(nameof(CreateThumbnail))]
-        [BlobOutput("samples-workitems/{name}-thumbnail.jpg", Connection = "")]
-        public async Task<Image> Run([BlobTrigger("samples-workitems/{name}", Connection = "")] Stream stream, string name, Stream outputBlob)
+        [BlobOutput("images/{name}-thumbnail.jpg", Connection = "")]
+        public async Task<Image> Run([BlobTrigger("images/{name}", Connection = "")] Stream stream, string name, Stream outputBlob)
         {
             //using var blobStreamReader = new StreamReader(stream);
             //var content = await blobStreamReader.ReadToEndAsync();
