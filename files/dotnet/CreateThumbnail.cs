@@ -19,17 +19,17 @@ namespace dotnet
         const int thumbnailHeight = 720;
 
         [Function(nameof(CreateThumbnail))]
-        [BlobOutput("thumbnails/{name}-thumb.jpg", Connection = "")] // Output binding to write the thumbnail to a blob
-        public static async Task<Image> Run(
-            [BlobTrigger("images/{name}", Connection = "")] Stream stream, // Input binding to read the image from a blob
-            string name,
-            ILogger log,
-            Stream outputBlob)
+        [BlobOutput("samples-workitems/{name}-thumbnail.jpg", Connection = "")]
+        public async Task<Image> Run([BlobTrigger("samples-workitems/{name}", Connection = "")] Stream stream, string name, Stream outputBlob)
         {
+            //using var blobStreamReader = new StreamReader(stream);
+            //var content = await blobStreamReader.ReadToEndAsync();
+            _logger.LogInformation($"Processing blob\n Name: {name} \n Data: {name.Length}");
+
             using (var image = Image.Load(stream))
             {
                 // Generate thumbnail
-                image.Mutate(x => x.Resize(new ResizeOptions
+                image.Mutate(async x => x.Resize(new ResizeOptions
                 {
                     Size = new Size(thumbnailWidth, thumbnailHeight),
                     Mode = ResizeMode.Max
@@ -38,7 +38,7 @@ namespace dotnet
                 image.Save(outputBlob, new JpegEncoder()); 
 
                 // Save the thumbnail to the output blob
-                log.LogInformation($"C# Blob trigger function processed blob\n Name:{name} and saved to thumbnails/{name}-thumb.jpg");
+                _logger.LogInformation($"Finished processing blob\n Name:{name} and saved to output blob");
                 return image;
             }
         }
