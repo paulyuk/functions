@@ -19,8 +19,8 @@ namespace dotnet
         const int thumbnailHeight = 720;
 
         [Function(nameof(CreateThumbnail))]
-        [BlobOutput("images/{name}-thumbnail.jpg", Connection = "")]
-        public async Task<Image> Run([BlobTrigger("images/{name}", Connection = "")] Stream stream, string name, Stream outputBlob)
+        //[BlobOutput("images/{name}-thumbnail.jpg", Connection = "")]
+        public async Task Run([BlobTrigger("images/{name}", Connection = "")] Stream stream, string name)
         {
             //using var blobStreamReader = new StreamReader(stream);
             //var content = await blobStreamReader.ReadToEndAsync();
@@ -28,6 +28,7 @@ namespace dotnet
 
             using (var image = Image.Load(stream))
             {
+
                 // Generate thumbnail
                 image.Mutate(async x => x.Resize(new ResizeOptions
                 {
@@ -35,11 +36,12 @@ namespace dotnet
                     Mode = ResizeMode.Max
                 }));
 
+                var outputBlob = new MemoryStream();
                 image.Save(outputBlob, new JpegEncoder()); 
 
                 // Save the thumbnail to the output blob
                 _logger.LogInformation($"Finished processing blob\n Name:{name} and saved to output blob");
-                return image;
+
             }
         }
 
