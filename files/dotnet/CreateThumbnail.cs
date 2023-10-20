@@ -1,3 +1,4 @@
+using Azure.Storage.Blobs;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using SixLabors.ImageSharp;
@@ -19,8 +20,7 @@ namespace dotnet
         const int thumbnailHeight = 720;
 
         [Function(nameof(CreateThumbnail))]
-        [BlobOutput("images-thumbnails/thumbnail.jpg", Connection = "AzureWebJobsStorage")]
-        public async Task<Byte[]> Run([BlobTrigger("images/{name}", Connection = "AzureWebJobsStorage")] Stream stream, string name)
+        public async Task Run([BlobTrigger("images/{name}", Connection = "AzureWebJobsStorage")] Stream stream, string name, [BlobInput("images-thumbnails", Connection = "AzureWebJobsStorage")] BlobContainerClient client)
         {
 
             _logger.LogInformation($"Processing blob\n Name: {name} \n Data: {name.Length}");
@@ -38,10 +38,12 @@ namespace dotnet
                 var outputBlob = new MemoryStream();
                 image.Save(outputBlob, new JpegEncoder()); 
 
+                outputBlob.Position = 0;
+
                 // Save the thumbnail to the output blob
+                await client.UploadBlobAsync(name, outputBlob);
                 _logger.LogInformation($"Finished processing blob\n Name:{name} and saved to output blob");
 
-                return outputBlob.ToArray();
             }
         }
 
