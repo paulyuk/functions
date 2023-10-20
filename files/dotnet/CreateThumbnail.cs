@@ -19,8 +19,8 @@ namespace dotnet
         const int thumbnailHeight = 720;
 
         [Function(nameof(CreateThumbnail))]
-        [BlobOutput("images-thumbnails/thumbnail.jpg", Connection = "")]
-        public async Task<Byte[]> Run([BlobTrigger("images/{name}", Connection = "")] Stream stream, string name)
+        [BlobOutput("images-thumbnails/thumbnail.jpg", Connection = "AzureWebJobsStorage")]
+        public async Task<Byte[]> Run([BlobTrigger("images/{name}", Connection = "AzureWebJobsStorage")] Stream stream, string name)
         {
 
             _logger.LogInformation($"Processing blob\n Name: {name} \n Data: {name.Length}");
