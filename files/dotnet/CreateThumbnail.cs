@@ -19,11 +19,10 @@ namespace dotnet
         const int thumbnailHeight = 720;
 
         [Function(nameof(CreateThumbnail))]
-        //[BlobOutput("images/{name}-thumbnail.jpg", Connection = "")]
-        public async Task Run([BlobTrigger("images/{name}", Connection = "")] Stream stream, string name)
+        [BlobOutput("images-thumbnails/thumbnail.jpg", Connection = "")]
+        public async Task<Byte[]> Run([BlobTrigger("images/{name}", Connection = "")] Stream stream, string name)
         {
-            //using var blobStreamReader = new StreamReader(stream);
-            //var content = await blobStreamReader.ReadToEndAsync();
+
             _logger.LogInformation($"Processing blob\n Name: {name} \n Data: {name.Length}");
 
             using (var image = Image.Load(stream))
@@ -42,6 +41,7 @@ namespace dotnet
                 // Save the thumbnail to the output blob
                 _logger.LogInformation($"Finished processing blob\n Name:{name} and saved to output blob");
 
+                return outputBlob.ToArray();
             }
         }
 
