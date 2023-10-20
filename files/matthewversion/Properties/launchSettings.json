@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "matthewversion": {
-      "commandName": "Project",
-      "commandLineArgs": "--port 7067",
-      "launchBrowser": false
-    }
-  }
-}
