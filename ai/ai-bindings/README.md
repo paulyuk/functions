@@ -1,14 +1,17 @@
 # Azure Functions
 ## Chat Your Email Data using AI Bindings for Functions (C#-Isolated)
 
-This sample shows how to take text documents as a input via BlobTrigger, does Text Summarization processing using the AI Congnitive Language service, and then outputs to another text document using BlobOutput binding.  
+This sample shows how to leverage new AI Functions Bindings: `TextCompletion`, `Embeddings`, and `SemanticSearch` to prompt and asks questions using AI.  
+- `TextCompletions` enables simple prompting using OpenAI.  
+- `Embeddings` enables creating embeddings for raw text or entire files; the embedding value can then be stored in a vector database.  
+- `SemanticSearch` does the actual upload of embeddings to a vector database, and then the consequent queries of it.  Currently the binding only supports using [Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/azure-data-explorer-for-vector-similarity-search/ba-p/3819626) as the vector Database for similarity search.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=575770869)
 
 ## Run on your local environment
 
 ### Pre-reqs
-1) [.NET 7 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) required *and [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or is strongly recommended*
+1) [.NET 6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) required *and [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [VS Code](https://code.visualstudio.com/) is strongly recommended*
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
 3) [Azurite](https://github.com/Azure/Azurite)
 
