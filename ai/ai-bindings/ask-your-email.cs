@@ -23,7 +23,8 @@ namespace genai2
         [FunctionName("IngestEmail")]
         public static async Task<IActionResult> IngestEmail(
             [HttpTrigger(AuthorizationLevel.Function, "post")] EmbeddingsRequest req,
-            [Embeddings("{FilePath}", InputType.FilePath, Model = "py-embedding-ada-002")] EmbeddingsContext embeddings,
+            [Embeddings("{FilePath}", InputType.FilePath, 
+            Model = "%AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT%")] EmbeddingsContext embeddings,
             [SemanticSearch("KustoConnectionString", "Documents")] IAsyncCollector<SearchableDocument> output)
         {
             string title = Path.GetFileNameWithoutExtension(req.FilePath);
@@ -34,7 +35,11 @@ namespace genai2
         [FunctionName("PromptEmail")]
         public static IActionResult PromptEmail(
             [HttpTrigger(AuthorizationLevel.Function, "post")] SemanticSearchRequest unused,
-            [SemanticSearch("KustoConnectionString", "Documents", Query = "{Prompt}", EmbeddingsModel = "py-embedding-ada-002", ChatModel = "py-gpt35turbo")] SemanticSearchContext result)
+            [SemanticSearch("KustoConnectionString", "Documents", 
+            Query = "{Prompt}", 
+            EmbeddingsModel = "%AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT%", 
+            ChatModel = "%AZURE_OPENAI_CHATGPT_DEPLOYMENT%")] 
+            SemanticSearchContext result)
         {
             return new ContentResult { Content = result.Response, ContentType = "text/plain" };
         }

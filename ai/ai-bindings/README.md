@@ -11,7 +11,7 @@ This sample shows how to leverage new AI Functions Bindings: `TextCompletion`, `
 ## Run on your local environment
 
 ### Pre-reqs
-1) [.NET 6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) required *and [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [VS Code](https://code.visualstudio.com/) is strongly recommended*
+1) [.NET 6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) or higher required *and [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [VS Code](https://code.visualstudio.com/) is strongly recommended*
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
 3) [Azurite](https://github.com/Azure/Azurite)
 
@@ -43,6 +43,7 @@ Create the `Documents` table with desired schema using this query in Azure Data 
         "AZURE_OPENAI_ENDPOINT": "https://***.openai.azure.com/",
         "AZURE_OPENAI_SERVICE": "***",
         "AZURE_OPENAI_CHATGPT_DEPLOYMENT": "***",
+        "AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT": "***",       
         "AZURE_OPENAI_DEPLOYMENT": "placeholder",
         "KustoConnectionString": "https://***.eastus2.kusto.windows.net/your-database-here; Fed=true; Accept=true"
     }
@@ -76,7 +77,7 @@ Use this query to reset all emails/embeddings/data:
 .clear table Documents data
 ```
 
-## Deploy to Azure
+## Deploy to Azure (TBD)
 
 The easiest way to deploy this app is using the [Azure Dev CLI aka AZD](https://aka.ms/azd).  If you open this repo in GitHub CodeSpaces the AZD tooling is already preinstalled.
 
