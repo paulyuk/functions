@@ -1,0 +1,14 @@
+
+
+POST http://localhost:7071/api/IngestEmail HTTP/1.1
+content-type: application/json
+
+{
+    "FilePath": "input.txt"
+}
+
+### Send a search query (Example #1)
+POST http://localhost:7071/api/PromptEmail
+Content-Type: application/json
+
+{"Prompt":"what time to I need to be at the venue? "}
