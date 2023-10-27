@@ -2,7 +2,7 @@
   "profiles": {
     "genai2": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7184",
+      "commandLineArgs": "--port 7071",
       "launchBrowser": false
     }
   }

@@ -44,7 +44,6 @@ Create the `Documents` table with desired schema using this query in Azure Data 
         "AZURE_OPENAI_SERVICE": "***",
         "AZURE_OPENAI_CHATGPT_DEPLOYMENT": "***",
         "AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT": "***",       
-        "AZURE_OPENAI_DEPLOYMENT": "placeholder",
         "KustoConnectionString": "https://***.eastus2.kusto.windows.net/your-database-here; Fed=true; Accept=true"
     }
 }
