@@ -87,7 +87,7 @@ azd up
 
 ## How it works
 
-Looking at [ask-you-email.cs](.\ask-your-email.cs) in particular, we see two functions: `IngestEmail` and `PromptEmail`.
+Looking at [ask-your-email.cs](ask-your-email.cs) in particular, we see two functions: `IngestEmail` and `PromptEmail`.
 
 `IngestEmail` function is responsible for uploading your email file or raw text, and converting it into embeddings using `Embeddings` binding attribute that will work later with a vector search.
 Once the file is converted into embeddings, the embeddings are uploaded to the vector database using the `SemanticSearch` binding attribute.  
