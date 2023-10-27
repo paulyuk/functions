@@ -84,3 +84,45 @@ To provision and deploy:
 ```bash
 azd up
 ```
+
+## How it works
+
+Looking at [ask-you-email.cs](.\ask-your-email.cs) in particular, we see two functions: `IngestEmail` and `PromptEmail`.
+
+`IngestEmail` function is responsible for uploading your email file or raw text, and converting it into embeddings using `Embeddings` binding attribute that will work later with a vector search.
+Once the file is converted into embeddings, the embeddings are uploaded to the vector database using the `SemanticSearch` binding attribute.  
+
+`PromptEmail` function is responsible for searching over the vector database, in this case Azure Data Explorer (Kusto), using a customizable `Prompt` as the query.  `SemanticSearch` binding attribute
+is used again but this time we specify the embeddings model/deployment, the ChatGPT model/deployment, and the Query.  This connects the ChatGPT search to the vector database to search with your prompt. 
+
+```csharp
+[FunctionName("IngestEmail")]
+public static async Task<IActionResult> IngestEmail(
+    [HttpTrigger(AuthorizationLevel.Function, "post")] EmbeddingsRequest req,
+    [Embeddings("{FilePath}", InputType.FilePath, 
+    Model = "%AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT%")] EmbeddingsContext embeddings,
+    [SemanticSearch("KustoConnectionString", "Documents")] IAsyncCollector<SearchableDocument> output)
+{
+    string title = Path.GetFileNameWithoutExtension(req.FilePath);
+    await output.AddAsync(new SearchableDocument(title, embeddings));
+    return new OkObjectResult(new { status = "success", title, chunks = embeddings.Count });
+}
+
+[FunctionName("PromptEmail")]
+public static IActionResult PromptEmail(
+    [HttpTrigger(AuthorizationLevel.Function, "post")] SemanticSearchRequest unused,
+    [SemanticSearch("KustoConnectionString", "Documents", 
+    Query = "{Prompt}", 
+    EmbeddingsModel = "%AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT%", 
+    ChatModel = "%AZURE_OPENAI_CHATGPT_DEPLOYMENT%")] 
+    SemanticSearchContext result)
+{
+    return new ContentResult { Content = result.Response, ContentType = "text/plain" };
+}
+```
+
+Learn more about the AI bindings in their respective NuGet pages:
+[Learn more about Azure Functions AI Bindings](https://www.nuget.org/packages/CGillum.WebJobs.Extensions.OpenAI/0.3.0-alpha)
+
+
+
