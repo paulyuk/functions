@@ -1,5 +1,5 @@
 # Azure Functions
-## Chat Your Email Data using AI Bindings for Functions (C#-Isolated)
+## Chat Your Email Data using AI Bindings for Functions (C#-InProc, C#-Isolated coming soon!)
 
 This sample shows how to leverage new AI Functions Bindings: `TextCompletion`, `Embeddings`, and `SemanticSearch` to prompt and asks questions using AI.  These are part of these new [Bindings extension Nuget packages](https://www.nuget.org/packages/CGillum.WebJobs.Extensions.OpenAI/0.3.0-alpha)
 - `TextCompletions` enables simple prompting using OpenAI.  
