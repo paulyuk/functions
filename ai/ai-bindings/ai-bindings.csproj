@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <AzureFunctionsVersion>v4</AzureFunctionsVersion>
+    <UserSecretsId>21bb9b53-eeb2-4f08-8de1-68f2708834b1</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CGillum.WebJobs.Extensions.OpenAI" Version="0.3.0-alpha" />
