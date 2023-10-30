@@ -64,17 +64,20 @@ module api './app/api.bicep' = {
     appServicePlanId: appServicePlan.outputs.id
     keyVaultName: keyVault.outputs.name
     storageAccountName: storage.outputs.name
+    openAiAccountName: ai.outputs.AZURE_OPENAI_SERVICE
+    openAiResourceGroupName: openAiResourceGroup.name
     appSettings: {
-      AZURE_OPENAI_KEY: openai.listKeys().key1
       AZURE_OPENAI_ENDPOINT: ai.outputs.AZURE_OPENAI_ENDPOINT
       AZURE_OPENAI_SERVICE: ai.outputs.AZURE_OPENAI_SERVICE
       AZURE_OPENAI_CHATGPT_DEPLOYMENT: ai.outputs.AZURE_OPENAI_CHATGPT_DEPLOYMENT
       AZURE_OPENAI_GPT_DEPLOYMENT: ai.outputs.AZURE_OPENAI_GPT_DEPLOYMENT
       AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT: ai.outputs.AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT
+      KustoConnectionString: db.outputs.connectionString
       //AzureWebJobsFeatureFlags: 'EnableWorkerIndexing'
     }
   }
 }
+
 
 // Give the API access to KeyVault
 module apiKeyVaultAccess './core/security/keyvault-access.bicep' = {
@@ -82,6 +85,29 @@ module apiKeyVaultAccess './core/security/keyvault-access.bicep' = {
   scope: rg
   params: {
     keyVaultName: keyVault.outputs.name
+    principalId: api.outputs.SERVICE_API_IDENTITY_PRINCIPAL_ID
+  }
+}
+
+module db 'app/db.bicep' = {
+  name: 'db'
+  scope: rg
+  params: {
+    name: 'vector-${resourceToken}'
+    databaseName: 'vectorsearch'
+    location: location
+    tags: tags
+
+  }
+}
+
+//give the api/function access to the database
+module apiDatabaseAccess './core/database/azuredataexplorer/azuredataexplorer-access.bicep' = {
+  name: 'api-database-access'
+  scope: rg
+  params: {
+    clusterName: db.outputs.clusterName
+    databaseName: db.outputs.databaseName
     principalId: api.outputs.SERVICE_API_IDENTITY_PRINCIPAL_ID
   }
 }
@@ -159,3 +185,4 @@ output AZURE_OPENAI_SERVICE string = ai.outputs.AZURE_OPENAI_SERVICE
 output AZURE_OPENAI_CHATGPT_DEPLOYMENT string = ai.outputs.AZURE_OPENAI_CHATGPT_DEPLOYMENT
 output AZURE_OPENAI_GPT_DEPLOYMENT string = ai.outputs.AZURE_OPENAI_GPT_DEPLOYMENT
 output AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT string = ai.outputs.AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT
+output KustoConnectionString string = db.outputs.connectionString

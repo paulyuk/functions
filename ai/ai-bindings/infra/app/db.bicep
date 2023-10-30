@@ -3,29 +3,26 @@ param location string = resourceGroup().location
 param tags object = {}
 
 param databaseName string = ''
-param keyVaultName string
-
-@secure()
-param sqlAdminPassword string
-@secure()
-param appUserPassword string
+param principalId string = ''
 
 // Because databaseName is optional in main.bicep, we make sure the database name is set here.
-var defaultDatabaseName = 'Todo'
+var defaultDatabaseName = 'vectorsearch'
 var actualDatabaseName = !empty(databaseName) ? databaseName : defaultDatabaseName
 
-module sqlServer '../core/database/sqlserver/sqlserver.bicep' = {
-  name: 'sqlserver'
+module dataExplorerDatabase '../core/database/azuredataexplorer/azuredataexplorer.bicep' = {
+  name: 'dataExplorerDatabase'
   params: {
-    name: name
+    clusterName: name
     location: location
     tags: tags
     databaseName: actualDatabaseName
-    keyVaultName: keyVaultName
-    sqlAdminPassword: sqlAdminPassword
-    appUserPassword: appUserPassword
+    principalId: principalId
   }
 }
 
-output connectionStringKey string = sqlServer.outputs.connectionStringKey
-output databaseName string = sqlServer.outputs.databaseName
+output clusterName string = dataExplorerDatabase.outputs.clusterName
+output databaseName string = dataExplorerDatabase.outputs.databaseName
+output uri string = dataExplorerDatabase.outputs.uri
+output connectionString string = dataExplorerDatabase.outputs.connectionString
+output principalId string = dataExplorerDatabase.outputs.principalId
+

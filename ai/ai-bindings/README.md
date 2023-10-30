@@ -76,7 +76,7 @@ Use this query to reset all emails/embeddings/data:
 .clear table Documents data
 ```
 
-## Deploy to Azure (TBD)
+## Deploy to Azure
 
 The easiest way to deploy this app is using the [Azure Dev CLI aka AZD](https://aka.ms/azd).  If you open this repo in GitHub CodeSpaces the AZD tooling is already preinstalled.
 
@@ -84,6 +84,8 @@ To provision and deploy:
 ```bash
 azd up
 ```
+
+`Note: azd provision + test.http currently works but we're still working on enabling the deployed function calling Kusto with right access rules`
 
 ## How it works
 

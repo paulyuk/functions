@@ -3,16 +3,14 @@ param location string = resourceGroup().location
 param tags object = {}
 
 param gptDeploymentName string = 'davinci'
-param gptModelName string = 'text-davinci-003'
-param gptDeploymentCapacity int = 29
 param chatGptDeploymentName string = 'chat'
 param chatGptModelName string = 'gpt-35-turbo'
-param chatGptDeploymentCapacity int = 29
+param chatGptDeploymentCapacity int = 1
 param embeddingsDeploymentName string = 'embeddings'
 param embeddingsModelName string = 'text-embedding-ada-002'
-param embeddingsDeploymentCapacity int = 120
+param embeddingsDeploymentCapacity int = 60
 
-module openai '../core/ai/openai.bicep' = {
+module openai '../core/ai/cognitiveservices.bicep' = {
   name: 'ai-textanalytics'
   params: {
     name: name
@@ -20,22 +18,16 @@ module openai '../core/ai/openai.bicep' = {
     tags: tags
     deployments: [
       {
-        name: gptDeploymentName
-        model: {
-          format: 'OpenAI'
-          name: gptModelName
-          version: '1'
-        }
-        capacity: gptDeploymentCapacity
-      }
-      {
         name: chatGptDeploymentName
         model: {
           format: 'OpenAI'
           name: chatGptModelName
           version: '0301'
         }
-        capacity: chatGptDeploymentCapacity
+        sku: {
+          name: 'Standard'
+          capacity: chatGptDeploymentCapacity
+        }
       }
       {
         name: embeddingsDeploymentName
@@ -44,7 +36,10 @@ module openai '../core/ai/openai.bicep' = {
           name: embeddingsModelName
           version: '2'
         }
-        capacity: embeddingsDeploymentCapacity
+        sku: {
+          name: 'Standard'
+          capacity: embeddingsDeploymentCapacity
+        }
       }
     ]
   }
