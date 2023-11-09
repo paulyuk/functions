@@ -1,2280 +1,1626 @@
- Weather Spark
-Map
-Compare
-History
-Hide Ads
-°F 
-Find City or Airport
-Full Year
-Today
-SpringSummerFallWinter
-JanFebMarAprMayJunJulAugSepOctNovDec
-123456789101112131415161718192021222324252627282930
-ADVERTISEMENT
+Skip to main content
 
-November Weather in Seattle Washington, United States
-Daily high temperatures decrease by 8°F, from 56°F to 48°F, rarely falling below 42°F or exceeding 62°F.
+.NET Blog
+DevBlogs Developer Technology More
 
-Daily low temperatures decrease by 6°F, from 45°F to 39°F, rarely falling below 30°F or exceeding 53°F.
+Theme
+Login
 
-For reference, on August 1, the hottest day of the year, temperatures in Seattle typically range from 59°F to 79°F, while on December 23, the coldest day of the year, they range from 37°F to 46°F.
+.NET Conf 2023
+The biggest .NET virtual event is back, November 14-16!
 
-Average High and Low Temperature in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-25°F
-25°F
-30°F
-30°F
-35°F
-35°F
-40°F
-40°F
-45°F
-45°F
-50°F
-50°F
-55°F
-55°F
-60°F
-60°F
-65°F
-65°F
-70°F
-70°F
-75°F
-75°F
-Oct
-Dec
-Nov 1
-56°F
-Nov 1
-56°F
-45°F
-45°F
-Nov 30
-48°F
-Nov 30
-48°F
-39°F
-39°F
-Nov 11
-53°F
-Nov 11
-53°F
-43°F
-43°F
-Now
-Now
-The daily average high (red line) and low (blue line) temperature, with 25th to 75th and 10th to 90th percentile bands. The thin dotted lines are the corresponding average perceived temperatures.
-ADVERTISEMENT
+Save The Date 
+Close
+Demystifying Retrieval Augmented Generation with .NET
 
-The figure below shows you a compact characterization of the hourly average temperatures for the quarter of the year centered on November. The horizontal axis is the day, the vertical axis is the hour of the day, and the color is the average temperature for that hour and day.
+Stephen Toub - MSFT
 
-Average Hourly Temperature in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-12 AM
-12 AM
-2 AM
-2 AM
-4 AM
-4 AM
-6 AM
-6 AM
-8 AM
-8 AM
-10 AM
-10 AM
-12 PM
-12 PM
-2 PM
-2 PM
-4 PM
-4 PM
-6 PM
-6 PM
-8 PM
-8 PM
-10 PM
-10 PM
-12 AM
-12 AM
-Oct
-Dec
-Now
-Now
-very cold
-cold
-cool
-cool
-frigid
-15°F
-freezing
-32°F
-very cold
-45°F
-cold
-55°F
-cool
-65°F
-comfortable
-75°F
-warm
-85°F
-hot
-95°F
-sweltering
-The average hourly temperature, color coded into bands. The shaded overlays indicate night and civil twilight.
-ADVERTISEMENT
+September 6th, 202323 23
+Generative AI, or using AI to create text, images, audio, or basically anything else, has taken the world by storm over the last year. Developers for all manner of applications are now exploring how these systems can be incorporated to the benefit of their users. Yet while the technology advances at a breakneck pace, new models are released every day, and new SDKs constantly pop out of the woodwork, it can be challenging for developers to figure out how to actually get started. There are a variety of polished end-to-end sample applications that .NET developers can use as a reference (example). However, I personally do better when I can build something up incrementally, learning the minimal concepts first, and then expanding on it and making it robust and beautiful later.
 
-Nantes, France (4,986 miles away) is the far-away foreign place with temperatures most similar to Seattle (view comparison).
+To that end, this post focuses on building a simple console-based .NET chat application from the ground up, with minimal dependencies and minimal fuss. The end goal is to be able to ask questions and get answers not only based on the data on which our model was trained, but also on additional data supplied dynamically. Along the way, every code sample shown is a complete application, so you can just copy-and-paste it into a Program.cs file, run it, play with it, and then copy-and-paste into your real application, where you can refine and augment it to your heart’s content.
 
-MapMarker© OpenStreetMap contributors
-Compare Seattle to another city:
-Find City or Airport
-Map
-Clouds
-The month of November in Seattle experiences gradually increasing cloud cover, with the percentage of time that the sky is overcast or mostly cloudy increasing from 64% to 71%.
+Let’s Get Chattin’
+To begin, make sure you have .NET 7 or newer installed, and create a simple console app (.NET 6 and .NET Framework will also work as well, just with a few tweaks to the project file):
 
-The clearest day of the month is November 1, with clear, mostly clear, or partly cloudy conditions 36% of the time.
+dotnet new console -o chatapp
+cd chatapp
+This creates a new directory chatapp and populates it with two files: chatapp.csproj and Program.cs. We then need to bring in one NuGet package: Microsoft.SemanticKernel.
 
-For reference, on January 19, the cloudiest day of the year, the chance of overcast or mostly cloudy conditions is 72%, while on August 3, the clearest day of the year, the chance of clear, mostly clear, or partly cloudy skies is 75%.
+dotnet add package Microsoft.SemanticKernel --prerelease
+We could choose to reference specific AI-related packages, like Azure.AI.OpenAI, but I’ve instead turned to Semantic Kernel (SK) as a way to simplify various interactions and more easily swap in and out different implementations in order to more quickly experiment. SK provides a set of libraries that makes it easier to work with Large Language Models (LLMs). It provides abstractions for various AI concepts so that you can code to the abstraction and more easily substitute different implementations. It provides many concrete implementations of those abstractions, wrapping a multitude of other SDKs. It provides support for planning and orchestration, such that you can ask AI to create a plan for how to achieve a certain goal. It provides support for plug-ins. And much more. We’ll touch on a variety of those aspects throughout this post, but I’m primarily using SK for its abstractions.
 
-Cloud Cover Categories in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-0%
-100%
-10%
-90%
-20%
-80%
-30%
-70%
-40%
-60%
-50%
-50%
-60%
-40%
-70%
-30%
-80%
-20%
-90%
-10%
-100%
-0%
-Oct
-Dec
-Nov 1
-36%
-Nov 1
-36%
-Nov 30
-29%
-Nov 30
-29%
-Nov 11
-32%
-Nov 11
-32%
-Now
-Now
-clear
-mostly clear
-partly cloudy
-mostly cloudy
-overcast
-0%
-clear
-20%
-mostly clear
-40%
-partly cloudy
-60%
-mostly cloudy
-80%
-overcast
-100%
-The percentage of time spent in each cloud cover band, categorized by the percentage of the sky covered by clouds.
-Precipitation
-A wet day is one with at least 0.04 inches of liquid or liquid-equivalent precipitation. In Seattle, the chance of a wet day over the course of November is increasing, starting the month at 51% and ending it at 56%.
+While for the purposes of this post I’ve tried to keep dependencies to a minimum, there’s one more I can’t avoid: you need access to an LLM. The easiest way to get access is via either OpenAI or Azure OpenAI. I’m using Azure OpenAI, but because I’m using SK, switching to use OpenAI instead requires changing just one line in each of the samples. You’ll need four pieces of information for the remainder of the post:
 
-For reference, the year's highest daily chance of a wet day is 57% on November 18, and its lowest chance is 8% on August 11.
+The endpoint. This will be something like https://whatevernameyouselected.openai.azure.com/, provided to you in the portal for your service.
+Your API key, provided to you in the portal for your service.
+A deployed “chat” model. I’m using gpt-35-turbo, and specifically version 0301, which as of this writing is the default for that model and has a context window of ~16K tokens. We’ll talk more about what this is later, but when you deploy one of these in your service, you’ll give it a name; I’ve chosen something incredibly clever: Gpt35Turbo_0301.
+A deployed “embedding” model. I’m using text-embedding-ada-002, and my deployment’s name is TextEmbeddingAda002_1.
+You can create the relevant resources manually in your Azure portal, or if you’d prefer, you can use a template created to do it for you:
 
-Probability of Precipitation in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-0%
-0%
-5%
-5%
-10%
-10%
-15%
-15%
-20%
-20%
-25%
-25%
-30%
-30%
-35%
-35%
-40%
-40%
-45%
-45%
-50%
-50%
-55%
-55%
-60%
-60%
-Oct
-Dec
-Nov 18
-57%
-Nov 18
-57%
-Nov 1
-51%
-Nov 1
-51%
-Nov 30
-56%
-Nov 30
-56%
-Now
-Now
-rain
-mixed
-The percentage of days in which various types of precipitation are observed, excluding trace quantities: rain alone, snow alone, and mixed (both rain and snow fell in the same day).
-Rainfall
-To show variation within the month and not just the monthly total, we show the rainfall accumulated over a sliding 31-day period centered around each day.
+If you don’t already have the Azure developer CLI installed, install it following the directions at Install or update the Azure Developer CLI.
+Ensure you’re logged in:
+azd auth login
+Create a new temporary directory in which to house the template files:
+mkdir ragpost
+cd ragpost
+Grab the necessary template files for this post:
+azd init -t demystifying-rag-dotnet
+That will pull down the files from https://github.com/Azure-Samples/demystifying-rag-dotnet, which you can inspect to see exactly what resources will be created on your behalf (see the infra/main.bicep file). It will ask you to choose a new environment name; this just needs to be some unique string that you can use to identify these resources in azure, e.g. “ragpost”.
 
-The average sliding 31-day rainfall during November in Seattle is rapidly increasing, starting the month at 6.4 inches, when it rarely exceeds 10.1 inches or falls below 2.7 inches, and ending the month at 7.4 inches, when it rarely exceeds 11.7 inches or falls below 3.2 inches.
+Finally, run:
+azd provision
+When it prompts you, select the Azure subscription you want to use and the Azure location you want to use; use East US (eastus). Then go get a cup of coffee; this can take several minutes.
 
-The highest average 31-day accumulation is 7.7 inches on November 22.
+Now that your resources are created, you just need the cited endpoint and API key information above, which you can get from the portal (the tool might output the endpoint information). The previous command should have output a link that you can follow to take you directly to the created resource group in the portal.
+(When you’re done with experimenting, you can also delete all of the created resources by running
+azd down
+from this same directory.)
 
-Average Monthly Rainfall in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-0 in
-0 in
-2 in
-2 in
-4 in
-4 in
-6 in
-6 in
-8 in
-8 in
-10 in
-10 in
-12 in
-12 in
-Oct
-Dec
-Nov 22
-7.7 in
-Nov 22
-7.7 in
-Nov 1
-6.4 in
-Nov 1
-6.4 in
-Nov 11
-7.3 in
-Nov 11
-7.3 in
-Now
-Now
-The average rainfall (solid line) accumulated over the course of a sliding 31-day period centered on the day in question, with 25th to 75th and 10th to 90th percentile bands. The thin dotted line is the corresponding average snowfall.
-Sun
-Over the course of November in Seattle, the length of the day is rapidly decreasing. From the start to the end of the month, the length of the day decreases by 1 hour, 13 minutes, implying an average daily decrease of 2 minutes, 32 seconds, and weekly decrease of 17 minutes, 43 seconds.
+With that out of the way, we can dive in. Believe it or not, we can create a simple chat app in just a few lines code. Copy-and-paste this into your Program.cs:
 
-The shortest day of the month is November 30, with 8 hours, 45 minutes of daylight and the longest day is November 1, with 9 hours, 59 minutes of daylight.
+using Microsoft.SemanticKernel;
 
-Hours of Daylight and Twilight in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-0 hr
-24 hr
-4 hr
-20 hr
-8 hr
-16 hr
-12 hr
-12 hr
-16 hr
-8 hr
-20 hr
-4 hr
-24 hr
-0 hr
-Oct
-Dec
-night
-night
-day
-day
-Nov 1
-9 hr, 59 min
-Nov 1
-9 hr, 59 min
-Nov 30
-8 hr, 45 min
-Nov 30
-8 hr, 45 min
-The number of hours during which the Sun is visible (black line). From bottom (most yellow) to top (most gray), the color bands indicate: full daylight, twilight (civil, nautical, and astronomical), and full night.
-The latest sunrise of the month in Seattle is 7:57 AM on November 4 and the earliest sunrise is 58 minutes earlier at 6:59 AM on November 5.
+string aoaiEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")!;
+string aoaiApiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY")!;
+string aoaiModel = "Gpt35Turbo_0301";
 
-The latest sunset is 5:51 PM on November 1 and the earliest sunset is 1 hour, 31 minutes earlier at 4:20 PM on November 30.
+// Initialize the kernel
+IKernel kernel = Kernel.Builder
+    .WithAzureChatCompletionService(aoaiModel, aoaiEndpoint, aoaiApiKey)
+    .Build();
 
-Daylight saving time (DST) ends at 1:00 AM on November 5, 2023, shifting sunrise and sunset to be an hour earlier.
+// Q&A loop
+while (true)
+{
+    Console.Write("Question: ");
+    Console.WriteLine((await kernel.InvokeSemanticFunctionAsync(Console.ReadLine()!)).GetValue<string>());
+    Console.WriteLine();
+}
+To avoid accidentally leaking my API key (which needs to be protected like you would a password) to the world in this post, I’ve stored it in an environment variable. Thus, I read in the API key and endpoint via GetEnvironmentVariable. I then create a new “kernel” with the SK APIs, asking it to add into the kernel an Azure OpenAI chat completion service. The Microsoft.SemanticKernel package we pulled in earlier includes references to both the OpenAI and Azure OpenAI clients, so we don’t need anything additional to be able to talk to these services. And with that configured, we can now run our chat app (dotnet run), typing out questions and getting answers back from the service: Simple question and answer with a chat agent
 
-For reference, on June 21, the longest day of the year, the Sun rises at 5:11 AM and sets 15 hours, 59 minutes later, at 9:10 PM, while on December 22, the shortest day of the year, it rises at 7:55 AM and sets 8 hours, 26 minutes later, at 4:20 PM.
+The await kernel.InvokeSemanticFunctionAsync(Console.ReadLine()!) expression in there is the entirety of the interaction with the LLM. This reads in the user’s question and sends it off to the LLM, getting back a string response. SK supports multiple kinds of functions that can be invoked, including “semantic functions” (text-based interactions with AI) and “native functions” (.NET methods that can do anything C# code can do). The invocation of these functions can be issued directly by the consumer, as we’re doing here, but they can also be invoked as part of a “plan”: you supply a set of functions, each of which is capable of accomplishing something, and you ask the LLM for a plan for how to use one or more of those functions to achieve some described goal… SK can then invoke the functions according to the plan (we’ll see an example of that later).
 
-Sunrise & Sunset with Twilight and Daylight Saving Time in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-12 AM
-2 AM
-4 AM
-6 AM
-8 AM
-10 AM
-12 PM
-2 PM
-4 PM
-6 PM
-8 PM
-10 PM
-12 AM
-Oct
-Dec
-6:59 AM
-6:59 AM
-Nov 5
-4:45 PM
-Nov 5
-4:45 PM
-7:35 AM
-7:35 AM
-Nov 30
-4:20 PM
-Nov 30
-4:20 PM
-7:15 AM
-7:15 AM
-Nov 16
-4:31 PM
-Nov 16
-4:31 PM
-DST
-Nov 5
-DST
-Nov 5
-Solar
-Midnight
-Solar
-Midnight
-Solar
-Noon
-Sunrise
-Sunset
-Now
-Now
-The solar day over the course of November. From bottom to top, the black lines are the previous solar midnight, sunrise, solar noon, sunset, and the next solar midnight. The day, twilights (civil, nautical, and astronomical), and night are indicated by the color bands from yellow to gray. The transitions to and from daylight saving time are indicated by the 'DST' labels.
-The figure below presents a compact representation of the sun's elevation (the angle of the sun above the horizon) and azimuth (its compass bearing) for every hour of every day in the reporting period. The horizontal axis is the day of the year and the vertical axis is the hour of the day. For a given day and hour of that day, the background color indicates the azimuth of the sun at that moment. The black isolines are contours of constant solar elevation.
+The “function” in this example is just whatever the user typed, e.g. if the user typed “What color is the sky?”, that’s the function, asking of the LLM “What color is the sky?”, since that’s what we passed to InvokeSemanticFunctionAsync. We can make this function nature a bit clearer by separating the function out into its own entity, via the CreateSemanticFunction method, and then reusing that one function repeatedly. In doing so, we’re no longer creating a new function per user input, and thus need some way to parameterize the created function with the user’s input. For that, SK includes support for prompt templates, where you supply the prompt but with placeholders that SK will fill in based on the variables and functions available to it. For example, if I run the previous sample again, and this time ask for the current time, the LLM is unable to provide me with an answer: LLM doesn't know the current time However, if we expect such questions, we can proactively provide the LLM with the information it needs as part of the prompt. Here I’ve registered with the kernel a native function that returns the current date and time. Then I’ve created a semantic function, with a prompt template that will invoke this function as part of rendering the prompt, and that will also include the value of the $input variable; $input is the name of the primary input (additional variables can be named and supplied via a ContextVariables dictionary passed to InvokeAsync):
 
-Solar Elevation and Azimuth in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-12 AM
-12 AM
-2 AM
-2 AM
-4 AM
-4 AM
-6 AM
-6 AM
-8 AM
-8 AM
-10 AM
-10 AM
-12 PM
-12 PM
-2 PM
-2 PM
-4 PM
-4 PM
-6 PM
-6 PM
-8 PM
-8 PM
-10 PM
-10 PM
-12 AM
-12 AM
-Oct
-Dec
-0
-0
-10
-10
-20
-20
-0
-0
-0
-10
-10
-20
-20
-30
-Now
-Now
-north
-east
-south
-west
-Solar elevation and azimuth over the course of November 2023. The black lines are lines of constant solar elevation (the angle of the sun above the horizon, in degrees). The background color fills indicate the azimuth (the compass bearing) of the sun. The lightly tinted areas at the boundaries of the cardinal compass points indicate the implied intermediate directions (northeast, southeast, southwest, and northwest).
-Moon
-The figure below presents a compact representation of key lunar data for November 2023. The horizontal axis is the day, the vertical axis is the hour of the day, and the colored areas indicate when the moon is above the horizon. The vertical gray bars (new Moons) and blue bars (full Moons) indicate key Moon phases. The label associated with each bar indicates the date and time that the phase is obtained, and the companion time labels indicate the rise and set times of the Moon for the nearest time interval in which the moon is above the horizon.
+using Microsoft.SemanticKernel;
 
-Moon Rise, Set & Phases in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-12 AM
-12 AM
-4 AM
-4 AM
-8 AM
-8 AM
-12 PM
-12 PM
-4 PM
-4 PM
-8 PM
-8 PM
-12 AM
-12 AM
-Oct
-Dec
-Oct 14
-10:56 AM
-Oct 14
-10:56 AM
-Oct 28
-1:25 PM
-Oct 28
-1:25 PM
-Nov 13
-1:28 AM
-Nov 13
-1:28 AM
-Nov 27
-1:17 AM
-Nov 27
-1:17 AM
-Dec 12
-3:33 PM
-Dec 12
-3:33 PM
-Dec 26
-4:34 PM
-Dec 26
-4:34 PM
-7:21 AM
-7:21 AM
-6:25 PM
-6:25 PM
-5:51 PM
-5:51 PM
-8:59 AM
-8:59 AM
-7:44 AM
-7:44 AM
-4:32 PM
-4:32 PM
-3:42 PM
-3:42 PM
-8:14 AM
-8:14 AM
-7:57 AM
-7:57 AM
-3:43 PM
-3:43 PM
-3:45 PM
-3:45 PM
-9:07 AM
-9:07 AM
-Now
-Now
-The time in which the moon is above the horizon (light blue area), with new moons (dark gray lines) and full moons (blue lines) indicated. The shaded overlays indicate night and civil twilight.
-Nov 2023		Illumination	Moonrise	Moonset	Moonrise	Meridian Passing	Distance
-1	
-85%	-	12:45 PM	NW	8:14 PM	NE	4:02 AM	S	240,646 mi
-2	
-77%	-	1:39 PM	NW	9:13 PM	NE	4:57 AM	S	243,993 mi
-3	
-67%	-	2:20 PM	NW	10:19 PM	NE	5:51 AM	S	246,916 mi
-4	
-58%	-	2:51 PM	NW	11:28 PM	NE	6:41 AM	S	249,200 mi
-5	
-50%	-	2:15 PM	WNW	11:37 PM	ENE	6:27 AM	S	250,702 mi
-6	
-38%	-	2:33 PM	WNW	-	7:10 AM	S	251,357 mi
-7	
-29%	12:45 AM	ENE	2:49 PM	WNW	-	7:51 AM	S	251,170 mi
-8	
-21%	1:52 AM	E	3:03 PM	W	-	8:31 AM	S	250,211 mi
-9	
-13%	2:58 AM	E	3:17 PM	W	-	9:10 AM	S	248,605 mi
-10	
-7%	4:06 AM	E	3:31 PM	W	-	9:50 AM	S	246,515 mi
-11	
-3%	5:15 AM	ESE	3:47 PM	WSW	-	10:32 AM	S	244,125 mi
-12	
-0%	6:28 AM	ESE	4:07 PM	WSW	-	11:18 AM	S	241,622 mi
-13	
-0%	7:44 AM	ESE	4:32 PM	SW	-	12:08 PM	S	239,175 mi
-14	
-3%	9:02 AM	SE	5:06 PM	SW	-	1:04 PM	S	236,923 mi
-15	
-7%	10:16 AM	SE	5:52 PM	SW	-	2:04 PM	S	234,955 mi
-16	
-14%	11:21 AM	SE	6:52 PM	SW	-	3:07 PM	S	233,314 mi
-17	
-24%	12:12 PM	SE	8:06 PM	SW	-	4:09 PM	S	232,002 mi
-18	
-34%	12:51 PM	SE	9:27 PM	SW	-	5:09 PM	S	231,002 mi
-19	
-46%	1:20 PM	ESE	10:51 PM	WSW	-	6:05 PM	S	230,296 mi
-20	
-50%	1:43 PM	ESE	-	-	6:57 PM	S	229,887 mi
-21	
-69%	-	12:13 AM	WSW	2:02 PM	E	7:46 PM	S	229,809 mi
-22	
-79%	-	1:33 AM	W	2:19 PM	E	8:33 PM	S	230,119 mi
-23	
-88%	-	2:53 AM	W	2:36 PM	E	9:20 PM	S	230,887 mi
-24	
-95%	-	4:13 AM	WNW	2:54 PM	ENE	10:08 PM	S	232,168 mi
-25	
-99%	-	5:34 AM	WNW	3:15 PM	ENE	10:59 PM	S	233,978 mi
-26	
-100%	-	6:55 AM	WNW	3:42 PM	NE	11:52 PM	S	236,275 mi
-27	
-100%	-	8:14 AM	NW	4:17 PM	NE	-	-
-28	
-99%	-	9:26 AM	NW	5:02 PM	NE	12:47 AM	S	238,942 mi
-29	
-95%	-	10:27 AM	NW	5:58 PM	NE	1:44 AM	S	241,800 mi
-30	
-90%	-	11:14 AM	NW	7:02 PM	NE	2:39 AM	S	244,624 mi
-Humidity
-We base the humidity comfort level on the dew point, as it determines whether perspiration will evaporate from the skin, thereby cooling the body. Lower dew points feel drier and higher dew points feel more humid. Unlike temperature, which typically varies significantly between night and day, dew point tends to change more slowly, so while the temperature may drop at night, a muggy day is typically followed by a muggy night.
+string aoaiEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")!;
+string aoaiApiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY")!;
+string aoaiModel = "Gpt35Turbo_0301";
 
-The chance that a given day will be muggy in Seattle is essentially constant during November, remaining around 0% throughout.
+// Initialize the kernel
+IKernel kernel = Kernel.Builder
+    .WithAzureChatCompletionService(aoaiModel, aoaiEndpoint, aoaiApiKey)
+    .Build();
 
-For reference, on July 8, the muggiest day of the year, there are muggy conditions 0% of the time, while on January 1, the least muggy day of the year, there are muggy conditions 0% of the time.
+// Register functions with the kernel
+kernel.RegisterCustomFunction(SKFunction.FromNativeFunction(
+    () => $"{DateTime.UtcNow:r}",
+    "DateTime", "Now",
+    "Gets the current date and time"));
+ISKFunction qa = kernel.CreateSemanticFunction("""
+    The current date and time is {{ datetime.now }}.
+    {{ $input }}
+    """);
 
-Humidity Comfort Levels in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-0%
-0%
-10%
-10%
-20%
-20%
-30%
-30%
-40%
-40%
-50%
-50%
-60%
-60%
-70%
-70%
-80%
-80%
-90%
-90%
-100%
-100%
-Oct
-Dec
-Nov 1
-0%
-Nov 1
-0%
-Nov 30
-0%
-Nov 30
-0%
-Nov 11
-0%
-Nov 11
-0%
-dry
-dry
-comfortable
-comfortable
-dry
-55°F
-comfortable
-60°F
-humid
-65°F
-muggy
-70°F
-oppressive
-75°F
-miserable
-The percentage of time spent at various humidity comfort levels, categorized by dew point.
-Wind
-This section discusses the wide-area hourly average wind vector (speed and direction) at 10 meters above the ground. The wind experienced at any given location is highly dependent on local topography and other factors, and instantaneous wind speed and direction vary more widely than hourly averages.
+// Q&A loop
+while (true)
+{
+    Console.Write("Question: ");
+    Console.WriteLine((await qa.InvokeAsync(Console.ReadLine()!, kernel, functions: kernel.Functions)).GetValue<string>());
+    Console.WriteLine();
+}
+When that function is invoked, it will render the prompt, filling in those placeholders by invoking the registered Now function and substituting its result into the prompt, and similarly by substituting the input variable into the prompt (the input in this case is what’s passed as the first argument to InvokeAsync, but functions can be chained as well, such that the output of one function becomes the input of the next). Now when I ask the same question, the answer is more satisfying: LLM now knows the current time
 
-The average hourly wind speed in Seattle is gradually increasing during November, increasing from 4.7 miles per hour to 5.3 miles per hour over the course of the month.
+A Trip Down Memory Lane
+We’re making good progress: in just a few lines of code, we’ve been able to create a simple chat agent to which we can repeatedly pose questions and get answers, and we’ve been able to provide additional information in the prompt to help it answer questions it would have otherwise been unable to answer. However, we’ve also created a chat agent with no memory, such that it has no concept of things previously discussed: LLM has no memory of the previous messages in the chat
 
-For reference, on November 30, the windiest day of the year, the daily average wind speed is 5.3 miles per hour, while on August 2, the calmest day of the year, the daily average wind speed is 2.8 miles per hour.
+These LLMs are stateless. To address the lack of memory, we need to keep track of our chat history and send it back as part of the prompt on each request. We could do so manually, rendering it into the prompt ourselves, or we could rely on SK to do it for us (and it can rely on the underlying clients for Azure OpenAI, OpenAI, or whatever other chat service is plugged in). This does the latter, getting the registered IChatCompletion service, creating a new chat (which is essentially just a list of all messages added to it), and then not only issuing requests and printing out responses, but also storing both into the chat history.
 
-Average Wind Speed in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-0 mph
-0 mph
-2 mph
-2 mph
-4 mph
-4 mph
-6 mph
-6 mph
-8 mph
-8 mph
-Oct
-Dec
-Nov 1
-4.7 mph
-Nov 1
-4.7 mph
-Nov 30
-5.3 mph
-Nov 30
-5.3 mph
-Nov 16
-5.2 mph
-Nov 16
-5.2 mph
-Now
-Now
-The average of mean hourly wind speeds (dark gray line), with 25th to 75th and 10th to 90th percentile bands.
-The hourly average wind direction in Seattle throughout November is predominantly from the south, with a peak proportion of 64% on November 17.
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.AI.ChatCompletion;
 
-Wind Direction in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-0%
-100%
-20%
-80%
-40%
-60%
-60%
-40%
-80%
-20%
-100%
-0%
-Oct
-Dec
-Now
-Now
-south
-east
-north
-west
-north
-east
-south
-west
-The percentage of hours in which the mean wind direction is from each of the four cardinal wind directions, excluding hours in which the mean wind speed is less than 1.0 mph. The lightly tinted areas at the boundaries are the percentage of hours spent in the implied intermediate directions (northeast, southeast, southwest, and northwest).
-Water Temperature
-Seattle is located near a large body of water (e.g., ocean, sea, or large lake). This section reports on the wide-area average surface temperature of that water.
+string aoaiEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")!;
+string aoaiApiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY")!;
+string aoaiModel = "Gpt35Turbo_0301";
 
-The average surface water temperature in Seattle is gradually decreasing during November, falling by 2°F, from 52°F to 49°F, over the course of the month.
+// Initialize the kernel
+IKernel kernel = Kernel.Builder
+    .WithAzureChatCompletionService(aoaiModel, aoaiEndpoint, aoaiApiKey)
+    .Build();
 
-Average Water Temperature in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-44°F
-44°F
-46°F
-46°F
-48°F
-48°F
-50°F
-50°F
-52°F
-52°F
-54°F
-54°F
-56°F
-56°F
-58°F
-58°F
-Oct
-Dec
-Nov 1
-52°F
-Nov 1
-52°F
-Nov 30
-49°F
-Nov 30
-49°F
-Nov 11
-51°F
-Nov 11
-51°F
-Now
-Now
-The daily average water temperature (purple line), with 25th to 75th and 10th to 90th percentile bands.
-Growing Season
-Definitions of the growing season vary throughout the world, but for the purposes of this report, we define it as the longest continuous period of non-freezing temperatures (≥ 32°F) in the year (the calendar year in the Northern Hemisphere, or from July 1 until June 30 in the Southern Hemisphere).
+// Create a new chat
+IChatCompletion ai = kernel.GetService<IChatCompletion>();
+ChatHistory chat = ai.CreateNewChat("You are an AI assistant that helps people find information.");
 
-The growing season in Seattle typically lasts for 9.0 months (272 days), from around February 24 to around November 23, rarely starting before January 17 or after March 19, and rarely ending before November 1 or after December 17.
+// Q&A loop
+while (true)
+{
+    Console.Write("Question: ");
+    chat.AddUserMessage(Console.ReadLine()!);
 
-During November in Seattle, the chance that a given day is within the growing season is very rapidly decreasing falling from 90% to 36% over the course of the month.
+    string answer = await ai.GenerateMessageAsync(chat);
+    chat.AddAssistantMessage(answer);
+    Console.WriteLine(answer);
 
-Time Spent in Various Temperature Bands and the Growing Season in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-growing season
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-0%
-100%
-10%
-90%
-20%
-80%
-30%
-70%
-40%
-60%
-50%
-50%
-60%
-40%
-70%
-30%
-80%
-20%
-90%
-10%
-100%
-0%
-Oct
-Dec
-90%
-Nov 1
-90%
-Nov 1
-Nov 30
-36%
-Nov 30
-36%
-75%
-Nov 11
-75%
-Nov 11
-55%
-Nov 21
-55%
-Nov 21
-Dec 17
-10%
-Dec 17
-10%
-Now
-Now
-freezing
-very cold
-cold
-cool
-comfortable
-frigid
-15°F
-freezing
-32°F
-very cold
-45°F
-cold
-55°F
-cool
-65°F
-comfortable
-75°F
-warm
-85°F
-hot
-95°F
-sweltering
-The percentage of time spent in various temperature bands. The black line is the percentage chance that a given day is within the growing season.
-Growing degree days are a measure of yearly heat accumulation used to predict plant and animal development, and defined as the integral of warmth above a base temperature, discarding any excess above a maximum temperature. In this report, we use a base of 50°F and a cap of 86°F.
+    Console.WriteLine();
+}
+With that chat history rendered into an appropriate prompt, we then get back much more satisfying results: LLM now sees all messages in the chat
 
-The average accumulated growing degree days in Seattle are essentially constant during November, remaining within 16°F of 2,261°F throughout.
+In a real implementation, you’d need to pay attention to many other details, like the fact that all of these language models have limits on the amount of data they’re able to process (the “context window”). The model I’m using has a context window of ~16,000 tokens (a “token” is the unit at which an LLM operates, sometimes a whole word, sometimes a portion of a word, sometimes a single character), plus there’s a per-token cost associated with every request/response, so once this graduates from experimentation to “let’s put this into production,” we’d need to start paying a lot more attention to things like how much data is actually in the chat history, clearing out portions of it, etc.
 
-Growing Degree Days in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-1,900°F
-1,900°F
-2,000°F
-2,000°F
-2,100°F
-2,100°F
-2,200°F
-2,200°F
-2,300°F
-2,300°F
-2,400°F
-2,400°F
-2,500°F
-2,500°F
-2,600°F
-2,600°F
-Oct
-Dec
-Nov 1
-2,245°F
-Nov 1
-2,245°F
-Nov 30
-2,277°F
-Nov 30
-2,277°F
-Nov 16
-2,268°F
-Nov 16
-2,268°F
-Now
-Now
-The average growing degree days accumulated over the course of November, with 25th to 75th and 10th to 90th percentile bands.
-Solar Energy
-This section discusses the total daily incident shortwave solar energy reaching the surface of the ground over a wide area, taking full account of seasonal variations in the length of the day, the elevation of the Sun above the horizon, and absorption by clouds and other atmospheric constituents. Shortwave radiation includes visible light and ultraviolet radiation.
+We can also add a tiny bit of code to help make the interaction feel snappier. These LLMs work based on generating the next token in the response, so although up until now we’ve only been printing out the response when the whole thing has arrived, we can actually stream the results so that we print out portions of the response as it’s available. This is exposed in SK via IAsyncEnumerable<T>, making it conventient to work with via await foreach loops.
 
-The average daily incident shortwave solar energy in Seattle is gradually decreasing during November, falling by 0.8 kWh, from 1.8 kWh to 1.0 kWh, over the course of the month.
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.AI.ChatCompletion;
+using System.Text;
 
-Average Daily Incident Shortwave Solar Energy in November in Seattle
- Fall
-Compare
-Averages:
-J
-F
-M
-A
-M
-J
-J
-A
-S
-O
-Nov
-D
-History:
-2023
-2022
-2021
-2020
-2019
-Nov
-1
-1
-2
-2
-3
-3
-4
-4
-5
-5
-6
-6
-7
-7
-8
-8
-9
-9
-10
-10
-11
-11
-12
-12
-13
-13
-14
-14
-15
-15
-16
-16
-17
-17
-18
-18
-19
-19
-20
-20
-21
-21
-22
-22
-23
-23
-24
-24
-25
-25
-26
-26
-27
-27
-28
-28
-29
-29
-30
-30
-0.0 kWh
-0.0 kWh
-0.5 kWh
-0.5 kWh
-1.0 kWh
-1.0 kWh
-1.5 kWh
-1.5 kWh
-2.0 kWh
-2.0 kWh
-2.5 kWh
-2.5 kWh
-3.0 kWh
-3.0 kWh
-3.5 kWh
-3.5 kWh
-4.0 kWh
-4.0 kWh
-4.5 kWh
-4.5 kWh
-Oct
-Dec
-Nov 1
-1.8 kWh
-Nov 1
-1.8 kWh
-Nov 30
-1.0 kWh
-Nov 30
-1.0 kWh
-Nov 16
-1.3 kWh
-Nov 16
-1.3 kWh
-Now
-Now
-The average daily shortwave solar energy reaching the ground per square meter (orange line), with 25th to 75th and 10th to 90th percentile bands.
-Topography
-For the purposes of this report, the geographical coordinates of Seattle are 47.606 deg latitude, -122.332 deg longitude, and 174 ft elevation.
+string aoaiEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")!;
+string aoaiApiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY")!;
+string aoaiModel = "Gpt35Turbo_0301";
 
-The topography within 2 miles of Seattle contains only modest variations in elevation, with a maximum elevation change of 449 feet and an average elevation above sea level of 135 feet. Within 10 miles contains only modest variations in elevation (1,171 feet). Within 50 miles contains very significant variations in elevation (7,720 feet).
+// Initialize the kernel
+IKernel kernel = Kernel.Builder
+    .WithAzureChatCompletionService(aoaiModel, aoaiEndpoint, aoaiApiKey)
+    .Build();
 
-The area within 2 miles of Seattle is covered by artificial surfaces (69%) and water (31%), within 10 miles by artificial surfaces (47%) and water (40%), and within 50 miles by trees (52%) and water (14%).
+// Create a new chat
+IChatCompletion ai = kernel.GetService<IChatCompletion>();
+ChatHistory chat = ai.CreateNewChat("You are an AI assistant that helps people find information.");
+StringBuilder builder = new();
 
-Data Sources
-This report illustrates the typical weather in Seattle, based on a statistical analysis of historical hourly weather reports and model reconstructions from January 1, 1980 to December 31, 2016.
+// Q&A loop
+while (true)
+{
+    Console.Write("Question: ");
+    chat.AddUserMessage(Console.ReadLine()!);
 
-Temperature and Dew Point
-There are 3 weather stations near enough to contribute to our estimation of the temperature and dew point in Seattle.
+    builder.Clear();
+    await foreach (string message in ai.GenerateMessageStreamAsync(chat))
+    {
+        Console.Write(message);
+        builder.Append(message);
+    }
+    Console.WriteLine();
+    chat.AddAssistantMessage(builder.ToString());
 
-For each station, the records are corrected for the elevation difference between that station and Seattle according to the International Standard Atmosphere , and by the relative change present in the MERRA-2 satellite-era reanalysis  between the two locations.
+    Console.WriteLine();
+}
+Now when we run this, we can see the response streaming in:
 
-The estimated value at Seattle is computed as the weighted average of the individual contributions from each station, with weights proportional to the inverse of the distance between Seattle and a given station.
+Video Player
 
-The stations contributing to this reconstruction are:
-
-King County International Airport (KBFI, 78%, 5 mi, south, -157 ft elevation change)
-Snohomish County Airport (Paine Field) (KPAE, 11%, 21 mi, north, 430 ft elevation change)
-Bremerton National Airport (KPWT, 11%, 22 mi, southwest, 269 ft elevation change)
-Sources map
-KBFI, 78%
-5 mi, -157 ft
-KPAE, 11%
-21 mi, 430 ft
-KPWT, 11%
-22 mi, 269 ft
-© OpenStreetMap contributors
-To get a sense of how much these sources agree with each other, you can view a comparison of Seattle and the stations that contribute to our estimates of its temperature history and climate. Please note that each source's contribution is adjusted for elevation and the relative change present in the MERRA-2 data.
-
-Other Data
-All data relating to the Sun's position (e.g., sunrise and sunset) are computed using astronomical formulas from the book, Astronomical Algorithms 2nd Edition , by Jean Meeus.
-
-All other weather data, including cloud cover, precipitation, wind speed and direction, and solar flux, come from NASA's MERRA-2 Modern-Era Retrospective Analysis . This reanalysis combines a variety of wide-area measurements in a state-of-the-art global meteorological model to reconstruct the hourly history of weather throughout the world on a 50-kilometer grid.
-
-Land Use data comes from the Global Land Cover SHARE database , published by the Food and Agriculture Organization of the United Nations.
-
-Elevation data comes from the Shuttle Radar Topography Mission (SRTM) , published by NASA's Jet Propulsion Laboratory.
-
-Names, locations, and time zones of places and some airports come from the GeoNames Geographical Database .
-
-Time zones for airports and weather stations are provided by AskGeo.com .
-
-Maps are © OpenStreetMap  contributors.
-
-Disclaimer
-The information on this site is provided as is, without any assurances as to its accuracy or suitability for any purpose. Weather data is prone to errors, outages, and other defects. We assume no responsibility for any decisions made on the basis of the content presented on this site.
-
-We draw particular cautious attention to our reliance on the MERRA-2 model-based reconstructions for a number of important data series. While having the tremendous advantages of temporal and spatial completeness, these reconstructions: (1) are based on computer models that may have model-based errors, (2) are coarsely sampled on a 50 km grid and are therefore unable to reconstruct the local variations of many microclimates, and (3) have particular difficulty with the weather in some coastal areas, especially small islands.
-
-We further caution that our travel scores are only as good as the data that underpin them, that weather conditions at any given location and time are unpredictable and variable, and that the definition of the scores reflects a particular set of preferences that may not agree with those of any particular reader.
-
-Please review our full terms contained on our Terms of Service page.
+00:00
+00:15
 
 
-Language
+Mind the Gap
+So, we’re now able to submit questions and get back answers. We’re able to keep a history of these interactions and use them to influence the answers. And we’re able to stream our results. Are we done? Not exactly.
 
-English
-Deutsch (German)
-Español (Spanish)
-Français (French)
-हिन्दी (Hindi)
-Indonesia (Indonesian)
-Italiano (Italian)
-日本語 (Japanese)
-한국어 (Korean)
-Polski (Polish)
-Português (Portuguese)
-Русский (Russian)
-ไทย (Thai)
-Türkçe (Turkish)
-Tiếng Việt (Vietnamese)
-简体中文 (Chinese)
-繁體中文 (Chinese)
-Home
-About
-Pricing
-support@weatherspark.com
-Create Account
-Log In
-© Cedar Lake Ventures, Inc.
+Thus far, the only information the LLM has to provide answers is the data on which it was trained, plus anything we proactively put into the prompt (e.g. the current time in a previous example). That means if we ask questions about things the LLM wasn’t trained on or for which it has significant gaps in its knowledgebase, the answers we get back are likely to be unhelpful, misleading, or blatantly wrong (aka “hallucinations”). For example, consider this question and answer: Incorrect answer about functionality released after LLM model was trained The questions are asking about functionality introduced in .NET 7, which was released after the GPT 3.5 Turbo model was trained. The model has no information about the functionality, so for the first question, it gives an outdated answer, and for the second question, it starts hallucinating and just making up stuff. We need to find a way to teach it about the things the user is asking about.
 
-Terms
-Privacy
+We’ve already seen a way of teaching the LLM things: put it in the prompt. So let’s try that. The blog post Performance Improvements in .NET 7, which was also posted after the GPT 3.5 Turbo model was trained, contains a lengthy section on Regex improvements in .NET 7, including about that new RegexOptions.NonBacktracking option, so if we put it all into the prompt, that should provide the LLM with what it needs. Here I’ve just augmented the previous example with an additional section of code that downloads the contents of the web page, does a hack job of cleaning up the contents a bit, and then adding that all into a user message.
+
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.AI.ChatCompletion;
+using System.Net;
+using System.Text;
+using System.Text.RegularExpressions;
+
+string aoaiEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")!;
+string aoaiApiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY")!;
+string aoaiModel = "Gpt35Turbo_0301";
+
+// Initialize the kernel
+IKernel kernel = Kernel.Builder
+    .WithAzureChatCompletionService(aoaiModel, aoaiEndpoint, aoaiApiKey)
+    .Build();
+
+// Create a new chat
+IChatCompletion ai = kernel.GetService<IChatCompletion>();
+ChatHistory chat = ai.CreateNewChat("You are an AI assistant that helps people find information.");
+StringBuilder builder = new();
+
+// Download a document and add all of its contents to our chat
+using (HttpClient client = new())
+{
+    string s = await client.GetStringAsync("https://devblogs.microsoft.com/dotnet/performance_improvements_in_net_7");
+    s = WebUtility.HtmlDecode(Regex.Replace(s, @"<[^>]+>|&nbsp;", ""));
+    chat.AddUserMessage("Here's some additional information: " + s); // uh oh!
+}
+
+// Q&A loop
+while (true)
+{
+    Console.Write("Question: ");
+    chat.AddUserMessage(Console.ReadLine()!);
+
+    builder.Clear();
+    await foreach (string message in ai.GenerateMessageStreamAsync(chat))
+    {
+        Console.Write(message);
+        builder.Append(message);
+    }
+    Console.WriteLine();
+    chat.AddAssistantMessage(builder.ToString());
+
+    Console.WriteLine();
+}
+And the result?
+
+Unhandled exception. Microsoft.SemanticKernel.AI.AIException: Invalid request: The request is not valid, HTTP status: 400
+ ---> Azure.RequestFailedException: This model's maximum context length is 16384 tokens. However, your messages resulted in 155751 tokens. Please reduce the length of the messages.
+Status: 400 (model_error)
+ErrorCode: context_length_exceeded
+Oops! Even without any additional history, we exceeded the context window by almost 10 times. We obviously need to include less information, but we still need to ensure it’s relevant information. RAG to the rescue.
+
+“RAG,” or Retrieval Augmented Generation, is just a fancy way of saying “look up some stuff and put it into the prompt.” Rather than putting all possible information into the prompt, we’ll instead index all of the additional information we care about, and then when a question is asked, we’ll use that question to find the most relevant indexed content and put just that additional content into the prompt. And to help with that, we need embeddings.
+
+Think of an “embedding” as a vector (array) of floating-point values that represents some content and its semantic meaning. We can ask a model specifically focused on embeddings to create such a vector for a particular input, and then we can store both the vector and the text that seeded it into a database. Later on, when a question is asked, we can similarly run that question through the same model, and we can use the resulting vector to look up the most relevant embeddings in our database. We’re not necessarily looking for exact matches, just ones that are close enough. And you can take “close” here literally; the lookups are typically performed using functions that use a distance measure, such as cosine similarity. For example, consider this program:
+
+using Microsoft.SemanticKernel.AI.Embeddings;
+using Microsoft.SemanticKernel.Connectors.AI.OpenAI.TextEmbedding;
+
+string aoaiEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")!;
+string aoaiApiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY")!;
+var embeddingGen = new AzureTextEmbeddingGeneration("TextEmbeddingAda002_1", aoaiEndpoint, aoaiApiKey);
+
+string input = "What is an amphibian?";
+string[] examples =
+{
+    "What is an amphibian?",
+    "Cos'è un anfibio?",
+    "A frog is an amphibian.",
+    "Frogs, toads, and salamanders are all examples.",
+    "Amphibians are four-limbed and ectothermic vertebrates of the class Amphibia.",
+    "They are four-limbed and ectothermic vertebrates.",
+    "A frog is green.",
+    "A tree is green.",
+    "It's not easy bein' green.",
+    "A dog is a mammal.",
+    "A dog is a man's best friend.",
+    "You ain't never had a friend like me.",
+    "Rachel, Monica, Phoebe, Joey, Chandler, Ross",
+};
+
+// Generate embeddings for each piece of text
+ReadOnlyMemory<float> inputEmbedding = (await embeddingGen.GenerateEmbeddingsAsync(new[] { input }))[0];
+IList<ReadOnlyMemory<float>> exampleEmbeddings = await embeddingGen.GenerateEmbeddingsAsync(examples);
+
+// Print the cosine similarity between the input and each example
+float[] similarity = exampleEmbeddings.Select(e => CosineSimilarity(e.Span, inputEmbedding.Span)).ToArray();
+similarity.AsSpan().Sort(examples.AsSpan(), (f1, f2) => f2.CompareTo(f1));
+Console.WriteLine("Similarity Example");
+for (int i = 0; i < similarity.Length; i++)
+    Console.WriteLine($"{similarity[i]:F6}   {examples[i]}");
+
+static float CosineSimilarity(ReadOnlySpan<float> x, ReadOnlySpan<float> y)
+{
+    float dot = 0, xSumSquared = 0, ySumSquared = 0;
+
+    for (int i = 0; i < x.Length; i++)
+    {
+        dot += x[i] * y[i];
+        xSumSquared += x[i] * x[i];
+        ySumSquared += y[i] * y[i];
+    }
+
+    return dot / (MathF.Sqrt(xSumSquared) * MathF.Sqrt(ySumSquared));
+}
+This uses the Azure OpenAI embedding generation service to get an embedding vector (using the TextEmbeddingAda002_1 deployment I mentioned at the beginning of the post) for both an input and a bunch of other pieces of text. It then compares the resulting embedding for the input against the resulting embedding for each of those other texts, sorts the results by similarity, and prints them out:
+
+Similarity Example
+1.000000   What is an amphibian?
+0.937651   A frog is an amphibian.
+0.902491   Amphibians are four-limbed and ectothermic vertebrates of the class Amphibia.
+0.873569   Cos'è un anfibio?
+0.866632   Frogs, toads, and salamanders are all examples.
+0.857454   A frog is green.
+0.842596   They are four-limbed and ectothermic vertebrates.
+0.802171   A dog is a mammal.
+0.784479   It's not easy bein' green.
+0.778341   A tree is green.
+0.756669   A dog is a man's best friend.
+0.734219   You ain't never had a friend like me.
+0.721176   Rachel, Monica, Phoebe, Joey, Chandler, Ross
+Let’s incorporate this concept into our chat app. In this iteration, I’ve augmented the previous chat example with a few things:
+
+To better help us see what’s going on under the covers, I’ve enable logging in the kernel, by using the WithLoggerFactory method to register an ILoggerFactory that logs to the console. That also requires us to add a couple of additional packages:
+dotnet add package Microsoft.Extensions.Logging
+dotnet add package Microsoft.Extensions.Logging.Console
+To enable SK to do the embedding generation on our behalf via its abstractions, we’ll also need to add its Memory package:
+dotnet add package Microsoft.SemanticKernel.Plugins.Memory --prerelease
+I then need to create an ISemanticTextMemory to use for querying, which I do by using MemoryBuilder to combine an embeddings generator with a database. I’ve used the WithAzureTextEmbeddingGenerationService method to specify I want to use the Azure OpenAI service as my embeddings generator, and I’ve used WithMemoryStore to register a VolatileMemoryStore instance as the store (we’ll change that later, but this will suffice for now). VolatileMemoryStore is simply an implementation of SK’s IMemoryStore abstraction wrapping an in-memory dictionary.
+I’ve taken the downloaded text, used SK’s TextChunker to break it fairly arbitrarily into pieces, and then I’ve used SaveInformationAsync to save each of those pieces to the memory store. That call will use the embedding service to generate an embedding for the text and then store the resulting vector and the input text into the aforementioned dictionary.
+Then, when it’s time to ask a question, rather than just adding the question to the chat history and submitting that, we first use the question to SearchAsync on the memory store. That will again use the embedding service to get an embedding vector for the question, and then search the store for the closest vectors to that input. I’ve arbitrarily had it return the three closest matches, for which it then appends together the associated text, adds the results into the chat history, and submits that. After submitting the request, I’ve also then removed this additional context from my chat history, so that it’s not sent again on subsequent requests; this additional information can consume much of the allowed context window.
+Here’s our resulting program:
+
+using Microsoft.Extensions.Logging;
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.AI.ChatCompletion;
+using Microsoft.SemanticKernel.Connectors.AI.OpenAI;
+using Microsoft.SemanticKernel.Memory;
+using Microsoft.SemanticKernel.Plugins.Memory;
+using Microsoft.SemanticKernel.Text;
+using System.Net;
+using System.Text;
+using System.Text.RegularExpressions;
+
+string aoaiEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")!;
+string aoaiApiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY")!;
+string aoaiModel = "Gpt35Turbo_0301";
+
+// Initialize the kernel
+IKernel kernel = Kernel.Builder
+    .WithLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()))
+    .WithAzureChatCompletionService(aoaiModel, aoaiEndpoint, aoaiApiKey)
+    .Build();
+
+// Download a document and create embeddings for it
+ISemanticTextMemory memory = new MemoryBuilder()
+    .WithLoggerFactory(kernel.LoggerFactory)
+    .WithMemoryStore(new VolatileMemoryStore())
+    .WithAzureTextEmbeddingGenerationService("TextEmbeddingAda002_1", aoaiEndpoint, aoaiApiKey)
+    .Build();
+string collectionName = "net7perf";
+using (HttpClient client = new())
+{
+    string s = await client.GetStringAsync("https://devblogs.microsoft.com/dotnet/performance_improvements_in_net_7");
+    List<string> paragraphs =
+        TextChunker.SplitPlainTextParagraphs(
+            TextChunker.SplitPlainTextLines(
+                WebUtility.HtmlDecode(Regex.Replace(s, @"<[^>]+>|&nbsp;", "")),
+                128),
+            1024);
+    for (int i = 0; i < paragraphs.Count; i++)
+        await memory.SaveInformationAsync(collectionName, paragraphs[i], $"paragraph{i}");
+}
+
+// Create a new chat
+IChatCompletion ai = kernel.GetService<IChatCompletion>();
+ChatHistory chat = ai.CreateNewChat("You are an AI assistant that helps people find information.");
+StringBuilder builder = new();
+
+// Q&A loop
+while (true)
+{
+    Console.Write("Question: ");
+    string question = Console.ReadLine()!;
+
+    builder.Clear();
+    await foreach (var result in memory.SearchAsync(collectionName, question, limit: 3))
+        builder.AppendLine(result.Metadata.Text);
+    int contextToRemove = -1;
+    if (builder.Length != 0)
+    {
+        builder.Insert(0, "Here's some additional information: ");
+        contextToRemove = chat.Count;
+        chat.AddUserMessage(builder.ToString());
+    }
+
+    chat.AddUserMessage(question);
+
+    builder.Clear();
+    await foreach (string message in ai.GenerateMessageStreamAsync(chat))
+    {
+        Console.Write(message);
+        builder.Append(message);
+    }
+    Console.WriteLine();
+    chat.AddAssistantMessage(builder.ToString());
+
+    if (contextToRemove >= 0) chat.RemoveAt(contextToRemove);
+    Console.WriteLine();
+}
+When I run this, I now see lots of logging happening: Embedding creation logging from Semantic Kernel The text chunking code split the document into 163 “paragraphs,” leading to 163 embeddings being generated and stored in our database. For one or two of the resulting requests, they were also throttled, with the service sending back an error saying that too many requests were being issued in too short a period of time, and the HttpClient used by SK automatically retried after a few seconds, at which point it was able to successfully continue. The cool thing is now with all of those embeddings, when we ask our question, it results in pulling from the database the most relevant material, that additional text is added to the prompt, and now when we ask the same questions we did earlier, we get a much more helpful and accurate response: LLM now correctly answers questions about functionality created after the model was trained Sweet.
+
+Persistence of Memory
+Of course, we don’t want to have to index the material every time the app restarts. Imagine this was a site that was enabling chatting with thousands of documents; reindexing all of that content every time a process was restarted would not only be time consuming, it would be unnecessarily expensive (the pricing details for the Azure OpenAI embedding model I’m using here highlight that at the time of this writing it costs $0.0001 per 1,000 tokens, which means just this one document costs a few cents to index). So, we want to switch to using a database. SK provides a multitude of IMemoryStore implementations, and we can easily switch to one that actually persists the results. For example, let’s switch to one based on Sqlite. For this, we need another NuGet package:
+
+dotnet add package Microsoft.SemanticKernel.Connectors.Memory.Sqlite --prerelease
+and with that, we can change just one line of code to switch from the VolatileMemoryStore:
+
+.WithMemoryStore(new VolatileMemoryStore())
+to the SqliteMemoryStore:
+
+.WithMemoryStore(await SqliteMemoryStore.ConnectAsync("mydata.db"))
+Sqlite is an embedded SQL database engine that runs in the same process and stores its data in regular disk files. Here, it’ll connect to a mydata.db file, creating it if it doesn’t already exist. Now, if we were to run that, we’d still end up creating the embeddings again, as in our previous example there wasn’t any guard checking to see whether the data already existed. Thus, our final change is simply to guard that work:
+
+IList<string> collections = await memory.GetCollectionsAsync();
+if (!collections.Contains("net7perf"))
+{
+    ... // same code as before to download and process the document
+}
+You get the idea. Here’s the full version using Sqlite:
+
+using Microsoft.Extensions.Logging;
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.AI.ChatCompletion;
+using Microsoft.SemanticKernel.Connectors.AI.OpenAI;
+using Microsoft.SemanticKernel.Connectors.Memory.Sqlite;
+using Microsoft.SemanticKernel.Memory;
+using Microsoft.SemanticKernel.Plugins.Memory;
+using Microsoft.SemanticKernel.Text;
+using System.Net;
+using System.Text;
+using System.Text.RegularExpressions;
+
+string aoaiEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")!;
+string aoaiApiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY")!;
+string aoaiModel = "Gpt35Turbo_0301";
+
+// Initialize the kernel
+IKernel kernel = Kernel.Builder
+    .WithLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()))
+    .WithAzureChatCompletionService(aoaiModel, aoaiEndpoint, aoaiApiKey)
+    .Build();
+
+// Download a document and create embeddings for it
+ISemanticTextMemory memory = new MemoryBuilder()
+    .WithLoggerFactory(kernel.LoggerFactory)
+    .WithMemoryStore(await SqliteMemoryStore.ConnectAsync("mydata.db"))
+    .WithAzureTextEmbeddingGenerationService("TextEmbeddingAda002_1", aoaiEndpoint, aoaiApiKey)
+    .Build();
+IList<string> collections = await memory.GetCollectionsAsync();
+string collectionName = "net7perf";
+if (collections.Contains(collectionName))
+{
+    Console.WriteLine("Found database");
+}
+else
+{
+    using HttpClient client = new();
+    string s = await client.GetStringAsync("https://devblogs.microsoft.com/dotnet/performance_improvements_in_net_7");
+    List<string> paragraphs =
+        TextChunker.SplitPlainTextParagraphs(
+            TextChunker.SplitPlainTextLines(
+                WebUtility.HtmlDecode(Regex.Replace(s, @"<[^>]+>|&nbsp;", "")),
+                128),
+            1024);
+    for (int i = 0; i < paragraphs.Count; i++)
+        await memory.SaveInformationAsync(collectionName, paragraphs[i], $"paragraph{i}");
+    Console.WriteLine("Generated database");
+}
+
+// Create a new chat
+IChatCompletion ai = kernel.GetService<IChatCompletion>();
+ChatHistory chat = ai.CreateNewChat("You are an AI assistant that helps people find information.");
+StringBuilder builder = new();
+
+// Q&A loop
+while (true)
+{
+    Console.Write("Question: ");
+    string question = Console.ReadLine()!;
+
+    builder.Clear();
+    await foreach (var result in memory.SearchAsync(collectionName, question, limit: 3))
+        builder.AppendLine(result.Metadata.Text);
+    int contextToRemove = -1;
+    if (builder.Length != 0)
+    {
+        builder.Insert(0, "Here's some additional information: ");
+        contextToRemove = chat.Count;
+        chat.AddUserMessage(builder.ToString());
+    }
+
+    chat.AddUserMessage(question);
+
+    builder.Clear();
+    await foreach (string message in ai.GenerateMessageStreamAsync(chat))
+    {
+        Console.Write(message);
+        builder.Append(message);
+    }
+    Console.WriteLine();
+    chat.AddAssistantMessage(builder.ToString());
+
+    if (contextToRemove >= 0) chat.RemoveAt(contextToRemove);
+    Console.WriteLine();
+}
+Now when we run that, on first invocation we still end up indexing everything, but after that, the data has all been indexed: Sqlite database on disk and subsequent invocations are able to simply use it. Embeddings found in Sqlite database
+
+Of course, while Sqlite is an awesome tool, it’s not optimized for doing these kinds of searches. In fact, the code for this SqliteMemoryStore in SK is simply enumerating the full contents of the database and doing a CosineSimilarity check on each:
+
+// from https://github.com/microsoft/semantic-kernel/blob/013abb79b6e797360f5f91c60d657ebd4d253754/dotnet/src/Connectors/Connectors.Memory.Sqlite/SqliteMemoryStore.cs#L137-L143
+await foreach (var record in this.GetAllAsync(collectionName, cancellationToken))
+{
+    if (record != null)
+    {
+        double similarity = embedding.Span.CosineSimilarity(record.Embedding.Span);
+        ...
+For real scale, and to be able to share the data between multiple frontends, we’d want a real “vector database,” one that’s been designed for storing and searching embeddings. There are a multitude of such vector databases now available, including Azure Cognitive Search, Chroma, Milvus, Pinecone, Qdrant, Weaviate, and more, all of which have memory store implementations for SK. We can simply stand up one of those (most of which have docker images readily available), change our WithMemoryStore call to use the appropriate connector, and we’re cooking with gas.
+
+So let’s do that. You can choose whichever of these databases works well for your needs; for the purposes of this post, I’ve arbitrarily chosen Qdrant. Ensure you have docker up and running, and then issue the following command to pull down the Qdrant image:
+
+docker pull qdrant/qdrant
+Once you have that, you can start a container with it:
+
+docker run -p 6333:6333 -v /qdrant_storage:/qdrant/storage qdrant/qdrant
+And that’s it; we now have a vector database up and running locally. Now we just need to use it instead. I add the relevant SK “connector” to my project:
+
+dotnet add package Microsoft.SemanticKernel.Connectors.Memory.Qdrant --prerelease
+and then change two lines of code, from:
+
+using Microsoft.SemanticKernel.Connectors.Memory.Sqlite;
+...
+.WithMemoryStore(await SqliteMemoryStore.ConnectAsync("mydata.db"))
+to:
+
+using Microsoft.SemanticKernel.Connectors.Memory.Qdrant;
+...
+.WithMemoryStore(new QdrantMemoryStore("http://localhost:6333/", 1536))
+And that’s it! Now when I run it, I see a flurry of logging activity coming from Qdrant as the app stores all the embeddings: Console logging from Qdrant We can use its dashboard to inspect the data that was stored. Qdrant web dashboard And of course the app continues working happily: Using Qdrant from the chat console app
+
+Best Laid Plans
+Now that we’ve implemented an end-to-end use of embeddings with a vector database, let’s loop back around to something I mentioned earlier: plans. We saw how we can search embeddings for data to put into a prompt. And we saw how we can proactively invoke functions to get data to put into a prompt (e.g. the current date and time). What if I wanted to instead reactively put that data into the prompt? After all, I might have many functions that could be invoked, and each of those functions could generate a non-trivial number of tokens; just as with the embeddings, it’d be nice to only include them if they’re going to be relevant to answering the user’s question.
+
+For that, we have orchestration and planning. The idea here is that we can tell the LLM what functions are available and give it a goal to achieve, and ask it to create a plan using those functions to achieve the goal. That plan can then be executed. There are a variety of planners built into SK, and tools to aid in creating other custom planners. The SequentialPlanner, for example, is given a goal and creates a list of functions to invoke in sequence along with the arguments to pass to those functions; however, it generally needs a model more powerful than GPT 3.5 Turbo. The StepwisePlanner in contrast iteratively makes requests to the LLM, at each turn of the crank moving one step closer to the goal and then evaluating what it should do next. To use it, we need another nuget package:
+
+dotnet add package Microsoft.SemanticKernel.Planners.Core --prerelease
+Here’s a simple example of it in action:
+
+using Microsoft.Extensions.Logging;
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.Planners;
+using Microsoft.SemanticKernel.Planning;
+
+string aoaiEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")!;
+string aoaiApiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY")!;
+string aoaiModel = "Gpt35Turbo_0301";
+
+IKernel kernel = Kernel.Builder
+    .WithLoggerFactory(LoggerFactory.Create(b => b.AddConsole()))
+    .WithAzureChatCompletionService(aoaiModel, aoaiEndpoint, aoaiApiKey)
+    .Build();
+
+kernel.RegisterCustomFunction(SKFunction.FromNativeFunction(
+    (string personName) => personName switch { "John" => 24, _ => 0 },
+    "Demographics", "GetAge", "Gets the age of the person whose name is provided"));
+
+var planner = new StepwisePlanner(kernel);
+Plan p = planner.CreatePlan("John's dog is half his age. How old is the dog?");
+Console.WriteLine($"Result: {(await kernel.RunAsync(p)).GetValue<string>()}");
+I’ve created a kernel with access to GPT 3.5 Turbo and enabled basic console logging. Then I’ve registered a function that can calculate a person’s age (stubbed out to just return data for this example). And then I’ve created a plan with the StepwisePlanner and invoked it. Via the logging, we can see the planner making progress and eventually reaching the goal: Using the StepwisePlanner
+
+SK also provides an ActionPlanner, which is provided with a list of functions and a goal, and may pick one function to execute. As an exemplar, we’ll include that in our chat app. Everything is as it was before, but now in addition to searching our embeddings, we also run the user’s query through the ActionPlanner, and include its output in the context we submit as part of the prompt. For this example, I’ve again included the time function we saw earlier.
+
+using Microsoft.Extensions.Logging;
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.AI.ChatCompletion;
+using Microsoft.SemanticKernel.Connectors.AI.OpenAI;
+using Microsoft.SemanticKernel.Connectors.Memory.Qdrant;
+using Microsoft.SemanticKernel.Memory;
+using Microsoft.SemanticKernel.Plugins.Memory;
+using Microsoft.SemanticKernel.Planners;
+using Microsoft.SemanticKernel.Planning;
+using Microsoft.SemanticKernel.Text;
+using System.Net;
+using System.Text;
+using System.Text.RegularExpressions;
+
+string aoaiEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")!;
+string aoaiApiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY")!;
+string aoaiModel = "Gpt35Turbo_0301";
+
+// Initialize the kernel
+IKernel kernel = Kernel.Builder
+    .WithLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()))
+    .WithAzureChatCompletionService(aoaiModel, aoaiEndpoint, aoaiApiKey)
+    .Build();
+
+// Register helpful functions with the kernel
+kernel.RegisterCustomFunction(SKFunction.FromNativeFunction(
+    () => $"The current date and time are {DateTime.UtcNow:r}",
+    "DateTime", "Now", "Gets the current date and time."));
+
+// Ensure we have embeddings for our document
+ISemanticTextMemory memory = new MemoryBuilder()
+    .WithLoggerFactory(kernel.LoggerFactory)
+    .WithMemoryStore(new QdrantMemoryStore("http://localhost:6333/", 1536))
+    .WithAzureTextEmbeddingGenerationService("TextEmbeddingAda002_1", aoaiEndpoint, aoaiApiKey)
+    .Build();
+IList<string> collections = await memory.GetCollectionsAsync();
+string collectionName = "net7perf";
+if (collections.Contains(collectionName))
+{
+    Console.WriteLine("Found database");
+}
+else
+{
+    using HttpClient client = new();
+    string s = await client.GetStringAsync("https://devblogs.microsoft.com/dotnet/performance_improvements_in_net_7");
+    List<string> paragraphs =
+        TextChunker.SplitPlainTextParagraphs(
+            TextChunker.SplitPlainTextLines(
+                WebUtility.HtmlDecode(Regex.Replace(s, @"<[^>]+>|&nbsp;", "")),
+                128),
+            1024);
+    for (int i = 0; i < paragraphs.Count; i++)
+        await memory.SaveInformationAsync(collectionName, paragraphs[i], $"paragraph{i}");
+    Console.WriteLine("Generated database");
+}
+
+// Create a new chat
+IChatCompletion ai = kernel.GetService<IChatCompletion>();
+ChatHistory chat = ai.CreateNewChat("You are an AI assistant that helps people find information.");
+StringBuilder builder = new();
+
+// Q&A loop
+while (true)
+{
+    Console.Write("Question: ");
+    string question = Console.ReadLine()!;
+
+    // Get additional context from embeddings
+    builder.Clear();
+    await foreach (var result in memory.SearchAsync(collectionName, question, limit: 3))
+        builder.AppendLine(result.Metadata.Text);
+
+    // Get additional context from any function the LLM thinks we should invoke
+    Plan plan = await new ActionPlanner(kernel).CreatePlanAsync(question);
+    string? plannerResult = (await kernel.RunAsync(plan)).GetValue<string>();
+    if (!string.IsNullOrEmpty(plannerResult))
+    {
+        builder.AppendLine(plannerResult);
+    }
+
+    int contextToRemove = -1;
+    if (builder.Length != 0)
+    {
+        builder.Insert(0, "Here's some additional information: ");
+        contextToRemove = chat.Count;
+        chat.AddUserMessage(builder.ToString());
+    }
+
+    chat.AddUserMessage(question);
+
+    builder.Clear();
+    await foreach (string message in ai.GenerateMessageStreamAsync(chat))
+    {
+        Console.Write(message);
+        builder.Append(message);
+    }
+    Console.WriteLine();
+    chat.AddAssistantMessage(builder.ToString());
+
+    if (contextToRemove >= 0) chat.RemoveAt(contextToRemove);
+    Console.WriteLine();
+}
+If I ask a question that has nothing to do with time, then logging shows the time function is never invoked: ActionPlanner not invoking the time function but if I ask a question that requires knowing the current time, then we can see it is in fact invoked: ActionPlanner invoking the time function
+
+That example has the client using a planner and asking the LLM if there are any functions that should be called to gather more information. However, recent advances in some models enables the actual LLM service to detect an opportunity to invoke a function it’s been told exists. See the “Function Calling” section of https://openai.com/blog/function-calling-and-other-api-updates. Essentially, as part of the chat message, you include a schema for any available function the LLM might want to use, and then if the LLM detects an opportunity to use it, rather than sending back a textual response to your message, it sends back a request for you to invoke the function. You then invoke the function and reissue your request, this time with both its function request and your function’s response in the chat history.
+
+Let’s look at an example. The model I’ve been using, gpt-35-turbo version 0301, doesn’t support functions, so I’ve created a deployment of gpt-35-turbo-16k, version 0613, which does support functions. At the time I write this, SK also doesn’t currently expose this capability via its abstractions (though it’s in the works). This is the nature of abstractions, often representing the lowest-common denominator of all that they can represent and trailing in the functionality available; as such, a good abstracted system may provide a way to “break glass,” escaping from the confines of the abstraction and letting you use the underlying capabilities where needed. SK does so. Thus far, we’ve been using:
+
+.WithAzureChatCompletionService("Gpt35Turbo_16k", aoaiEndpoint, aoaiApiKey)
+where we provide the Azure OpenAI endpoint and associated API key. But there’s another overload that instead accepts an Azure.AI.OpenAI.OpenAIClient, which is the actual Azure SDK client type. The overload we’ve been using constructs one of these under the covers, but we can construct one ourselves, pass it to SK so it can use it, but then we can also use it directly, and in doing so, have full access to the raw APIs SK was abstracting over. OpenAIClient does expose this function call support, and we can rewrite our sample to take advantage of it:
+
+First, we need to explicitly reference the Azure package:
+
+dotnet add package Azure.AI.OpenAI --prerelease
+With that, we can change our kernel initialization to use the specific OpenAIClient we create:
+
+var aoai = new OpenAIClient(new Uri(aoaiEndpoint), new AzureKeyCredential(aoaiApiKey));
+IKernel kernel = Kernel.Builder
+    .WithLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()))
+    .WithAzureChatCompletionService("Gpt35Turbo_16k", aoai)
+    ...
+Then, instead of SK’s ChatHistory, we create a ChatCompletionsOptions and populate its Messages list in a similar manner.
+
+var chatCompletionsOptions = new ChatCompletionsOptions();
+chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.System, "You are an AI assistant that helps people find information."));
+However, we can also tell it about the functions that are available to it, including their name, a description of what they do, and a JSON description of the function’s arguments.
+
+chatCompletionsOptions.Functions.Add(new FunctionDefinition("get_person_age")
+{
+    Description = "Gets the age of the named person",
+    Parameters = BinaryData.FromString("""
+                 {
+                     "type":"object",
+                     "properties":{
+                         "name":{ 
+                             "type":"string",
+                             "description":"The name of a person"
+                         }
+                     },
+                     "required": ["name"]
+                 }
+                 """)
+});
+Then instead of calling a method on SK’s IChatCompletion to make the request to the LLM, we use the OpenAIClient‘s GetChatCompletionsAsync. If we weren’t involving functions at all, that would also be a simple loop:
+
+// Q&A loop
+while (true)
+{
+    Console.Write("Question: ");
+    chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.User, Console.ReadLine()!));
+
+    Response<ChatCompletions> response = await aoai.GetChatCompletionsAsync("Gpt35Turbo_16k", chatCompletionsOptions);
+    ChatChoice c = response.Value.Choices[0];
+    Console.WriteLine(c.Message.Content);
+    chatCompletionsOptions.Messages.Add(c.Message);
+}
+But with functions in the picture, the response that comes back might not signify the end of the response token generation but might instead represent a request from the LLM for a function to be invoked. We thus need to check the FinishReason, and if it stopped due to CompletionsFinishReason.FunctionCall, we need to invoke the requested function with the requested arguments, and put both the LLM’s function call request and the function call result into the chat history:
+
+Response<ChatCompletions> response;
+ChatChoice c;
+while (true)
+{
+    response = await aoai.GetChatCompletionsAsync("Gpt35Turbo_16k", chatCompletionsOptions);
+    c = response.Value.Choices[0];
+    if (c.FinishReason == CompletionsFinishReason.FunctionCall)
+    {
+        switch (c.Message.FunctionCall.Name)
+        {
+            case "get_person_age":
+                int age = JsonNode.Parse(c.Message.FunctionCall.Arguments)?["name"]?.ToString() switch
+                {
+                    "Elsa" => 21,
+                    "Anna" => 18,
+                    _ => -1,
+                };
+                chatCompletionsOptions.Messages.Add(c.Message);
+                chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.Function, $"{{ \"age\":{age} }}") { Name = "get_person_age" });
+                continue;
+        }
+    }
+    break;
+}
+Here I’ve just hardcoded the results for this function, but obviously code can do anything to get the answer to hand back to the LLM. Putting it altogether, here’s our full program, that both fills the prompt with data we retrieve from our vector database and functions that enable us to provide additional information on demand:
+
+using Azure;
+using Azure.AI.OpenAI;
+using Microsoft.Extensions.Logging;
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.Connectors.AI.OpenAI;
+using Microsoft.SemanticKernel.Connectors.Memory.Qdrant;
+using Microsoft.SemanticKernel.Memory;
+using Microsoft.SemanticKernel.Plugins.Memory;
+using Microsoft.SemanticKernel.Text;
+using System.Net;
+using System.Text;
+using System.Text.Json.Nodes;
+using System.Text.RegularExpressions;
+
+string aoaiEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")!;
+string aoaiApiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY")!;
+string aoaiModel = "Gpt35Turbo_16k";
+
+// Initialize the client
+var aoai = new OpenAIClient(new Uri(aoaiEndpoint), new AzureKeyCredential(aoaiApiKey));
+
+// Ensure we have embeddings for our document
+ISemanticTextMemory memory = new MemoryBuilder()
+    .WithLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()))
+    .WithMemoryStore(new QdrantMemoryStore("http://localhost:6333/", 1536))
+    .WithAzureTextEmbeddingGenerationService("TextEmbeddingAda002_1", aoaiEndpoint, aoaiApiKey)
+    .Build();
+IList<string> collections = await memory.GetCollectionsAsync();
+string collectionName = "net7perf";
+if (collections.Contains(collectionName))
+{
+    Console.WriteLine("Found database");
+}
+else
+{
+    using HttpClient client = new();
+    string s = await client.GetStringAsync("https://devblogs.microsoft.com/dotnet/performance_improvements_in_net_7");
+    List<string> paragraphs =
+        TextChunker.SplitPlainTextParagraphs(
+            TextChunker.SplitPlainTextLines(
+                WebUtility.HtmlDecode(Regex.Replace(s, @"<[^>]+>|&nbsp;", "")),
+                128),
+            1024);
+    for (int i = 0; i < paragraphs.Count; i++)
+        await memory.SaveInformationAsync(collectionName, paragraphs[i], $"paragraph{i}");
+    Console.WriteLine("Generated database");
+}
+
+// Create a new chat
+StringBuilder builder = new();
+var chatCompletionsOptions = new ChatCompletionsOptions();
+chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.System, "You are an AI assistant that helps people find information."));
+chatCompletionsOptions.Functions.Add(new FunctionDefinition("get_person_age")
+{
+    Description = "Gets the age of the named person",
+    Parameters = BinaryData.FromString("""
+                 {
+                     "type":"object",
+                     "properties":{
+                         "name":{ 
+                             "type":"string",
+                             "description":"The name of a person"
+                         }
+                     },
+                     "required": ["name"]
+                 }
+                 """)
+});
+
+// Q&A loop
+while (true)
+{
+    Console.Write("Question: ");
+    string question = Console.ReadLine()!;
+
+    builder.Clear();
+    await foreach (var result in memory.SearchAsync(collectionName, question, limit: 3))
+        builder.AppendLine(result.Metadata.Text);
+    int contextToRemove = -1;
+    if (builder.Length != 0)
+    {
+        builder.Insert(0, "Here's some additional information: ");
+        contextToRemove = chatCompletionsOptions.Messages.Count;
+        chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.User, builder.ToString()));
+    }
+
+    chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.User, question));
+
+    Response<ChatCompletions> response;
+    ChatChoice c;
+    while (true)
+    {
+        response = await aoai.GetChatCompletionsAsync(aoaiModel, chatCompletionsOptions);
+        c = response.Value.Choices[0];
+        if (c.FinishReason == CompletionsFinishReason.FunctionCall)
+        {
+            switch (c.Message.FunctionCall.Name)
+            {
+                case "get_person_age":
+                    int age = JsonNode.Parse(c.Message.FunctionCall.Arguments)?["name"]?.ToString() switch
+                    {
+                        "Elsa" => 21,
+                        "Anna" => 18,
+                        _ => -1,
+                    };
+                    chatCompletionsOptions.Messages.Add(c.Message);
+                    chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.Function, $"{{ \"age\":{age} }}") { Name = "get_person_age" });
+                    continue;
+            }
+        }
+        break;
+    }
+
+    Console.WriteLine(c.Message.Content);
+    chatCompletionsOptions.Messages.Add(c.Message);
+    if (contextToRemove >= 0) chatCompletionsOptions.Messages.RemoveAt(contextToRemove);
+}
+And with that, we can see the LLM has access both to the data we proactively sent and to data it requests we send: Showing the results of function invocations
+
+As we’re using direct access to the Azure SDK APIs now, we can also utilize more sophisticated functionality from the service that’s specific to Azure OpenAI: direct connection with Azure Cognitive Search. Azure Cognitive Search provides a vector database in Azure, and we can use it like we’ve already seen with VolatileMemoryStore, SqliteMemoryStore, and QdrantMemoryStore, first pulling in the relevant SK package:
+
+dotnet add package Microsoft.SemanticKernel.Connectors.Memory.AzureCognitiveSearch --prerelease
+and then changing our WithMemoryStore call to use it instead of another provider:
+
+.WithMemoryStore(new AzureCognitiveSearchMemoryStore(acsEndpoint, acsApiKey))
+(for this you’ll also need to create an Azure Cognitive Search resource in Azure, and grab from it the provided endpoint URI and API key; if you ran the azd tool at the beginning of the post, this resource will have been created for you already). The same app we’ve implemented, where we then search our memory store for the user’s query and manually shove the results into the prompt, will still “just work”.
+
+using Azure;
+using Azure.AI.OpenAI;
+using Microsoft.Extensions.Logging;
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.Connectors.AI.OpenAI;
+using Microsoft.SemanticKernel.Connectors.Memory.AzureCognitiveSearch;
+using Microsoft.SemanticKernel.Memory;
+using Microsoft.SemanticKernel.Plugins.Memory;
+using Microsoft.SemanticKernel.Text;
+using System.Net;
+using System.Text;
+using System.Text.RegularExpressions;
+
+string aoaiEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")!;
+string aoaiApiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY")!;
+string acsEndpoint = Environment.GetEnvironmentVariable("AZURE_SEARCH_ENDPOINT")!;
+string acsApiKey = Environment.GetEnvironmentVariable("AZURE_SEARCH_API_KEY")!;
+string aoaiModel = "Gpt35Turbo_16k";
+
+// Initialize the client
+var aoai = new OpenAIClient(new Uri(aoaiEndpoint), new AzureKeyCredential(aoaiApiKey));
+
+// Ensure we have embeddings for our document
+ISemanticTextMemory memory = new MemoryBuilder()
+    .WithLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()))
+    .WithMemoryStore(new AzureCognitiveSearchMemoryStore(acsEndpoint, acsApiKey))
+    .WithAzureTextEmbeddingGenerationService("TextEmbeddingAda002_1", aoaiEndpoint, aoaiApiKey)
+    .Build();
+IList<string> collections = await memory.GetCollectionsAsync();
+string collectionName = "net7perf";
+if (collections.Contains(collectionName))
+{
+    Console.WriteLine("Found database");
+}
+else
+{
+    using HttpClient client = new();
+    string s = await client.GetStringAsync("https://devblogs.microsoft.com/dotnet/performance_improvements_in_net_7");
+    List<string> paragraphs =
+        TextChunker.SplitPlainTextParagraphs(
+            TextChunker.SplitPlainTextLines(
+                WebUtility.HtmlDecode(Regex.Replace(s, @"<[^>]+>|&nbsp;", "")),
+                128),
+            1024);
+    for (int i = 0; i < paragraphs.Count; i++)
+        await memory.SaveInformationAsync(collectionName, paragraphs[i], $"paragraph{i}");
+    Console.WriteLine("Generated database");
+}
+
+// Create a new chat
+StringBuilder builder = new();
+var chatCompletionsOptions = new ChatCompletionsOptions();
+chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.System, "You are an AI assistant that helps people find information."));
+
+// Q&A loop
+while (true)
+{
+    Console.Write("Question: ");
+    string question = Console.ReadLine()!;
+
+    builder.Clear();
+    await foreach (var result in memory.SearchAsync(collectionName, question, limit: 3))
+        builder.AppendLine(result.Metadata.Text);
+    int contextToRemove = -1;
+    if (builder.Length != 0)
+    {
+        builder.Insert(0, "Here's some additional information: ");
+        contextToRemove = chatCompletionsOptions.Messages.Count;
+        chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.User, builder.ToString()));
+    }
+
+    chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.User, question));
+
+    builder.Clear();
+    Response<StreamingChatCompletions> response = await aoai.GetChatCompletionsStreamingAsync(aoaiModel, chatCompletionsOptions);
+    await foreach (StreamingChatChoice choice in response.Value.GetChoicesStreaming())
+    {
+        await foreach (ChatMessage message in choice.GetMessageStreaming())
+        {
+            builder.Append(message.Content);
+            Console.Write(message.Content);
+        }
+    }
+
+    chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.Assistant, builder.ToString()));
+    if (contextToRemove >= 0) chatCompletionsOptions.Messages.RemoveAt(contextToRemove);
+
+    Console.WriteLine();
+}
+However, we can take it a step further. The Azure OpenAI service and the Azure Cognitive Search service know about each other, and we can ask Azure OpenAI to perform the search to Azure Cognitive Search on our behalf. Then, rather than us needing to search the memory store, get the resulting embeddings, and put those into the prompt, Azure OpenAI will handle that. That requires just two changes to our previous example:
+
+Delete the code that searches the memory store (and that fixes up our chat history after the fact), and just store the user’s question directly into the chat message:
+Console.Write("Question: ");
+chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.User, $"Question: {Console.ReadLine()!}"));
+Inform the ChatCompletionsOptions about the Azure Cognitive Search endpoint:
+chatCompletionsOptions.AzureExtensionsOptions = new AzureChatExtensionsOptions
+{
+    Extensions =
+    {
+        new AzureCognitiveSearchChatExtensionConfiguration
+        {
+            SearchEndpoint = new Uri(acsEndpoint),
+            SearchKey = new AzureKeyCredential(acsApiKey),
+            IndexName = CollectionName,
+        }
+    }
+};
+Here’s our resulting program:
+
+using Azure;
+using Azure.AI.OpenAI;
+using Microsoft.Extensions.Logging;
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.Connectors.AI.OpenAI;
+using Microsoft.SemanticKernel.Connectors.Memory.AzureCognitiveSearch;
+using Microsoft.SemanticKernel.Memory;
+using Microsoft.SemanticKernel.Plugins.Memory;
+using Microsoft.SemanticKernel.Text;
+using System.Net;
+using System.Text;
+using System.Text.RegularExpressions;
+
+string aoaiEndpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT")!;
+string aoaiApiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY")!;
+string acsEndpoint = Environment.GetEnvironmentVariable("AZURE_SEARCH_ENDPOINT")!;
+string acsApiKey = Environment.GetEnvironmentVariable("AZURE_SEARCH_API_KEY")!;
+string aoaiModel = "Gpt35Turbo_16k";
+
+// Initialize the client
+var aoai = new OpenAIClient(new Uri(aoaiEndpoint), new AzureKeyCredential(aoaiApiKey));
+
+// Ensure we have embeddings for our document
+ISemanticTextMemory memory = new MemoryBuilder()
+    .WithLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()))
+    .WithMemoryStore(new AzureCognitiveSearchMemoryStore(acsEndpoint, acsApiKey))
+    .WithAzureTextEmbeddingGenerationService("TextEmbeddingAda002_1", aoaiEndpoint, aoaiApiKey)
+    .Build();
+IList<string> collections = await memory.GetCollectionsAsync();
+string collectionName = "net7perf";
+if (collections.Contains(collectionName))
+{
+    Console.WriteLine("Found database");
+}
+else
+{
+    using HttpClient client = new();
+    string s = await client.GetStringAsync("https://devblogs.microsoft.com/dotnet/performance_improvements_in_net_7");
+    List<string> paragraphs =
+        TextChunker.SplitPlainTextParagraphs(
+            TextChunker.SplitPlainTextLines(
+                WebUtility.HtmlDecode(Regex.Replace(s, @"<[^>]+>|&nbsp;", "")),
+                128),
+            1024);
+    for (int i = 0; i < paragraphs.Count; i++)
+        await memory.SaveInformationAsync(collectionName, paragraphs[i], $"paragraph{i}");
+    Console.WriteLine("Generated database");
+}
+
+// Create a new chat
+StringBuilder builder = new();
+var chatCompletionsOptions = new ChatCompletionsOptions();
+chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.System, "You are an AI assistant that helps people find information."));
+chatCompletionsOptions.AzureExtensionsOptions = new AzureChatExtensionsOptions
+{
+    Extensions =
+    {
+        new AzureCognitiveSearchChatExtensionConfiguration
+        {
+            SearchEndpoint = new Uri(acsEndpoint),
+            SearchKey = new AzureKeyCredential(acsApiKey),
+            IndexName = collectionName,
+            ShouldRestrictResultScope = false,
+        }
+    }
+};
+
+// Q&A loop
+while (true)
+{
+    Console.Write("Question: ");
+    chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.User, $"Question: {Console.ReadLine()!}"));
+
+    builder.Clear();
+    Response<StreamingChatCompletions> response = await aoai.GetChatCompletionsStreamingAsync(aoaiModel, chatCompletionsOptions);
+    await foreach (StreamingChatChoice choice in response.Value.GetChoicesStreaming())
+    {
+        await foreach (ChatMessage message in choice.GetMessageStreaming())
+        {
+            builder.Append(message.Content);
+            Console.Write(message.Content);
+        }
+    }
+
+    chatCompletionsOptions.Messages.Add(new ChatMessage(ChatRole.Assistant, builder.ToString()));
+    Console.WriteLine();
+}
+Notice that we’re not explicitly putting into the chat history any information about the thing we’re searching for, but that information has still found its way into the response: Allowing Azure OpenAI to query Azure Cognitive Search
+
+What’s Next?
+Whew! I’ve obviously omitted a lot of important details that any real application will need to consider. How should the data being indexed be cleaned and normalized and chunked? How should errors be handled? How should we restrict how much data is sent as part of each request (e.g. limiting chat history, limiting the size of the found embeddings)? In a service, where should all of this information be persisted? And a multitude of others, including making the UI much prettier than my amazing Console.WriteLine calls. But even with all of those details missing, it should hopefully be obvious now that you can get started incorporating this kind of functionality into your applications immediately. As mentioned as well, the space is evolving very quickly, and your feedback about what works well and doesn’t work well for you would be invaluable for the teams working on these solutions. I encourage you to join the discussions in repos like for Semantic Kernel and Azure OpenAI client library.
+
+Happy coding!
+
+
+Stephen Toub - MSFT Partner Software Engineer, .NET
+Follow  
+
+Posted in
+.NET
+.NET Core
+Tagged
+.net 8
+Read next
+WPF File Dialog Improvements in .NET 8
+Announing OpenFolderDialog control and other file dialog properties in WPF in .NET 8.
+Dipesh Kumar
+September 8, 2023
+22 comments
+.NET September 2023 Updates – .NET 7.0.11, .NET 6.0.22
+Check out latest September 2023 updates for .NET 7.0 and .NET 6.0
+Rahul Bhandari (MSFT)
+September 12, 2023
+2 comments
+23 comments
+Comments are closed. Login to edit/delete your existing comments
+
+
+王宏亮 September 6, 2023 5:44 am  3
+ 
+Looking forward to your brilliant insights into .net 8 performance improvements!
+
+
+Stephen Toub - MSFTMicrosoft employee September 6, 2023 5:49 am  3
+ 
+Thanks 🙂 Next week.
+
+
+Daniel Smith September 6, 2023 9:55 am  1
+ 
+Hey, now I’m wondering if you use generative AI to write those epic performance improvement blog posts! 😂
+
+
+Stephen Toub - MSFTMicrosoft employee September 6, 2023 9:56 am  3
+ 
+Funny you should ask that: I actually talk about that in the intro to the post, but you’ll need to wait a week to see it 🙂
+
+I do appreciate all the interest. Hopefully it lives up to the hype 🙂
+
+
+MgSam September 6, 2023 10:06 am  0
+ 
+Thanks for the walkthrough. As always, this is really well done.
+
+I hope in the future there will be better ways of passing data to these models besides just putting everything into a giant text prompt, which seems to be the only method right now. This current generation of the LLMs being these magical black boxes that we throw text into seems really clumsy and awkward and leads to a lot of severe limitations.
+
+
+Stephen Toub - MSFTMicrosoft employee September 6, 2023 11:22 am  1
+ 
+Thanks for the walkthrough. As always, this is really well done.
+
+Thanks.
+
+
+enrico sabbadin September 6, 2023 10:18 am  0
+ 
+As far as I know 0301 has 4k tokens .. 0613 has 16k
+
+
+Stephen Toub - MSFTMicrosoft employee September 6, 2023 11:22 am  2
+ 
+If I submit a gigantic prompt, I get the following errors:
+For gpt-35-turbo 0301: “This model’s maximum context length is 16384 tokens”
+For gpt-35-turbo 0613: “This model’s maximum context length is 4096 tokens”
+For gpt-35-turbo-16k 0613: “This model’s maximum context length is 16384 tokens”
+
+
+Frenchy.André September 7, 2023 4:09 am  0
+ 
+I often print out those long articles and read them offline. Though, the screenshots from the Terminal makes it really wasteful on the ink. Could you possibly use a light-theme for the terminal in future posts? Would really appreciate it 🙂
+
+
+Stephen Toub - MSFTMicrosoft employee September 7, 2023 4:10 am  1
+ 
+Thanks for the feedback. Hadn’t occurred to me to change the terminal theme. I’ll certainly consider that for the future.
+
+
+Midnight September 7, 2023 1:31 pm  0
+ 
+Great article, thank you! The explanations are easy and clear for getting started. Will definetly try the topic.
+
+But still a lot of black boxes around (which isn’t a problem at all, for now). Probably in future we’ll need some deep dives like “How async/await really works” but about the parts that makes it fly.
+
+P. S. Waiting for the you-know-what-posts-are-the-longest-you’ve-ever-seen series. 🙂
+
+
+Stephen Toub - MSFTMicrosoft employee September 20, 2023 8:37 pm  1
+ 
+Great article, thank you! The explanations are easy and clear for getting started. Will definetly try the topic.
+
+Thanks!
+
+Waiting for the you-know-what-posts-are-the-longest-you’ve-ever-seen series.
+
+I think you’re referring to https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/ 🙂
+
+
+Dalibor Čarapić September 12, 2023 12:46 am  0
+ 
+Thank you very much for this. Very nice post and it helped me a lot to understand why all of that stuff even exists.
+
+
+Stephen Toub - MSFTMicrosoft employee September 20, 2023 8:37 pm  1
+ 
+Thanks! You’re very welcome.
+
+
+Dalibor Čarapić September 12, 2023 12:47 am  0
+ 
+@Stephen Toub
+Can you perhaps recommend some additional blog posts/articles which deal with using LLMs as a programmer?
+
+
+Dhananjaya Kuppu September 15, 2023 9:54 pm  0
+ 
+Thanks great article !! you explain so well that is easier to understand. Looking forward for more articles on dotnet Open AI
+
+
+Stephen Toub - MSFTMicrosoft employee September 20, 2023 8:36 pm  1
+ 
+Thanks great article !! you explain so well that is easier to understand.
+
+Excellent, thanks!
+
+
+Wouter Van Ranst October 8, 2023 7:18 am  0
+ 
+Great article and excellent walkthrough!!
+
+As of 8/oct planner.CreatePlan("Jane's dog is half her age. How old is the dog?"); triggered the content management policy 🙂 I m yet to find a workaround (same happened on gpt4, when changing dog to cat, when changing the name from Jane to Steve)
+
+{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI’s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"medium"},"violence":{"filtered":false,"severity":"safe"}}}}}
+
+Wouter Van Ranst October 8, 2023 7:20 am  0
+ 
+Changing the age from 8 to 24 does the trick
+
+
+Wouter Van Ranst October 8, 2023 7:29 am  1
+ 
+I got a subsequent error where it cannot do basic math
+
+info: Microsoft.SemanticKernel.Planning.StepwisePlanner[0]
+      Action: RUNTIME.Evaluate({"expression":"24/2"}).
+info: Microsoft.SemanticKernel.Planning.StepwisePlanner[0]
+      Observation: RUNTIME.Evaluate is not in [AVAILABLE FUNCTIONS]. Please try again using one of the [AVAILABLE FUNCTIONS].
+I added this custom function (and needed to put the age 42 otherwise the dog’s age triggers another content management policy :))
+
+kernel.RegisterCustomFunction(SKFunction.FromNativeFunction(
+    (int nominator, int denominator) => nominator / denominator,
+    skillName: "Divide",
+    functionName: "Divide",
+    "Divide the two given numbers and return the result"));
+this is the full listing
+
+IKernel kernel = Kernel.Builder
+    .WithLoggerFactory(LoggerFactory.Create(b => b.AddConsole()))
+    .WithAzureChatCompletionService(aoaiModel, aoaiEndpoint, aoaiApiKey)
+    .Build();
+
+kernel.RegisterCustomFunction(SKFunction.FromNativeFunction(
+    (string personName) => personName switch { "Jane" => 42, _ => 0 },
+    "Demographics", "GetAge", "Gets the age of the person whose name is provided"));
+
+kernel.RegisterCustomFunction(SKFunction.FromNativeFunction(
+    (int nominator, int denominator) => nominator / denominator,
+    skillName: "Divide",
+    functionName: "Divide",
+    "Divide the two given numbers and return the result"));
+
+var planner = new StepwisePlanner(kernel);
+Plan p = planner.CreatePlan("Jane's dog is half his age. How old is the dog?");
+Console.WriteLine($"Result: {await kernel.RunAsync(p)}");
+
+Stephen Toub - MSFTMicrosoft employee October 10, 2023 3:19 pm  0
+ 
+Thanks for pointing that out! I’ve updated the example to not trip the policy, and I’ve also followed up with the relevant teams about it.
+
+
+Cosmin Roman October 8, 2023 8:15 am  0
+ 
+Very interesting post. I wanted to start building the chat app myself but unfortunately I cannot create an Open AI Azure resource. Apparently “Your subscription is not enabled to deploy Azure OpenAI Service. The service is currently in Limited Access Public Preview. Please click the banner to apply for access.”. When I checked what’s needed to apply for access I see that this is only for enterprises.
+I wonder how everyone else was able to follow and apply the learnings from this post..
+
+Nevertheless, thanks 😉
+
+
+King David Consulting LLC October 15, 2023 3:55 pm  1
+ 
+You can use open ai platform for this as well. https://platform.openai.com/overview
+
+        if (_options.IsAzure)
+        {
+            _builder.WithAzureChatCompletionService(
+                _options.ModelId,
+                _options.Endpoint.ToString(),
+                _options.Key);
+        }
+        else
+        {
+            _builder.WithOpenAIChatCompletionService(
+                _options.Endpoint.ToString(),
+                _options.Key);
+        }
+.NET Feature Blogs
+.NET MAUI
+ASP.NET Core
+Blazor
+Entity Framework
+ML.NET
+NuGet
+Xamarin
+Languages
+C#
+F#
+Visual Basic
+Popular Topics
+.NET Internals
+.NET Servicing
+Containers
+Developer Stories
+Performance
+Archive
+November 2023
+October 2023
+September 2023
+August 2023
+July 2023
+June 2023
+May 2023
+April 2023
+March 2023
+February 2023
+January 2023
+December 2022
+November 2022
+October 2022
+September 2022
+August 2022
+July 2022
+June 2022
+May 2022
+April 2022
+March 2022
+February 2022
+January 2022
+December 2021
+November 2021
+October 2021
+September 2021
+August 2021
+July 2021
+June 2021
+May 2021
+April 2021
+March 2021
+February 2021
+January 2021
+December 2020
+November 2020
+October 2020
+September 2020
+August 2020
+July 2020
+June 2020
+May 2020
+April 2020
+March 2020
+February 2020
+January 2020
+December 2019
+November 2019
+October 2019
+September 2019
+August 2019
+July 2019
+June 2019
+May 2019
+April 2019
+March 2019
+February 2019
+January 2019
+December 2018
+November 2018
+October 2018
+September 2018
+August 2018
+July 2018
+June 2018
+May 2018
+April 2018
+March 2018
+February 2018
+January 2018
+December 2017
+November 2017
+October 2017
+September 2017
+August 2017
+July 2017
+June 2017
+May 2017
+April 2017
+March 2017
+February 2017
+January 2017
+December 2016
+November 2016
+October 2016
+September 2016
+August 2016
+July 2016
+June 2016
+May 2016
+April 2016
+March 2016
+February 2016
+January 2016
+December 2015
+November 2015
+October 2015
+September 2015
+August 2015
+July 2015
+June 2015
+May 2015
+April 2015
+March 2015
+February 2015
+January 2015
+December 2014
+November 2014
+October 2014
+September 2014
+August 2014
+July 2014
+June 2014
+May 2014
+April 2014
+March 2014
+February 2014
+January 2014
+December 2013
+November 2013
+October 2013
+September 2013
+August 2013
+July 2013
+June 2013
+May 2013
+April 2013
+March 2013
+February 2013
+January 2013
+December 2012
+November 2012
+October 2012
+September 2012
+August 2012
+July 2012
+June 2012
+May 2012
+April 2012
+March 2012
+February 2012
+January 2012
+October 2011
+September 2011
+August 2011
+June 2011
+April 2011
+March 2011
+February 2011
+January 2011
+December 2010
+November 2010
+October 2010
+September 2010
+August 2010
+July 2010
+June 2010
+May 2010
+April 2010
+March 2010
+February 2010
+December 2009
+November 2009
+October 2009
+September 2009
+August 2009
+July 2009
+June 2009
+May 2009
+April 2009
+March 2009
+February 2009
+January 2009
+December 2008
+November 2008
+October 2008
+September 2008
+August 2008
+July 2008
+June 2008
+May 2008
+April 2008
+March 2008
+February 2008
+January 2008
+December 2007
+November 2007
+October 2007
+September 2007
+August 2007
+July 2007
+June 2007
+May 2007
+April 2007
+March 2007
+February 2007
+January 2007
+December 2006
+November 2006
+October 2006
+September 2006
+August 2006
+July 2006
+June 2006
+May 2006
+April 2006
+March 2006
+February 2006
+January 2006
+October 2005
+July 2005
+May 2005
+December 2004
+November 2004
+September 2004
+June 2004
+More .NET
+Download .NET
+.NET Community
+.NET Documentation
+.NET API Browser
+Learn
+.NET Learning Hub
+Architecture Guidance
+Beginner Videos
+Customer Showcase
+Follow
+Twitter
+Mastodon
+YouTube
+Facebook
+LinkedIn
+GitHub
+Stay informed
+Enter your email
+By subscribing you agree to our Terms of Use and Privacy Policy
+Feedback usabilla icon
+
+What's new
+Surface Laptop Studio 2
+Surface Laptop Go 3
+Surface Pro 9
+Surface Laptop 5
+Surface Studio 2+
+Copilot in Windows
+Microsoft 365
+Windows 11 apps
+Microsoft Store
+Account profile
+Download Center
+Microsoft Store support
+Returns
+Order tracking
+Certified Refurbished
+Microsoft Store Promise
+Flexible Payments
+Education
+Microsoft in education
+Devices for education
+Microsoft Teams for Education
+Microsoft 365 Education
+How to buy for your school
+Educator training and development
+Deals for students and parents
+Azure for students
+Business
+Microsoft Cloud
+Microsoft Security
+Dynamics 365
+Microsoft 365
+Microsoft Power Platform
+Microsoft Teams
+Microsoft Industry
+Small Business
+Developer & IT
+Azure
+Developer Center
+Documentation
+Microsoft Learn
+Microsoft Tech Community
+Azure Marketplace
+AppSource
+Visual Studio
+Company
+Careers
+About Microsoft
+Company news
+Privacy at Microsoft
+Investors
+Diversity and inclusion
+Accessibility
+Sustainability
+Your Privacy Choices
+Sitemap Contact Microsoft Privacy Terms of use Trademarks Safety & eco Recycling About our ads © Microsoft 2023

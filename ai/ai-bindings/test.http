@@ -12,7 +12,7 @@ content-type: application/json
 POST http://localhost:7071/api/PromptData
 Content-Type: application/json
 
-{"Prompt":"What can i do for giving campaign"}
+{"Prompt":"how do i put embeddings data into a prompt?"}
 
 ## TEST IN AZURE (do `azd provision` first)
 
