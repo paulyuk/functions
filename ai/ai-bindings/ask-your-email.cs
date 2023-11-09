@@ -17,11 +17,11 @@ namespace genai2
     {
         public record EmbeddingsRequest(string RawText, string FilePath);
         public record SemanticSearchRequest(string Prompt);
-
+        
         // REVIEW: There are several assumptions about how the Embeddings binding and the SemanticSearch bindings
         //         work together. We should consider creating a higher-level of abstraction for this.
-        [FunctionName("IngestEmail")]
-        public static async Task<IActionResult> IngestEmail(
+        [FunctionName("IngestData")]
+        public static async Task<IActionResult> IngestData(
             [HttpTrigger(AuthorizationLevel.Function, "post")] EmbeddingsRequest req,
             [Embeddings("{FilePath}", InputType.FilePath, 
             Model = "%AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT%")] EmbeddingsContext embeddings,
@@ -32,8 +32,8 @@ namespace genai2
             return new OkObjectResult(new { status = "success", title, chunks = embeddings.Count });
         }
 
-        [FunctionName("PromptEmail")]
-        public static IActionResult PromptEmail(
+        [FunctionName("PromptData")]
+        public static IActionResult PromptData(
             [HttpTrigger(AuthorizationLevel.Function, "post")] SemanticSearchRequest unused,
             [SemanticSearch("KustoConnectionString", "Documents", 
             Query = "{Prompt}", 

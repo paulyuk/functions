@@ -1,55 +1,2280 @@
-Dear Speakers (on BCC and CC),
-We are all looking forward to welcoming you to Warsaw next week! The whole team is really excited about our 10th anniversary!
-This email contains a summary of important logistical information before the conference - please read carefully!
+ Weather Spark
+Map
+Compare
+History
+Hide Ads
+°F 
+Find City or Airport
+Full Year
+Today
+SpringSummerFallWinter
+JanFebMarAprMayJunJulAugSepOctNovDec
+123456789101112131415161718192021222324252627282930
+ADVERTISEMENT
 
-The Conference and Agenda
-We expect ca. 1100 attendees on-site and another 250 joining us online via live-stream on Vimeo. 
-We are quite happy with the numbers - we are ALMOST back to our pre-pandemic levels (we had 1500 ppl in 2019)!
+November Weather in Seattle Washington, United States
+Daily high temperatures decrease by 8°F, from 56°F to 48°F, rarely falling below 42°F or exceeding 62°F.
 
-Please check the full agenda here: https://net.developerdays.pl/main-conference/
-If you see any issue with how your sessions are scheduled, please let us know ASAP!
+Daily low temperatures decrease by 6°F, from 45°F to 39°F, rarely falling below 30°F or exceeding 53°F.
 
-Airport Transfers
-Unfortunately, we will not be able to provide airport transfers for arriving speakers.
-The taxi from the airport to the hotel should be equivalent to ca. 15-20 EUR and most taxis take credit card payments (but better to ask first). Taxis from the airport stand are safe to take. Uber is another good option.
+For reference, on August 1, the hottest day of the year, temperatures in Seattle typically range from 59°F to 79°F, while on December 23, the coldest day of the year, they range from 37°F to 46°F.
 
-The Speaker Hotel
-The speaker hotel is (as usual) The Westin Warsaw (al. Jana Pawła II 21, 00-854 Warszawa, map: https://goo.gl/maps/Y1HLPbZ665P2). 
-All reservations are in your individual names, under DATA MASTER block reservation.
-I have attached the rooming list to this email, so you can check if your reservation details are correct.
- 
-The Venue
-Conference venue is EXPO XXI at Pradzynskiego Str. where we will occupy halls 1, 2 and 4. I have attached the venue plan for your information.
-There will be a dedicated Speaker Room available on-site for your convenience.
+Average High and Low Temperature in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+25°F
+25°F
+30°F
+30°F
+35°F
+35°F
+40°F
+40°F
+45°F
+45°F
+50°F
+50°F
+55°F
+55°F
+60°F
+60°F
+65°F
+65°F
+70°F
+70°F
+75°F
+75°F
+Oct
+Dec
+Nov 1
+56°F
+Nov 1
+56°F
+45°F
+45°F
+Nov 30
+48°F
+Nov 30
+48°F
+39°F
+39°F
+Nov 11
+53°F
+Nov 11
+53°F
+43°F
+43°F
+Now
+Now
+The daily average high (red line) and low (blue line) temperature, with 25th to 75th and 10th to 90th percentile bands. The thin dotted lines are the corresponding average perceived temperatures.
+ADVERTISEMENT
 
-Venue Transfers
-Directions from the hotel to the venue: https://goo.gl/maps/zKV5Mibtfen
-Tuesday and Wednesday: shuttles from the hotel to the venue at 8:00 and 8:30 am each morning (look for vans with the conference logo). If you miss the shuttle, you have to make it there on your own (at less than 3.5 km, it's walkable in good weather).
-Return to the hotel - depending on the needs we will be happy to take you there with the shuttle or order a taxi for you.
+The figure below shows you a compact characterization of the hourly average temperatures for the quarter of the year centered on November. The horizontal axis is the day, the vertical axis is the hour of the day, and the color is the average temperature for that hour and day.
 
-Warsaw Tour and Speaker Dinner on Monday evening
-We will be hosting our traditional Speaker Dinner on Monday, October 23rd at 8:00 pm at Hub Praga (https://hub-praga.pl/en/chef). We hope you can join us for some food and drinks before the conference! 
-If you have any dietary requirements, like vegan, vegetarian, pescatarian etc. - please let me know ASAP (preferably today)!
-But even before that, we will have a really cool Warsaw-by-bus tour starting from The Westin at 6:00 pm. If you are already in Warsaw by that time, you really don't want to miss that! We can start gathering in the lobby bar from ca. 5:30 pm, so the tour departure is not delayed. The bus tour will end at the restaurant, so if you miss the tour, you will have to make it there on your own.
+Average Hourly Temperature in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+12 AM
+12 AM
+2 AM
+2 AM
+4 AM
+4 AM
+6 AM
+6 AM
+8 AM
+8 AM
+10 AM
+10 AM
+12 PM
+12 PM
+2 PM
+2 PM
+4 PM
+4 PM
+6 PM
+6 PM
+8 PM
+8 PM
+10 PM
+10 PM
+12 AM
+12 AM
+Oct
+Dec
+Now
+Now
+very cold
+cold
+cool
+cool
+frigid
+15°F
+freezing
+32°F
+very cold
+45°F
+cold
+55°F
+cool
+65°F
+comfortable
+75°F
+warm
+85°F
+hot
+95°F
+sweltering
+The average hourly temperature, color coded into bands. The shaded overlays indicate night and civil twilight.
+ADVERTISEMENT
 
-Conference Party on Tuesday evening
-We will also be throwing a conference party at the venue on Tuesday starting at around 7 pm, going until 11 pm! Free beer, food and music! Please join us and mingle with the attendees - those folks are really eager to hang out with you!
-The entertainment for the evening will be a rock band from the Netherlands called Great Pianos (https://www.greatpianos.nl/en/de-band).
+Nantes, France (4,986 miles away) is the far-away foreign place with temperatures most similar to Seattle (view comparison).
 
-PPT Template
-Attached to this email is the conference PPT template. Please use it for all your presentations (pre-cons are exempt). All screen resolutions use 16:9 aspect ratio, with individual screens varying in resolution depending on your session room.
-If it's too difficult for you to modify your entire slidedeck to the new template, please at the very least use the title, rating and sponsor slides in your presentation.
-Because rooms A and B will be darkened, we kindly ask you to use dark background for your slides (as in the template) and dark theme in your VS demos to make it a little easier on the attendees' eyes.
+MapMarker© OpenStreetMap contributors
+Compare Seattle to another city:
+Find City or Airport
+Map
+Clouds
+The month of November in Seattle experiences gradually increasing cloud cover, with the percentage of time that the sky is overcast or mostly cloudy increasing from 64% to 71%.
 
-Tech-checks
-We would really appreciate it if you could be at the venue early on Tuesday in order to run a quick tech-check with the AV team. There will also be opportunity to do tech checks on Tuesday afternoon if your session is on Wednesday - ping me for details if you want to arrange one. Please let me know ASAP if you have any special requirements or if you're using a Mac (we have a history of problems with those, so tech-checks are obligatory in that case).
+The clearest day of the month is November 1, with clear, mostly clear, or partly cloudy conditions 36% of the time.
 
-WhatsApp group for speaker communication
-We use WhatsApp group for on-site communication with and among speakers. This is our main communication channel during the conference!
-Please join it as soon as you arrive in Warsaw and stay in touch - here is the link: <link>
-I would appreciate it if you could reply to me directly and provide me with your phone number, just in case we need to locate you during the event. ;)
+For reference, on January 19, the cloudiest day of the year, the chance of overcast or mostly cloudy conditions is 72%, while on August 3, the clearest day of the year, the chance of clear, mostly clear, or partly cloudy skies is 75%.
 
-I hope I have covered everything but if I didn't and you still have questions, please let me know.
+Cloud Cover Categories in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+0%
+100%
+10%
+90%
+20%
+80%
+30%
+70%
+40%
+60%
+50%
+50%
+60%
+40%
+70%
+30%
+80%
+20%
+90%
+10%
+100%
+0%
+Oct
+Dec
+Nov 1
+36%
+Nov 1
+36%
+Nov 30
+29%
+Nov 30
+29%
+Nov 11
+32%
+Nov 11
+32%
+Now
+Now
+clear
+mostly clear
+partly cloudy
+mostly cloudy
+overcast
+0%
+clear
+20%
+mostly clear
+40%
+partly cloudy
+60%
+mostly cloudy
+80%
+overcast
+100%
+The percentage of time spent in each cloud cover band, categorized by the percentage of the sky covered by clouds.
+Precipitation
+A wet day is one with at least 0.04 inches of liquid or liquid-equivalent precipitation. In Seattle, the chance of a wet day over the course of November is increasing, starting the month at 51% and ending it at 56%.
 
-Safe travels and see you in Warsaw next week!
-Maciej and The Team
+For reference, the year's highest daily chance of a wet day is 57% on November 18, and its lowest chance is 8% on August 11.
+
+Probability of Precipitation in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+0%
+0%
+5%
+5%
+10%
+10%
+15%
+15%
+20%
+20%
+25%
+25%
+30%
+30%
+35%
+35%
+40%
+40%
+45%
+45%
+50%
+50%
+55%
+55%
+60%
+60%
+Oct
+Dec
+Nov 18
+57%
+Nov 18
+57%
+Nov 1
+51%
+Nov 1
+51%
+Nov 30
+56%
+Nov 30
+56%
+Now
+Now
+rain
+mixed
+The percentage of days in which various types of precipitation are observed, excluding trace quantities: rain alone, snow alone, and mixed (both rain and snow fell in the same day).
+Rainfall
+To show variation within the month and not just the monthly total, we show the rainfall accumulated over a sliding 31-day period centered around each day.
+
+The average sliding 31-day rainfall during November in Seattle is rapidly increasing, starting the month at 6.4 inches, when it rarely exceeds 10.1 inches or falls below 2.7 inches, and ending the month at 7.4 inches, when it rarely exceeds 11.7 inches or falls below 3.2 inches.
+
+The highest average 31-day accumulation is 7.7 inches on November 22.
+
+Average Monthly Rainfall in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+0 in
+0 in
+2 in
+2 in
+4 in
+4 in
+6 in
+6 in
+8 in
+8 in
+10 in
+10 in
+12 in
+12 in
+Oct
+Dec
+Nov 22
+7.7 in
+Nov 22
+7.7 in
+Nov 1
+6.4 in
+Nov 1
+6.4 in
+Nov 11
+7.3 in
+Nov 11
+7.3 in
+Now
+Now
+The average rainfall (solid line) accumulated over the course of a sliding 31-day period centered on the day in question, with 25th to 75th and 10th to 90th percentile bands. The thin dotted line is the corresponding average snowfall.
+Sun
+Over the course of November in Seattle, the length of the day is rapidly decreasing. From the start to the end of the month, the length of the day decreases by 1 hour, 13 minutes, implying an average daily decrease of 2 minutes, 32 seconds, and weekly decrease of 17 minutes, 43 seconds.
+
+The shortest day of the month is November 30, with 8 hours, 45 minutes of daylight and the longest day is November 1, with 9 hours, 59 minutes of daylight.
+
+Hours of Daylight and Twilight in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+0 hr
+24 hr
+4 hr
+20 hr
+8 hr
+16 hr
+12 hr
+12 hr
+16 hr
+8 hr
+20 hr
+4 hr
+24 hr
+0 hr
+Oct
+Dec
+night
+night
+day
+day
+Nov 1
+9 hr, 59 min
+Nov 1
+9 hr, 59 min
+Nov 30
+8 hr, 45 min
+Nov 30
+8 hr, 45 min
+The number of hours during which the Sun is visible (black line). From bottom (most yellow) to top (most gray), the color bands indicate: full daylight, twilight (civil, nautical, and astronomical), and full night.
+The latest sunrise of the month in Seattle is 7:57 AM on November 4 and the earliest sunrise is 58 minutes earlier at 6:59 AM on November 5.
+
+The latest sunset is 5:51 PM on November 1 and the earliest sunset is 1 hour, 31 minutes earlier at 4:20 PM on November 30.
+
+Daylight saving time (DST) ends at 1:00 AM on November 5, 2023, shifting sunrise and sunset to be an hour earlier.
+
+For reference, on June 21, the longest day of the year, the Sun rises at 5:11 AM and sets 15 hours, 59 minutes later, at 9:10 PM, while on December 22, the shortest day of the year, it rises at 7:55 AM and sets 8 hours, 26 minutes later, at 4:20 PM.
+
+Sunrise & Sunset with Twilight and Daylight Saving Time in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+12 AM
+2 AM
+4 AM
+6 AM
+8 AM
+10 AM
+12 PM
+2 PM
+4 PM
+6 PM
+8 PM
+10 PM
+12 AM
+Oct
+Dec
+6:59 AM
+6:59 AM
+Nov 5
+4:45 PM
+Nov 5
+4:45 PM
+7:35 AM
+7:35 AM
+Nov 30
+4:20 PM
+Nov 30
+4:20 PM
+7:15 AM
+7:15 AM
+Nov 16
+4:31 PM
+Nov 16
+4:31 PM
+DST
+Nov 5
+DST
+Nov 5
+Solar
+Midnight
+Solar
+Midnight
+Solar
+Noon
+Sunrise
+Sunset
+Now
+Now
+The solar day over the course of November. From bottom to top, the black lines are the previous solar midnight, sunrise, solar noon, sunset, and the next solar midnight. The day, twilights (civil, nautical, and astronomical), and night are indicated by the color bands from yellow to gray. The transitions to and from daylight saving time are indicated by the 'DST' labels.
+The figure below presents a compact representation of the sun's elevation (the angle of the sun above the horizon) and azimuth (its compass bearing) for every hour of every day in the reporting period. The horizontal axis is the day of the year and the vertical axis is the hour of the day. For a given day and hour of that day, the background color indicates the azimuth of the sun at that moment. The black isolines are contours of constant solar elevation.
+
+Solar Elevation and Azimuth in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+12 AM
+12 AM
+2 AM
+2 AM
+4 AM
+4 AM
+6 AM
+6 AM
+8 AM
+8 AM
+10 AM
+10 AM
+12 PM
+12 PM
+2 PM
+2 PM
+4 PM
+4 PM
+6 PM
+6 PM
+8 PM
+8 PM
+10 PM
+10 PM
+12 AM
+12 AM
+Oct
+Dec
+0
+0
+10
+10
+20
+20
+0
+0
+0
+10
+10
+20
+20
+30
+Now
+Now
+north
+east
+south
+west
+Solar elevation and azimuth over the course of November 2023. The black lines are lines of constant solar elevation (the angle of the sun above the horizon, in degrees). The background color fills indicate the azimuth (the compass bearing) of the sun. The lightly tinted areas at the boundaries of the cardinal compass points indicate the implied intermediate directions (northeast, southeast, southwest, and northwest).
+Moon
+The figure below presents a compact representation of key lunar data for November 2023. The horizontal axis is the day, the vertical axis is the hour of the day, and the colored areas indicate when the moon is above the horizon. The vertical gray bars (new Moons) and blue bars (full Moons) indicate key Moon phases. The label associated with each bar indicates the date and time that the phase is obtained, and the companion time labels indicate the rise and set times of the Moon for the nearest time interval in which the moon is above the horizon.
+
+Moon Rise, Set & Phases in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+12 AM
+12 AM
+4 AM
+4 AM
+8 AM
+8 AM
+12 PM
+12 PM
+4 PM
+4 PM
+8 PM
+8 PM
+12 AM
+12 AM
+Oct
+Dec
+Oct 14
+10:56 AM
+Oct 14
+10:56 AM
+Oct 28
+1:25 PM
+Oct 28
+1:25 PM
+Nov 13
+1:28 AM
+Nov 13
+1:28 AM
+Nov 27
+1:17 AM
+Nov 27
+1:17 AM
+Dec 12
+3:33 PM
+Dec 12
+3:33 PM
+Dec 26
+4:34 PM
+Dec 26
+4:34 PM
+7:21 AM
+7:21 AM
+6:25 PM
+6:25 PM
+5:51 PM
+5:51 PM
+8:59 AM
+8:59 AM
+7:44 AM
+7:44 AM
+4:32 PM
+4:32 PM
+3:42 PM
+3:42 PM
+8:14 AM
+8:14 AM
+7:57 AM
+7:57 AM
+3:43 PM
+3:43 PM
+3:45 PM
+3:45 PM
+9:07 AM
+9:07 AM
+Now
+Now
+The time in which the moon is above the horizon (light blue area), with new moons (dark gray lines) and full moons (blue lines) indicated. The shaded overlays indicate night and civil twilight.
+Nov 2023		Illumination	Moonrise	Moonset	Moonrise	Meridian Passing	Distance
+1	
+85%	-	12:45 PM	NW	8:14 PM	NE	4:02 AM	S	240,646 mi
+2	
+77%	-	1:39 PM	NW	9:13 PM	NE	4:57 AM	S	243,993 mi
+3	
+67%	-	2:20 PM	NW	10:19 PM	NE	5:51 AM	S	246,916 mi
+4	
+58%	-	2:51 PM	NW	11:28 PM	NE	6:41 AM	S	249,200 mi
+5	
+50%	-	2:15 PM	WNW	11:37 PM	ENE	6:27 AM	S	250,702 mi
+6	
+38%	-	2:33 PM	WNW	-	7:10 AM	S	251,357 mi
+7	
+29%	12:45 AM	ENE	2:49 PM	WNW	-	7:51 AM	S	251,170 mi
+8	
+21%	1:52 AM	E	3:03 PM	W	-	8:31 AM	S	250,211 mi
+9	
+13%	2:58 AM	E	3:17 PM	W	-	9:10 AM	S	248,605 mi
+10	
+7%	4:06 AM	E	3:31 PM	W	-	9:50 AM	S	246,515 mi
+11	
+3%	5:15 AM	ESE	3:47 PM	WSW	-	10:32 AM	S	244,125 mi
+12	
+0%	6:28 AM	ESE	4:07 PM	WSW	-	11:18 AM	S	241,622 mi
+13	
+0%	7:44 AM	ESE	4:32 PM	SW	-	12:08 PM	S	239,175 mi
+14	
+3%	9:02 AM	SE	5:06 PM	SW	-	1:04 PM	S	236,923 mi
+15	
+7%	10:16 AM	SE	5:52 PM	SW	-	2:04 PM	S	234,955 mi
+16	
+14%	11:21 AM	SE	6:52 PM	SW	-	3:07 PM	S	233,314 mi
+17	
+24%	12:12 PM	SE	8:06 PM	SW	-	4:09 PM	S	232,002 mi
+18	
+34%	12:51 PM	SE	9:27 PM	SW	-	5:09 PM	S	231,002 mi
+19	
+46%	1:20 PM	ESE	10:51 PM	WSW	-	6:05 PM	S	230,296 mi
+20	
+50%	1:43 PM	ESE	-	-	6:57 PM	S	229,887 mi
+21	
+69%	-	12:13 AM	WSW	2:02 PM	E	7:46 PM	S	229,809 mi
+22	
+79%	-	1:33 AM	W	2:19 PM	E	8:33 PM	S	230,119 mi
+23	
+88%	-	2:53 AM	W	2:36 PM	E	9:20 PM	S	230,887 mi
+24	
+95%	-	4:13 AM	WNW	2:54 PM	ENE	10:08 PM	S	232,168 mi
+25	
+99%	-	5:34 AM	WNW	3:15 PM	ENE	10:59 PM	S	233,978 mi
+26	
+100%	-	6:55 AM	WNW	3:42 PM	NE	11:52 PM	S	236,275 mi
+27	
+100%	-	8:14 AM	NW	4:17 PM	NE	-	-
+28	
+99%	-	9:26 AM	NW	5:02 PM	NE	12:47 AM	S	238,942 mi
+29	
+95%	-	10:27 AM	NW	5:58 PM	NE	1:44 AM	S	241,800 mi
+30	
+90%	-	11:14 AM	NW	7:02 PM	NE	2:39 AM	S	244,624 mi
+Humidity
+We base the humidity comfort level on the dew point, as it determines whether perspiration will evaporate from the skin, thereby cooling the body. Lower dew points feel drier and higher dew points feel more humid. Unlike temperature, which typically varies significantly between night and day, dew point tends to change more slowly, so while the temperature may drop at night, a muggy day is typically followed by a muggy night.
+
+The chance that a given day will be muggy in Seattle is essentially constant during November, remaining around 0% throughout.
+
+For reference, on July 8, the muggiest day of the year, there are muggy conditions 0% of the time, while on January 1, the least muggy day of the year, there are muggy conditions 0% of the time.
+
+Humidity Comfort Levels in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+0%
+0%
+10%
+10%
+20%
+20%
+30%
+30%
+40%
+40%
+50%
+50%
+60%
+60%
+70%
+70%
+80%
+80%
+90%
+90%
+100%
+100%
+Oct
+Dec
+Nov 1
+0%
+Nov 1
+0%
+Nov 30
+0%
+Nov 30
+0%
+Nov 11
+0%
+Nov 11
+0%
+dry
+dry
+comfortable
+comfortable
+dry
+55°F
+comfortable
+60°F
+humid
+65°F
+muggy
+70°F
+oppressive
+75°F
+miserable
+The percentage of time spent at various humidity comfort levels, categorized by dew point.
+Wind
+This section discusses the wide-area hourly average wind vector (speed and direction) at 10 meters above the ground. The wind experienced at any given location is highly dependent on local topography and other factors, and instantaneous wind speed and direction vary more widely than hourly averages.
+
+The average hourly wind speed in Seattle is gradually increasing during November, increasing from 4.7 miles per hour to 5.3 miles per hour over the course of the month.
+
+For reference, on November 30, the windiest day of the year, the daily average wind speed is 5.3 miles per hour, while on August 2, the calmest day of the year, the daily average wind speed is 2.8 miles per hour.
+
+Average Wind Speed in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+0 mph
+0 mph
+2 mph
+2 mph
+4 mph
+4 mph
+6 mph
+6 mph
+8 mph
+8 mph
+Oct
+Dec
+Nov 1
+4.7 mph
+Nov 1
+4.7 mph
+Nov 30
+5.3 mph
+Nov 30
+5.3 mph
+Nov 16
+5.2 mph
+Nov 16
+5.2 mph
+Now
+Now
+The average of mean hourly wind speeds (dark gray line), with 25th to 75th and 10th to 90th percentile bands.
+The hourly average wind direction in Seattle throughout November is predominantly from the south, with a peak proportion of 64% on November 17.
+
+Wind Direction in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+0%
+100%
+20%
+80%
+40%
+60%
+60%
+40%
+80%
+20%
+100%
+0%
+Oct
+Dec
+Now
+Now
+south
+east
+north
+west
+north
+east
+south
+west
+The percentage of hours in which the mean wind direction is from each of the four cardinal wind directions, excluding hours in which the mean wind speed is less than 1.0 mph. The lightly tinted areas at the boundaries are the percentage of hours spent in the implied intermediate directions (northeast, southeast, southwest, and northwest).
+Water Temperature
+Seattle is located near a large body of water (e.g., ocean, sea, or large lake). This section reports on the wide-area average surface temperature of that water.
+
+The average surface water temperature in Seattle is gradually decreasing during November, falling by 2°F, from 52°F to 49°F, over the course of the month.
+
+Average Water Temperature in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+44°F
+44°F
+46°F
+46°F
+48°F
+48°F
+50°F
+50°F
+52°F
+52°F
+54°F
+54°F
+56°F
+56°F
+58°F
+58°F
+Oct
+Dec
+Nov 1
+52°F
+Nov 1
+52°F
+Nov 30
+49°F
+Nov 30
+49°F
+Nov 11
+51°F
+Nov 11
+51°F
+Now
+Now
+The daily average water temperature (purple line), with 25th to 75th and 10th to 90th percentile bands.
+Growing Season
+Definitions of the growing season vary throughout the world, but for the purposes of this report, we define it as the longest continuous period of non-freezing temperatures (≥ 32°F) in the year (the calendar year in the Northern Hemisphere, or from July 1 until June 30 in the Southern Hemisphere).
+
+The growing season in Seattle typically lasts for 9.0 months (272 days), from around February 24 to around November 23, rarely starting before January 17 or after March 19, and rarely ending before November 1 or after December 17.
+
+During November in Seattle, the chance that a given day is within the growing season is very rapidly decreasing falling from 90% to 36% over the course of the month.
+
+Time Spent in Various Temperature Bands and the Growing Season in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+growing season
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+0%
+100%
+10%
+90%
+20%
+80%
+30%
+70%
+40%
+60%
+50%
+50%
+60%
+40%
+70%
+30%
+80%
+20%
+90%
+10%
+100%
+0%
+Oct
+Dec
+90%
+Nov 1
+90%
+Nov 1
+Nov 30
+36%
+Nov 30
+36%
+75%
+Nov 11
+75%
+Nov 11
+55%
+Nov 21
+55%
+Nov 21
+Dec 17
+10%
+Dec 17
+10%
+Now
+Now
+freezing
+very cold
+cold
+cool
+comfortable
+frigid
+15°F
+freezing
+32°F
+very cold
+45°F
+cold
+55°F
+cool
+65°F
+comfortable
+75°F
+warm
+85°F
+hot
+95°F
+sweltering
+The percentage of time spent in various temperature bands. The black line is the percentage chance that a given day is within the growing season.
+Growing degree days are a measure of yearly heat accumulation used to predict plant and animal development, and defined as the integral of warmth above a base temperature, discarding any excess above a maximum temperature. In this report, we use a base of 50°F and a cap of 86°F.
+
+The average accumulated growing degree days in Seattle are essentially constant during November, remaining within 16°F of 2,261°F throughout.
+
+Growing Degree Days in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+1,900°F
+1,900°F
+2,000°F
+2,000°F
+2,100°F
+2,100°F
+2,200°F
+2,200°F
+2,300°F
+2,300°F
+2,400°F
+2,400°F
+2,500°F
+2,500°F
+2,600°F
+2,600°F
+Oct
+Dec
+Nov 1
+2,245°F
+Nov 1
+2,245°F
+Nov 30
+2,277°F
+Nov 30
+2,277°F
+Nov 16
+2,268°F
+Nov 16
+2,268°F
+Now
+Now
+The average growing degree days accumulated over the course of November, with 25th to 75th and 10th to 90th percentile bands.
+Solar Energy
+This section discusses the total daily incident shortwave solar energy reaching the surface of the ground over a wide area, taking full account of seasonal variations in the length of the day, the elevation of the Sun above the horizon, and absorption by clouds and other atmospheric constituents. Shortwave radiation includes visible light and ultraviolet radiation.
+
+The average daily incident shortwave solar energy in Seattle is gradually decreasing during November, falling by 0.8 kWh, from 1.8 kWh to 1.0 kWh, over the course of the month.
+
+Average Daily Incident Shortwave Solar Energy in November in Seattle
+ Fall
+Compare
+Averages:
+J
+F
+M
+A
+M
+J
+J
+A
+S
+O
+Nov
+D
+History:
+2023
+2022
+2021
+2020
+2019
+Nov
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+22
+22
+23
+23
+24
+24
+25
+25
+26
+26
+27
+27
+28
+28
+29
+29
+30
+30
+0.0 kWh
+0.0 kWh
+0.5 kWh
+0.5 kWh
+1.0 kWh
+1.0 kWh
+1.5 kWh
+1.5 kWh
+2.0 kWh
+2.0 kWh
+2.5 kWh
+2.5 kWh
+3.0 kWh
+3.0 kWh
+3.5 kWh
+3.5 kWh
+4.0 kWh
+4.0 kWh
+4.5 kWh
+4.5 kWh
+Oct
+Dec
+Nov 1
+1.8 kWh
+Nov 1
+1.8 kWh
+Nov 30
+1.0 kWh
+Nov 30
+1.0 kWh
+Nov 16
+1.3 kWh
+Nov 16
+1.3 kWh
+Now
+Now
+The average daily shortwave solar energy reaching the ground per square meter (orange line), with 25th to 75th and 10th to 90th percentile bands.
+Topography
+For the purposes of this report, the geographical coordinates of Seattle are 47.606 deg latitude, -122.332 deg longitude, and 174 ft elevation.
+
+The topography within 2 miles of Seattle contains only modest variations in elevation, with a maximum elevation change of 449 feet and an average elevation above sea level of 135 feet. Within 10 miles contains only modest variations in elevation (1,171 feet). Within 50 miles contains very significant variations in elevation (7,720 feet).
+
+The area within 2 miles of Seattle is covered by artificial surfaces (69%) and water (31%), within 10 miles by artificial surfaces (47%) and water (40%), and within 50 miles by trees (52%) and water (14%).
+
+Data Sources
+This report illustrates the typical weather in Seattle, based on a statistical analysis of historical hourly weather reports and model reconstructions from January 1, 1980 to December 31, 2016.
+
+Temperature and Dew Point
+There are 3 weather stations near enough to contribute to our estimation of the temperature and dew point in Seattle.
+
+For each station, the records are corrected for the elevation difference between that station and Seattle according to the International Standard Atmosphere , and by the relative change present in the MERRA-2 satellite-era reanalysis  between the two locations.
+
+The estimated value at Seattle is computed as the weighted average of the individual contributions from each station, with weights proportional to the inverse of the distance between Seattle and a given station.
+
+The stations contributing to this reconstruction are:
+
+King County International Airport (KBFI, 78%, 5 mi, south, -157 ft elevation change)
+Snohomish County Airport (Paine Field) (KPAE, 11%, 21 mi, north, 430 ft elevation change)
+Bremerton National Airport (KPWT, 11%, 22 mi, southwest, 269 ft elevation change)
+Sources map
+KBFI, 78%
+5 mi, -157 ft
+KPAE, 11%
+21 mi, 430 ft
+KPWT, 11%
+22 mi, 269 ft
+© OpenStreetMap contributors
+To get a sense of how much these sources agree with each other, you can view a comparison of Seattle and the stations that contribute to our estimates of its temperature history and climate. Please note that each source's contribution is adjusted for elevation and the relative change present in the MERRA-2 data.
+
+Other Data
+All data relating to the Sun's position (e.g., sunrise and sunset) are computed using astronomical formulas from the book, Astronomical Algorithms 2nd Edition , by Jean Meeus.
+
+All other weather data, including cloud cover, precipitation, wind speed and direction, and solar flux, come from NASA's MERRA-2 Modern-Era Retrospective Analysis . This reanalysis combines a variety of wide-area measurements in a state-of-the-art global meteorological model to reconstruct the hourly history of weather throughout the world on a 50-kilometer grid.
+
+Land Use data comes from the Global Land Cover SHARE database , published by the Food and Agriculture Organization of the United Nations.
+
+Elevation data comes from the Shuttle Radar Topography Mission (SRTM) , published by NASA's Jet Propulsion Laboratory.
+
+Names, locations, and time zones of places and some airports come from the GeoNames Geographical Database .
+
+Time zones for airports and weather stations are provided by AskGeo.com .
+
+Maps are © OpenStreetMap  contributors.
+
+Disclaimer
+The information on this site is provided as is, without any assurances as to its accuracy or suitability for any purpose. Weather data is prone to errors, outages, and other defects. We assume no responsibility for any decisions made on the basis of the content presented on this site.
+
+We draw particular cautious attention to our reliance on the MERRA-2 model-based reconstructions for a number of important data series. While having the tremendous advantages of temporal and spatial completeness, these reconstructions: (1) are based on computer models that may have model-based errors, (2) are coarsely sampled on a 50 km grid and are therefore unable to reconstruct the local variations of many microclimates, and (3) have particular difficulty with the weather in some coastal areas, especially small islands.
+
+We further caution that our travel scores are only as good as the data that underpin them, that weather conditions at any given location and time are unpredictable and variable, and that the definition of the scores reflects a particular set of preferences that may not agree with those of any particular reader.
+
+Please review our full terms contained on our Terms of Service page.
+
+
+Language
+
+English
+Deutsch (German)
+Español (Spanish)
+Français (French)
+हिन्दी (Hindi)
+Indonesia (Indonesian)
+Italiano (Italian)
+日本語 (Japanese)
+한국어 (Korean)
+Polski (Polish)
+Português (Portuguese)
+Русский (Russian)
+ไทย (Thai)
+Türkçe (Turkish)
+Tiếng Việt (Vietnamese)
+简体中文 (Chinese)
+繁體中文 (Chinese)
+Home
+About
+Pricing
+support@weatherspark.com
+Create Account
+Log In
+© Cedar Lake Ventures, Inc.
+
+Terms
+Privacy

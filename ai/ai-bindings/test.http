@@ -1,7 +1,7 @@
 ## TEST LOCALLY
 
-### upload an email
-POST http://localhost:7071/api/IngestEmail HTTP/1.1
+### upload a doc
+POST http://localhost:7071/api/IngestData HTTP/1.1
 content-type: application/json
 
 {
@@ -9,10 +9,10 @@ content-type: application/json
 }
 
 ### ask a question to your email
-POST http://localhost:7071/api/PromptEmail
+POST http://localhost:7071/api/PromptData
 Content-Type: application/json
 
-{"Prompt":"what time to I need to be at the venue? "}
+{"Prompt":"What can i do for giving campaign"}
 
 ## TEST IN AZURE (do `azd provision` first)
 
