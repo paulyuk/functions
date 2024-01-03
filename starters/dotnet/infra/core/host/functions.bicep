@@ -39,6 +39,8 @@ param minimumElasticInstanceCount int = -1
 param numberOfWorkers int = -1
 param scmDoBuildDuringDeployment bool = true
 param use32BitWorkerProcess bool = false
+param reserved bool = false
+param containerSize int = -1
 
 module functions 'appservice.bicep' = {
   name: '${name}-functions'
@@ -70,6 +72,8 @@ module functions 'appservice.bicep' = {
     runtimeNameAndVersion: runtimeNameAndVersion
     scmDoBuildDuringDeployment: scmDoBuildDuringDeployment
     use32BitWorkerProcess: use32BitWorkerProcess
+    reserved: reserved
+    containerSize: containerSize != -1 ? containerSize : null
   }
 }
 

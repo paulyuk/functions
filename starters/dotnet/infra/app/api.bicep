@@ -7,6 +7,8 @@ param applicationInsightsName string = ''
 param appServicePlanId string
 param appSettings object = {}
 param keyVaultName string
+param runtimeName string = 'dotnet-isolated'
+param runtimeVersion string = '6.0'
 param serviceName string = 'api'
 param storageAccountName string
 
@@ -22,10 +24,12 @@ module api '../core/host/functions.bicep' = {
     applicationInsightsName: applicationInsightsName
     appServicePlanId: appServicePlanId
     keyVaultName: keyVaultName
-    runtimeName: 'dotnet-isolated'
-    runtimeVersion: '7.0'
+    runtimeName: runtimeName
+    runtimeVersion: runtimeVersion
     storageAccountName: storageAccountName
     scmDoBuildDuringDeployment: false
+    reserved: true //needed for Flex
+    containerSize: 2048 //needed for Flex
   }
 }
 

@@ -32,8 +32,10 @@ param minimumElasticInstanceCount int = -1
 param numberOfWorkers int = -1
 param scmDoBuildDuringDeployment bool = false
 param use32BitWorkerProcess bool = false
+param reserved bool = false
+param containerSize int = -1
 
-resource appService 'Microsoft.Web/sites@2022-03-01' = {
+resource appService 'Microsoft.Web/sites@2022-09-01' = {
   name: name
   location: location
   tags: tags
@@ -55,6 +57,8 @@ resource appService 'Microsoft.Web/sites@2022-03-01' = {
     }
     clientAffinityEnabled: clientAffinityEnabled
     httpsOnly: true
+    reserved: reserved
+    containerSize: containerSize != -1 ? containerSize : null
   }
 
   identity: { type: managedIdentity ? 'SystemAssigned' : 'None' }

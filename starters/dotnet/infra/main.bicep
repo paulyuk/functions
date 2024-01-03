@@ -47,9 +47,12 @@ module api './app/api.bicep' = {
     applicationInsightsName: monitoring.outputs.applicationInsightsName
     appServicePlanId: appServicePlan.outputs.id
     keyVaultName: keyVault.outputs.name
+    runtimeName: 'dotnet-isolated'
+    runtimeVersion: '6.0'
     storageAccountName: storage.outputs.name
     appSettings: {
     }
+
   }
 }
 
@@ -72,8 +75,8 @@ module appServicePlan './core/host/appserviceplan.bicep' = {
     location: location
     tags: tags
     sku: {
-      name: 'Y1'
-      tier: 'Dynamic'
+      name: 'FC1'
+      tier: 'FlexConsumption'
     }
   }
 }
