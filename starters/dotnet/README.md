@@ -1,5 +1,5 @@
 # Azure Functions
-## Starter template (.NET 6 C# Function, Flex private preview enabled)
+## Starter template (.NET 6 C# Function, Consumption plan)
 
 This sample template provides an "empty starting point" function that is ready to run and deploy Azure easily.  
 
