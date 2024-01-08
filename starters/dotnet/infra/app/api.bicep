@@ -28,8 +28,6 @@ module api '../core/host/functions.bicep' = {
     runtimeVersion: runtimeVersion
     storageAccountName: storageAccountName
     scmDoBuildDuringDeployment: false
-    reserved: true //needed for Flex
-    containerSize: 2048 //needed for Flex
   }
 }
 
