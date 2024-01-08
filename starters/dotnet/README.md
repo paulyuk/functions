@@ -39,7 +39,7 @@ func start
 
 Terminal:
 ```bash
-curl -i -X POST http://localhost:7071/api/chat/ \
+curl -i -X POST http://localhost:7071/api/httppostbody \
   -H "Content-Type: text/json" \
   --data-binary "@testdata.json"
 ```
@@ -47,18 +47,26 @@ curl -i -X POST http://localhost:7071/api/chat/ \
 testdata.json
 ```json
 {
-  "name": "Awesome Developer"
+    "person": 
+    {
+        "name": "Awesome Developer",
+        "age": 25 
+    }
 }
 ```
 
 test.http
 ```bash
 
-POST http://localhost:7071/api/chat HTTP/1.1
+POST http://localhost:7071/api/httppostbody HTTP/1.1
 content-type: application/json
 
 {
-  "name": "Awesome Developer"
+    "person": 
+    {
+        "name": "Awesome Developer",
+        "age": 25 
+    }
 }
 ```
 
@@ -75,33 +83,23 @@ content-type: application/json
 
 ## Source Code
 
-The key code that makes this work is as follows in `./http/http.cs`.  The async Run function is marked as an Azure Function using the Function attribute and naming `http`.  This code shows how to handle an ordinary Web hook GET or a POST that sends
+The key code that makes this work is as follows in `./http/httpGetFunction.cs` and `./http/httpGetFunction.cs`.  The async Run function is marked as an Azure Function using the Function attribute and naming `http`.  This code shows how to handle an ordinary Web hook GET or a POST that sends
 a `name` value in the request body as JSON.  
 
 ```csharp
-[Function("http")]
-public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req)
+[Function("httpget")]
+public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequest req)
 {
-    _logger.LogInformation("C# HTTP trigger function processed a request.");
+    return new OkObjectResult("Welcome to Azure Functions!");
+}
+```
 
-    string? name = HttpUtility.ParseQueryString(req.Url.Query)["name"];
-
-    if (req.Body.Length > 0) {
-        RequestPayload? payload = await req.ReadFromJsonAsync<RequestPayload>();
-        name = payload?.Name;
-    }
-
-    string helloMsg = name is null
-        ? "Welcome to Azure Functions!"
-        : $"Welcome to Azure Functions, {name}!";
-
-    _logger.LogInformation(helloMsg);
-
-    var response = req.CreateResponse(HttpStatusCode.OK);
-    response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
-    response.WriteString(helloMsg);  
-
-    return response;
+```csharp
+[Function("httppostbody")]        
+public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequest req,
+    [FromBody] Person person)
+{
+    return new OkObjectResult(person);
 }
 ```
 

@@ -1,3 +1,7 @@
 {
-    "name": "Awesome Developer"
+    "person": 
+    {
+        "name": "Awesome Developer",
+        "age": 25 
+    }
 }
