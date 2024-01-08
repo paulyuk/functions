@@ -8,7 +8,7 @@ This sample template provides an "empty starting point" function that is ready t
 ## Run on your local environment
 
 ### Pre-reqs
-1) [.NET 6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) required *and [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) is strongly recommended*
+1) [.NET 6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) 
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
 3) Add this local.settings.json file to the http folder to simplify local development
 ```json
