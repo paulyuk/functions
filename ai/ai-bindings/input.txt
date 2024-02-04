@@ -1,55 +1,1093 @@
-Dear Speakers (on BCC and CC),
-We are all looking forward to welcoming you to Warsaw next week! The whole team is really excited about our 10th anniversary!
-This email contains a summary of important logistical information before the conference - please read carefully!
-
-The Conference and Agenda
-We expect ca. 1100 attendees on-site and another 250 joining us online via live-stream on Vimeo. 
-We are quite happy with the numbers - we are ALMOST back to our pre-pandemic levels (we had 1500 ppl in 2019)!
-
-Please check the full agenda here: https://net.developerdays.pl/main-conference/
-If you see any issue with how your sessions are scheduled, please let us know ASAP!
-
-Airport Transfers
-Unfortunately, we will not be able to provide airport transfers for arriving speakers.
-The taxi from the airport to the hotel should be equivalent to ca. 15-20 EUR and most taxis take credit card payments (but better to ask first). Taxis from the airport stand are safe to take. Uber is another good option.
-
-The Speaker Hotel
-The speaker hotel is (as usual) The Westin Warsaw (al. Jana Pawła II 21, 00-854 Warszawa, map: https://goo.gl/maps/Y1HLPbZ665P2). 
-All reservations are in your individual names, under DATA MASTER block reservation.
-I have attached the rooming list to this email, so you can check if your reservation details are correct.
- 
-The Venue
-Conference venue is EXPO XXI at Pradzynskiego Str. where we will occupy halls 1, 2 and 4. I have attached the venue plan for your information.
-There will be a dedicated Speaker Room available on-site for your convenience.
-
-Venue Transfers
-Directions from the hotel to the venue: https://goo.gl/maps/zKV5Mibtfen
-Tuesday and Wednesday: shuttles from the hotel to the venue at 8:00 and 8:30 am each morning (look for vans with the conference logo). If you miss the shuttle, you have to make it there on your own (at less than 3.5 km, it's walkable in good weather).
-Return to the hotel - depending on the needs we will be happy to take you there with the shuttle or order a taxi for you.
-
-Warsaw Tour and Speaker Dinner on Monday evening
-We will be hosting our traditional Speaker Dinner on Monday, October 23rd at 8:00 pm at Hub Praga (https://hub-praga.pl/en/chef). We hope you can join us for some food and drinks before the conference! 
-If you have any dietary requirements, like vegan, vegetarian, pescatarian etc. - please let me know ASAP (preferably today)!
-But even before that, we will have a really cool Warsaw-by-bus tour starting from The Westin at 6:00 pm. If you are already in Warsaw by that time, you really don't want to miss that! We can start gathering in the lobby bar from ca. 5:30 pm, so the tour departure is not delayed. The bus tour will end at the restaurant, so if you miss the tour, you will have to make it there on your own.
-
-Conference Party on Tuesday evening
-We will also be throwing a conference party at the venue on Tuesday starting at around 7 pm, going until 11 pm! Free beer, food and music! Please join us and mingle with the attendees - those folks are really eager to hang out with you!
-The entertainment for the evening will be a rock band from the Netherlands called Great Pianos (https://www.greatpianos.nl/en/de-band).
-
-PPT Template
-Attached to this email is the conference PPT template. Please use it for all your presentations (pre-cons are exempt). All screen resolutions use 16:9 aspect ratio, with individual screens varying in resolution depending on your session room.
-If it's too difficult for you to modify your entire slidedeck to the new template, please at the very least use the title, rating and sponsor slides in your presentation.
-Because rooms A and B will be darkened, we kindly ask you to use dark background for your slides (as in the template) and dark theme in your VS demos to make it a little easier on the attendees' eyes.
-
-Tech-checks
-We would really appreciate it if you could be at the venue early on Tuesday in order to run a quick tech-check with the AV team. There will also be opportunity to do tech checks on Tuesday afternoon if your session is on Wednesday - ping me for details if you want to arrange one. Please let me know ASAP if you have any special requirements or if you're using a Mac (we have a history of problems with those, so tech-checks are obligatory in that case).
-
-WhatsApp group for speaker communication
-We use WhatsApp group for on-site communication with and among speakers. This is our main communication channel during the conference!
-Please join it as soon as you arrive in Warsaw and stay in touch - here is the link: <link>
-I would appreciate it if you could reply to me directly and provide me with your phone number, just in case we need to locate you during the event. ;)
-
-I hope I have covered everything but if I didn't and you still have questions, please let me know.
-
-Safe travels and see you in Warsaw next week!
-Maciej and The Team
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 1 of 22
+, Chief Executive Officer
+, Chief Financial Officer
+, Analyst
+, Analyst
+, Analyst
+, Analyst
+, Analyst
+, Analyst
+, Analyst
+, Analyst
+, Analyst
+, Analyst
+, Analyst
+Unidentified Participant
+Operator
+Aaron Erter
+Q4 2023 Earnings Call
+Company Participants
+Aaron Erter
+Jason Miele
+Other Participants
+Andrew Scott
+Brook Campbell
+David Pace
+Harry Saunders
+Keith Chau
+Lee Power
+Lisa Yang
+Niraj Shah
+Paul Quinn
+Peter Steyn
+Simon Thackray
+Presentation
+Thank you for standing by, and welcome to James Hardie Fourth Quarter Fiscal Year 2023
+Results Briefing. Today
+'s briefing is hosted by James Hardie's CEO, Mr. Aaron Erter; and
+CFO, Mr. Jason Miele. After the briefing, we will open the lines to Q&A. And I remind
+participants to limit your questions to one plus a follow-up. After the Q&A, I'll turn it back
+to Mr. Erter for closing remarks.
+I would now like to hand the conference over to James Hardie's CEO, Mr. Aaron Erter.
+Please go ahead, sir.
+{BIO 20530202 <GO>}
+Thank you, operator, good morning and good evening to everyone. I'm Aaron Erter, CEO
+of James Hardie. Now I would like to welcome all of you to our fourth quarter fiscal year
+on 2023 briefing.
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 2 of 22
+Turning to Page 2, you will see our standard cautionary note on forward-looking
+statements. Please note that the presentation today does contain forward-looking
+statements and the use of non-GAAP financial information. Also, except where we
+explicitly state otherwise during our prepared remarks, all references to monetary
+amounts should be assumed to be in U.S. dollars.
+On Page 3, you will see our agenda for today. I'm joined by our CFO, Jason Miele. For
+today
+'s call, I will start by providing an operations and strategy update, Jason will then
+discuss our full year and fourth quarter fiscal year 2023 financial results and I will return to
+discuss our fiscal year 2024 guidance, outlook and provide a brief closing. We will then
+open it up for questions.
+Before we begin, I would like to take this opportunity to thank all of our employees
+around the world who remained focused on safely delivering the highest quality products
+and services to our customer partners. Our employees truly represent the very best in our
+industry and consistently enable our superior value proposition. I feel fortunate to work
+with each and every one of them.
+Let's start on Page 5 with a look back at fiscal year '23. Last quarter you heard me talk
+about our teams' focused on controlling what we can control and managing decisively.
+And when I reflect on our fiscal year '23 results that is exactly what we did. I'm really proud
+of what this team delivered. The true test of a team is how you perform through
+adversity, and I think our team has done an outstanding job.
+In FY23, we delivered record net sales globally and across all of our regions. Record EBIT
+of $767.5 million in North America, adjusted net income of $606 million and operating cash
+flow of $608 million. I am pleased with how the team's adjusted and executed during the
+year to prepare the company to thrive through a difficult environment, and I believe that is
+reflected in the fourth quarter results.
+In the fourth quarter, we delivered sequential growth versus the third quarter across
+numerous metrics in every region and globally. Some highlights, global adjusted net
+income improved 13% to $146.2 million. EBIT margins had meaningful growth versus the
+third quarter across all of our regions, notably North America improved 200 basis points
+to 29%. We took important steps forward this year to make the company stronger for
+years to come. We appointed a new Chairperson, Ms. Anne Lloyd, we reshaped and
+strengthened our leadership team by adding key leaders that will help to take this
+company forward.
+We focused on SG&A for the current environment, reallocating and prioritizing resources
+to key areas and projects. We reset our capital allocation framework in a manner we
+believe aligns to a growth company. Specifically, with the launch and execution of our
+share buyback program. We strengthened our customer value proposition to continue to
+be homeowner focused and more customer and contractor driven and we aligned on our
+go forward strategy. I believe we not only delivered differentiated results with share gain
+and elevated margin in a difficult environment but we have managed decisively and
+effectively to position James Hardie to not only navigate this market cycle, but to
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 3 of 22
+accelerate our competitive advantages through the cycle on come out on the other side,
+an even stronger company.
+Let's now turn to Page 6. I just walked you through some highlights that I believe illustrate
+our team's ability to navigate through any market conditions. We remain laser-focused on
+the items on this slide. We will control what we can control and continue to manage
+decisively to accelerate our competitive advantages despite the continued housing
+market pressure. We remain focused on continued strong execution of our strategy to
+drive profitable share gain. We are balancing our manufacturing network to ensure not
+only that we better match supply to demand, but ensure we are agile and ready to react
+to any market changes. We have adjusted SG&A for the current environment and we'll
+continue to do so as necessary, reallocating resources to key areas and projects, and we
+are continuing to invest in profitable growth.
+We bring the solutions our customers are seeking. We are focused on being agile and
+adaptive to respond to significant changes in market conditions but remain thoughtful and
+focused on where we can accelerate our competitive advantages. I believe our fourth
+quarter results are a proof point that we can indeed deliver differentiated results
+regardless of market conditions, and our ability to thrive regardless of the market
+conditions requires having the right strategy.
+So please turn to Page 7 to review our global strategic framework. You
+'
+ve heard me say it
+numerous times that we are homeowner focused customer and contractor driven. This
+was top of mind as our team worked on our go forward strategy. Last November, as
+stated, I thought we had a very solid strategy, but we would be adding additional clarity
+and precision to the strategic framework and that is what we have done here. All three
+regions are focused on the following key strategic initiatives.
+Number one, profitably grow and take share where we have the right to win, that is across
+regions, segments, products and customers. And an example is in North America, where
+there are 40 million-plus homes that are 40 years old or older, that we are working to
+convert the James Hardie siding.
+Number two, bringing our customers high value differentiated solutions, we're doing this
+throughout all our regions and Europe is leading the way with a focus on our high-value
+product growth. There are high-value product penetration as expected to be the highest
+in the company with our commercialization of our new technologies like Hardie
+Architectural Panel and Therm25 Innovative Flooring Solutions.
+Number three, connect and influence all the participants in the customer value chain.
+We're doing this across all regions, Australia is doing this by marketing directly to the
+homeowner by a multiple media platforms, cocreating next generation building design
+with architects and developers and working with builders to train and implement
+construction efficiencies. We will accelerate our strategic initiatives by establishing
+competitive advantages through our strategic enablers. Our strategic enablers are;
+customer integration, that means staying close to the participants in the value chain and
+optimizing service and reliability; innovative solutions, we will continue to improve existing
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 4 of 22
+products and introduce new products that meet the needs of our customers, you
+'
+ve seen
+us do this throughout our history and most recently with the Hardie Architectural
+Collection. And beyond just innovative products, we also want to provide innovative
+services and solutions, which is our contractor alliance program that provides a wide array
+of support and training for contractors as they start up and grow their businesses; be the
+brand of choice, we are focused on being the brand of choice in the building solutions
+space and we are generating demand through focused and balanced marketing
+programs to drive awareness, consideration and conversion across the value chain, that
+includes builders, dealers and distributors, architects, contractors and homeowners.
+Global capacity expansion. We are strategically aligning our capacity with demand
+enabling us the flexibility to grow profitably into the future. We are focused on ensuring
+we have supply ahead of demand and drive growth as the market leader. Both our
+strategic initiatives and strategic enablers build upon our foundational imperatives. Our
+foundational imperatives are the bedrock of our company and our non-negotiable as they
+help promote the James Hardie culture and will ensure our future success.
+The first is our culture of zero harm. We operate our business with our team's safety,
+security and well-being as our number one priority. We will always put safety first. We
+believe every incident is preventable. The second is ESG, we have continued to make
+good progress in integrating ESG into how we operate and we continue to make
+progress against the goals and targets we set out in our prior sustainability reports. We're
+currently in the process of setting new ESG goals and targets that you will see in our third
+Annual Sustainability Report which will be published in July 2023.
+Third is the Hardie operating system. If I were going to boil this down to just a few words
+the Hardie Manufacturing Operating System is how we get things done. This is across the
+entirety of our business. The Hardie operating system builds on the success of the Hardie
+Manufacturing Operating System or HMOS what you have heard us talk a lot about over
+the past four years. We have had great success with our implementation of HMOS, which
+has been all about how we run our plants.
+HMOS remains unchanged and is one-piece of the Hardie operating system. What we are
+doing now is taking those learnings and expanding the concepts to everything we do,
+how we run IT projects, how we run procurement, how we forecast and more. The best
+companies in the world have comprehensive management systems, and I believe we are
+ready to take that next step. I'll speak more about the Hardie operating system in the
+coming quarters, and over time I will set savings targets.
+The final and most important of these foundational imperatives is our people. My
+confidence in our future success stems directly from my belief and James Hardie's 5,000
+plus employees and our leadership team. There is no question we have great people, but
+we need to improve upon how we invest in, develop and retain our people. I think with
+the right focus, we can make our people an even bigger competitive advantage for us
+than they are today.
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 5 of 22
+Jason Miele
+I'm not going to dive deeper into our strategic framework today, but this slide will
+become a foundation of every quarterly result call and I will provide more context and
+updates on each of these items over future quarters. What I really want you to walk away
+with today is, we have the right strategy, we have a reenergized focus on profitable share
+gain, we have added our people as a critical focus and we have expanded the success of
+HMOS as a comprehensive company-wide management system, the Hardie operating
+system. I am confident in our team and our strategy. Combined, they position us to
+execute at a high level and drive profitable share gain in all three regions.
+Please turn to Page 8, where I want to tie our strategy to our value proposition. Our
+strategic intent is clear as is our expected outcome. Profitable share gain, in all three
+regions, we have large market opportunities to drive profitable growth for the long-term.
+Most importantly, I believe that we have the right to win in all three regions in the specific
+markets and segments we are targeting, the right to win as a foundation and our superior
+value proposition.
+Our products deliver a variety of exterior designs that deliver superior curb appeal for the
+homeowner. Our products have superior durability and are low maintenance. We are a
+trusted brand in the industry that delivers unrivaled business support and we have
+localized manufacturing enabling us to deliver reliable and excellent service to our
+customers and ensure product gets on the wall timely. It is this superior value
+propositions, which has helped us secure the strong market position we have today and it
+is the same attributes that I believe will help us continue to capitalize on our growth
+opportunities and drive profitable share gain into the future.
+I will now hand it over to Jason to go through our financial results.
+{BIO 20070385 <GO>}
+Thank you, Aaron. Let's start on Page 10 to discuss our global results for the fourth quarter
+and our full year fiscal 2023 results. Let's start with the full fiscal year, global net sales of
+$3.8 billion is an all-time record for James Hardie, up 4% from the prior year. Adjusted net
+income of $605.5 million is our second best results of all time. We continued to generate
+solid operating cash flows with FY23 cash flow was $607.6 million and adjusted EBITDA
+margin of 25.2% remained strong despite the market and inflationary pressures
+experienced in the year.
+Regarding the fourth quarter. Group net sales decreased 5% to $917.8 million, driven by a
+volume decrease of 13%, offset by global price mix growth of 8%. Adjusted net income
+decreased 18% to $146.2 million. Last quarter, we talk a lot about controlling what we can
+control as we navigate this cycle, so I wanted to also discuss our fourth quarter results
+sequentially versus our third quarter of fiscal year 2023 results.
+Volume of 1.1 billion standard feet, up 3% from Q3, net sales of $917.8 million was up 7%
+versus Q3, adjusted EBIT of $187.5 million, up 13% from Q3 and finally adjusted net income
+was up 13% from Q3 $146.2 million. Globally, we are controlling what we can control and
+have delivered a strong fourth quarter.
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 6 of 22
+Let's move to Page 11 to discuss the North American results. Let's start with the full year
+results, our North American business set records for net sales, average net sales price
+and EBIT in fiscal year 2023. Net sales increased 9% to a record $2.8 billion, driven by
+strong price mix growth of 11%. The record $767.5 million of EBIT was achieved at a robust
+EBIT margin of 27.5%. Regarding the fourth quarter results compared to the prior
+corresponding period, North American net sales decreased 6% to $651.5 million, volumes
+were down 14% as market activity weakened that was partially offset by price mix growth
+of 8%. Despite 14% lower volumes versus the prior corresponding period, EBIT dollars in
+the fourth quarter were down just 8% $188.8 million at a strong EBIT margin of 29%.
+Lastly, I want to discuss our fourth quarter results sequentially versus our third quarter of
+fiscal year 2023. We delivered 200 basis points of EBIT margin accretion in Q4 versus Q3
+with average net sales price up 1% and EBIT up $14.7 million. We are controlling what we
+can control delivering a lower cost per unit in Q4 versus Q3, while maintaining SG&A costs
+and driving profitable share gain. The North American team delivered a strong fourth
+quarter result by managing decisively and partnering with our customers, while we expect
+further weakening in the U.S. housing market, we exit Q4 in a position of strength with an
+EBIT margin of 29%, which will enable us to continue to invest in growth while absorbing
+the margin pressure associated with lower volumes.
+Let's move now to Page 12 to discuss the Asia Pacific results. Again, we will start with the
+full year results. Our Asia Pacific business set records for net sales and average net sales
+price in fiscal year 2023. Net sales increased 1% to a record AUD787 million, driven by
+strong price mix growth of 10%. EBIT of AUD208.8 million was achieved at an EBIT margin
+of 26.5%. Regarding the fourth quarter results, compared to the prior corresponding
+period, Asia Pac's net sales were AUD204.6 million, an increase of 2% driven by price mix
+growth of 12%. Despite 10% lower volumes versus the prior corresponding period, EBIT in
+the fourth quarter was up 12% at AUD59.1 million, a strong EBIT margin of 28.9%.
+Again, I want to discuss our fourth quarter results sequentially versus our third quarter
+fiscal year 2023 as it illustrates how the team is managing decisively. Our quarterly
+volumes increased 16% sequentially and net sales price was up 4%. EBIT improved by
+AUD16.8 million or 40% and EBIT margin improved 420 basis points to 28.9%. Similar to
+North America, our Asia Pacific team has managed decisively through the year and we exit
+FY23 in a position of strength. We expect the underlying housing markets to weaken
+further and are confident we will continue to control what we can control and deliver
+differentiated results through this cycle while accelerating our competitive advantages.
+Let's now turn to Page 13 to discuss the European results. Starting with the full year
+results, the team delivered record net sales of EUR431.8 million, driven by price mix
+growth of 14% while EBIT margin of 5.8% for the full year was significantly impede by cost
+inflation, primarily related to energy costs. Similar to North America and APAC, our
+European team had a solid close to the year with Q4 setting a quarterly record for net
+sales and average net sales price.
+Net sales were EUR117.8 million, up 2% year-over-year at a record average net sales price
+of EUR438 per 1,000 standard feet. Sequentially, the Europe team delivered significant
+improvement in Q4 versus Q3. Volume improved 6% and average net sales price
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 7 of 22
+improved 10% while EBIT margin improved 520 basis points to 6.7% and EBIT increased
+EUR6.4 million. In line with their counterparts in North America and APAC, the European
+team effectively controlled what they could control and enter FY24 in a position of
+strength. We are laser focused on driving profitable share gain in FY24.
+Turning now to Page 14 to discuss the liquidity, cash flow, capital allocation and capital
+expenditures. We have maintained standard slides on these topics in the Appendix, but
+wanted to highlight some key points in our prepared remarks today. We continue to
+maintain a strong liquidity position with our leverage ratio at 0.99 times and $475.8 million
+of liquidity. We expect our continued robust operating cash flows will help ensure we
+maintain the strong liquidity position. In FY23, our operating cash flow was a robust $607.6
+million. Our capital allocation framework remains unchanged. First and foremost, we invest
+in our organic growth, we maintain a flexible balance sheet and when prudent we deploy
+excess capital to our shareholder by the way of share buyback. Since our announcement
+of our share buyback program in November 2022, we have repurchased 3.8 million shares
+for total consideration of USD78.4 million.
+Finally, let's discuss capital expenditures. In FY23, total capital expenditures were
+USD591.3 million. We had previously discussed with you a series of large capacity
+expansion projects across the globe, I wanted to provide a brief update on those
+projects. First, we have canceled our plans to build two pilot plants. We believe we have
+the capability to drive innovation within our existing R&D and manufacturing facilities and
+we believe we have proven this over time. This will save us over USD130 million in capital
+investments. We have continued construction of Prattville 3 and 4 in Alabama with an
+expected completion date for Line 3 in our fourth quarter of fiscal year 2024.
+We continued construction of our Massachusetts ColorPlus facility, which we expect to
+complete in the first quarter of FY24, which we will then utilize as a reload facility but not
+yet utilized the payment capacity until the market demand improves. We also continue our
+brownfield fiber gypsum expansion in Orejo, Spain and we had previously announced
+Fiber Cement greenfield expansions in all three of our regions. As housing market
+continue to change, we're monitoring medium-term demand closely to ensure we time
+these projects correctly. We're being very prudent in how we approach these greenfield
+projects. In relation to our US-based greenfield, last month we purchased land in Missouri.
+And in Europe, we plan to finalize the purchase of land for future fiber cement site in the
+next few months. The bulk of these greenfield do not expect to begin any construction at
+either location during fiscal year '24 based on current market demand.
+In total, we expect to spend approximately $550 million in capital expenditures in FY24.
+What is most important to note here, that despite the changing market conditions, we
+remain committed to invest in capacity expansion that we'll continuously adjust such that
+we are not overextending extending our capital, but allow us to be flexible and agile to
+respond as demand increases coming out of this cycle. Our capacity expansion program
+is guided by our expectation for sustainable long-term profitable share gain.
+To close, we have robust operating cash flows, substantial liquidity and a flexible balance
+sheet which will help us navigate this market cycle.
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 8 of 22
+Aaron Erter
+Please turn to Page 15 as I pass things back over to Aaron.
+{BIO 20530202 <GO>}
+Thank you, Jason. We have closed FY23 with our team executing at a high level. Let's now
+shift to a discussion of our fiscal year 2024 guidance and outlook before closing.
+Starting on Page 16. We are entering fiscal year 2024 in a position of strength. We have a
+clarity of mission with our team to drive profitable share gain. We approach the year with
+confidence and a commitment we will seize profitable share gain opportunities by
+bringing the right solutions to our customers.
+For FY24, we are targeting growth above the market or PVG 400 basis points in North
+America and APAC. Considering all of the challenges we were faced with, I believe our
+fourth quarter was our best of the year as each business unit delivered sequential EBIT
+margin improvement which enable us to continue to invest in growth through this cycle,
+which in turn will help us accelerate our competitive advantages and exit this cycle a
+stronger company and a stronger team. And of course, this is enabled by our strong team
+of 5,000 plus employees worldwide, which is led by an excellent group of leaders. Our
+team continues to manage decisively to ensure we execute on our strategy and continue
+to deliver differentiated results in fiscal year '24.
+Please turn to Page 17 to discuss our guidance. Today, we are providing three points of
+guidance for our first quarter of fiscal year 2024. First, we expect North America volumes
+to be in the range of 680 and 710 million standard feet. Second, we expect the North
+America EBIT margin to be in the range of 28% and 30%. And lastly, we expect global
+adjusted net income to be in the range of USD145 million and USD165 million. For FY24, I
+fully expect we will outperform the markets we participate in. With that said, I do see a
+challenging demand environment this year, interest rates are still in flux, job markets are
+still adjusting, consumer confidence remains low, and in general, housing markets remain
+unsettled. This uncertainty has provided limited visibility for us to give a full year guidance
+number at this time. We will look to provide more clarity in August.
+Please turn to Page 18 to discuss our market outlook. While we enter FY24 positioned to
+deliver differentiated results, we are also aware that all of the housing markets we
+participate in remain unsettled. This is supported by external data. Specifically, today, I
+wanted to walk you through our market outlook for our largest market North America. We
+shared some external data with you on our last call and have again presented updated
+information here along with our view of market conditions for calendar 2023.
+In single family, new construction, the current range of estimates for the eight data
+providers we track is down 10% to down 23%. The multifamily new construction, the
+current range of estimates for the eight data providers we track is down 8% to down 25%.
+In repair and remodel, the current range of estimates for the three data providers we
+track is down 8% to down 15%. Our view is that all three of these markets will decrease in
+the top half of these external arranges. Our current view is that we will see continued
+weakness in both new construction and repair and remodel markets until the Federal
+Reserve clearly states they
+'re done increasing interest rates. We view this as the first
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 9 of 22
+necessary step that enable these markets to establish a new normal and then adjust to it.
+Our current expectation as the underlying markets decline will lead to our North American
+volumes to decline sequentially each quarter through December 2023 before seeing a
+seasonal uplift in our fourth quarter aligned to the calendar 2024 build season.
+Please turn to Page 19. Noting the uncertain market conditions, we thought it would be
+useful to also provide a sensitivity analysis in regard to North American EBIT margins. As
+our largest business unit, as North America volumes change, so does our global net
+income. Thus, we thought this page was very relevant in a period of market uncertainty.
+Here, we are sharing our EBIT margin expectations at a variety of quarterly volume
+outcomes specific to fiscal year 2024. This sensitivity analysis does assume our current
+range of expectations on raw material costs and freight rates and assumes we continue
+to invest in growth as currently planned. Obviously, if market conditions decelerated we
+would focus on pulling certain levers to bring costs down as needed.
+So let's walk through the sensitivity analysis for FY24 quarterly volumes and EBIT margins.
+At 700 million standard feet of volume in the quarter, we would expect to deliver an EBIT
+margin of between 28% to 30%. At 650 million standard feet of volume in a quarter, we
+would expect to deliver an EBIT margin of between 26%, 28%. At 600 million standard
+feet of volume in a quarter, we would expect to deliver an EBIT margin of 25% to 27%.
+These volumes are simply to provide context to our EBIT margin sensitivity in North
+America and should not be construed as volume guidance for any quarter in fiscal year
+2024. Regardless of how the market fluctuates, we will deliver strong financial results, and
+I believe that is reflected in these EBIT margin ranges.
+Please turn to Page 20. I think our fourth quarter results and our first quarter guidance are
+proof positive that our team can execute regardless of market conditions. This slide which
+I introduced in February illustrates how we intend to manage our business through this
+cycle and specifically in FY24. First, we plan to continue to deliver growth above-market in
+every region in FY24. Second, we expect to achieve higher average net sales price in
+every region in FY24 versus FY23. Third, we expect to deliver lower cost per unit in FY24
+versus FY23. Fourth, we will closely manage our global SG&A spend. Lastly, we expect to
+maintain full year EBIT margins in North America and APAC above 25% and in the mid-
+single digits in Europe. We are managing decisively and controlling what we can control,
+and I think the financial results are starting to really reflect the impact our team is having
+by taking this approach. Globally, we have positioned ourselves to outperform the market
+through this cycle and enabled ourselves to continue to invest in growth while delivering
+strong returns.
+Finally, let's move to Page 21. We spent a fair amount of time today talking about how we
+will navigate the current market, but I also shared with you our long-term strategy and our
+superior value proposition will enable us to grow into the future. And I still firmly believe
+that these 10 core tenants listed here remain the illustration of who we are at James
+Hardie, a global growth company. We have updated the metrics at the bottom of this
+slide to include our FY23 results and all four metrics remain extremely strong and support
+being a global growth company. We are homeowner focused, customer and contractor
+driven.
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 10 of 22
+Operator
+Q - Niraj Shah
+A - Jason Miele
+Q - Niraj Shah
+A - Jason Miele
+Q - Niraj Shah
+A - Jason Miele
+Operator
+With that, I would like the operator to open the line up for questions.
+Questions And Answers
+Thank you. (Operator Instructions) Your first question comes from Niraj Shah with Goldman
+Sachs. Please go ahead.
+{BIO 19798057 <GO>}
+Good morning, guys. Hope you can hear me? My first question is just around the price
+contribution. How much of the 8% price mix was price and how did the realization
+compared to what you
+'d asked for?
+{BIO 20070385 <GO>}
+Yeah, Niraj. It'd be the mix of both obviously. I think it the fourth quarter to be more
+surprise as we'
+ve had the January first price increase as well and it's in line with our
+expectations. On the last call, we said we'd expect to get good price realization in R&R
+markets and obviously been tough a lot last quarter about the competitive nature of new
+construction. So things are on track and we expect to have price of year-on-year in FY24
+as shown in the slide deck and went through in the guidance and outlook session.
+{BIO 19798057 <GO>}
+Great, thanks. And then just secondly what percentage of I guess volumes were
+Cemplank in the fourth quarter and how did that sort of or and how did that increase I
+guess into the period?
+{BIO 20070385 <GO>}
+Yeah, Niraj. I'm not going to get into the certain percentages. I would say they were in line
+with our expectations of what we're projecting them to be internally. A we'
+ve talked about
+Cemplank before, Cemplank were utilizing as it is a need for our customer partners, right,
+as they try to hit a sharper price point. So rather than us go in and lower price, we offered
+one of our assets that we have out there in Cemplank, so it's meeting our expectations
+and as you can see with our performance and EBIT margin, it has not hurt us.
+{BIO 19798057 <GO>}
+Yeah, fair enough. Thanks guys.
+{BIO 20070385 <GO>}
+Thanks.
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 11 of 22
+Q - Keith Chau
+A - Jason Miele
+Q - Keith Chau
+A - Jason Miele
+Q - Niraj Shah
+A - Jason Miele
+Q - Keith Chau
+A - Jason Miele
+Thank you. Your next question comes from Keith Chau with MST Marquee. Please go
+ahead.
+{BIO 16563119 <GO>}
+Good evening, gents. So this was question just to follow-up Aaron on what you said
+earlier, I just wanted to be clear on that, so you are expecting a sequential decline of
+volumes from the December '23 quarter onwards, is that correct before the seasonal
+uplift in the fourth quarter of FY24?
+{BIO 20070385 <GO>}
+That's correct.
+{BIO 16563119 <GO>}
+Okay. So do we interpret that as an acceleration of I guess a downward trend in demand
+as we track through FY24 and bottoming at some stage, the reason why I ask is, I'm just
+trying to get an understanding of the shape of the demand curve you
+'re expecting for
+FY24, when during FY24 are you expecting the comps to bottom out?
+{BIO 20070385 <GO>}
+Yes. As far as when we see it bottoming out, I mean, look, our expectation is Q1, I'll just
+say this, is tracking along well for us. As we look to Q2 and Q3, we see that the volumes
+declining and then as we get into our Q4, Keith, we see the seasonal volume increase
+because of the build season. That's how we're modeling this out right now.
+{BIO 19798057 <GO>}
+Okay, thanks. I guess if we're talking about the seasonal uplift in the fourth quarter and
+you
+'re seeing that seasonal uplift coming through that then we should have reached the
+trough at some point in time, but in the second, third quarter of FY24?
+{BIO 20070385 <GO>}
+Hey, Keith, I think in any downturn we'
+ve experienced historically, there's always an uplift
+for the build season. So we're saying Q4 versus Q3, we'
+ve see an uplift, we're not stating
+Q4 next year will be higher than Q4 this year. The market is too uncertain to call out at this
+point. As we move to August, you look to provide more clarity.
+{BIO 16563119 <GO>}
+And then just for the follow-up question, maybe on Niraj's question earlier. So let's just
+look at average net sales price up 1% sequentially noting that ColorPlus volumes were
+only up 2% as well and I know we're coming off a strong period in the PCP , but certainly
+same mix was negative in the period, but is that within the bounds of what you
+'re
+expecting, can we still expect ColorPlus to grow this year at least hold volumes on an
+absolute basis?
+{BIO 20070385 <GO>}
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 12 of 22
+A - Aaron Erter
+Q - Keith Chau
+A - Jason Miele
+Operator
+Q - Lee Power
+A - Jason Miele
+Q - Lee Power
+A - Jason Miele
+Yeah, Keith I think ColorPlus up 2% in the backdrop of total volume down 14%, the strong
+results and kind of we sell to our comments last quarter that we'd expect R&R to hold up
+better than new construction over the cycle. And I think that's what we're seeing in our
+original data and the ColorPlus.
+{BIO 20530202 <GO>}
+And Keith I think just to add to that, when we think about ColorPlus or any of our volumes
+as we expect to outperform the market in which we plan. So that's what we would expect
+with ColorPlus as well.
+{BIO 16563119 <GO>}
+Okay, thank you. Excellent.
+{BIO 20070385 <GO>}
+Thanks.
+Your next question comes from Lee Power with UBS. Please go ahead.
+{BIO 19206337 <GO>}
+Hi, Aaron. Hi, Jason. Aaron, just following on from Keith line of questioning. So if we look at
+your 1Q FY24 volume guidance. I get the PCP was strong, but that's 690 to 720 number
+implies a 16% decline year-on-year and you
+'re talking about full year TAM being down 14%
+to 16% and then you expected to outperform the market. Look, I know in your comments
+that you talked to continued weakness in sequential declines in the period, I'm trying to
+get like reconcile that down 16% with this TAM, down 14% to 16% like how far under your
+base case do you think we are actually off kind of returned to normal seasonality?
+{BIO 20070385 <GO>}
+Yeah, Lee. So I think the only thing that was looked out of that question with the comment
+of 4 points of PDG that Aaron talked about on the call. So if you assume that across the
+market range we gave for this kind of down 10% to down 15%. And so the down 16% in Q1
+is in line with that when you think about the curve we just talked about that as we see the
+year going. Obviously, the comps in the back half of the year get a lot easier at both first
+quarters being right around 700 versus the first two quarters being 832 and 820. So,
+yeah, we'd expect to be in that range, but Q1 starting that kind of the minus 68 base in
+the midpoint.
+{BIO 19206337 <GO>}
+Okay, thank you. And then just a follow-up. I mean, you
+'
+ve obviously taken some shifts of
+line like which capacity utilization in the network now?
+{BIO 20070385 <GO>}
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 13 of 22
+Q - Lee Power
+A - Aaron Erter
+Operator
+Q - Peter Steyn
+A - Jason Miele
+Q - Peter Steyn
+Yeah. We have plenty of capacity to flex as needed. So we feel good about where we're
+at. We don't disclose that number specifically. We're operating as we talked about
+managing decisively and making sure we can have that network flex up or down
+depending on the market conditions. So we're in good shape.
+{BIO 19206337 <GO>}
+Okay, excellent. Thank you.
+{BIO 20530202 <GO>}
+Thanks.
+Your next question comes from Peter Steyn with Macquarie. Please go ahead.
+{BIO 2038773 <GO>}
+Good evening Aaron and Jason, thanks for your time. Just wanted to dig into what you
+'re
+expecting or seeing in the R&R market. Interested in your view that there is an 11% to 15%
+decline in the market in the context of what you
+'re seeing on ColorPlus? I appreciate that
+these market outperformance in your ColorPlus number, but could you just sketch the
+R&R market to us and what you
+'re expecting as the year progresses?
+{BIO 20070385 <GO>}
+Yeah, hey, thanks for the question, Pete. If you look at some of the outside data providers.
+I think that we track around 3%. I mean the range goes from negative 8% to negative 15%.
+Our view is negative 11% to negative 15%. I think there is an interesting dynamic right now
+and it just goes to the uncertainty out there, right. Consumer sentiment is still down. So
+you have people that are more reluctant to spend on a larger project, right. I think some
+of the forecasts out there in R&R for smaller projects are a little more bullish than what we
+have. I would say, the long-term fundamentals are great for R&R. We keep talking about
+it's our number one focus, 65% of our business particularly in North America, Sean and
+team have initiatives to really go out and attack this market space. We keep going back to
+the fact that there's 40 million homes that are over 40 years old or older, right. So there is
+a huge market share opportunity for us. I think what has to happen as we get a little more
+certainty in the marketplace, people are going to be more comfortable with spending on
+a larger project.
+The other thing that bodes well for R&R longer-term is you have probably 80% plus of
+people in North America who were tied to really low interest rates, right. So they
+'re not
+going to necessarily want to go -- they
+'re not going to necessarily going to want to leave
+their homes and go and try to find a new one. So that bodes well for R&R. So, we are
+extremely confident in our long-term prospects in R&R. I think what you
+'re seeing right
+now is just because of the uncertainty and we're seeing out in the marketplace that we
+talked about on the call.
+{BIO 2038773 <GO>}
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 14 of 22
+A - Aaron Erter
+Q - Peter Steyn
+A - Aaron Erter
+Operator
+Q - Lisa Yang
+A - Aaron Erter
+Q - Lisa Yang
+A - Aaron Erter
+Thanks Aaron. And then if I could ask a related follow-up. Regionally, what are you seeing
+in the R&R markets if you wouldn't mind giving us some color on that?
+{BIO 20530202 <GO>}
+Yeah, no, it's a great question. I would just say kind of high level, the areas that are -- you
+would expect to be more on in our focus. Like the mid-Atlantic, the Northeast, the
+Carolinas, the Midwest. We're seeing strength there and tracking above, what I would say,
+the rest of the regions as it relates to R&R and you can see that by some of our -- when I
+look at some of our Color growth and those markets in particular we're tracking very, very
+well.
+{BIO 2038773 <GO>}
+Great, thanks. Yeah, that does correlate to that ColorPlus number. Thanks very much. I'll
+leave it there. Thanks, gents.
+{BIO 20530202 <GO>}
+Thanks Peter.
+Your next question comes from Lisa Yang with JPMorgan. Please go ahead.
+{BIO 16487172 <GO>}
+Hi, good morning. I had a question around fiber cement as category more holistically, just
+given where affordability stands at the moment, can you just talking about fiber cement
+and how that's tracking versus vinyl and the implications for how confident you are behind
+that 4 percentage points of PDG?
+{BIO 20530202 <GO>}
+Yeah, Lisa. I just want to make sure. I got your question, is how is fiber cement as the
+category tracking behind vinyl, is that your question?
+{BIO 16487172 <GO>}
+Yeah, it sounds like just from feedback that kind of fiber cement in general is losing share
+versus vinyl in the market at the moment, just given affordability concerns?
+{BIO 20530202 <GO>}
+Yeah, Lisa. I think one of the things that we got to make sure that we're grounded on is
+they
+'re not apples to apples, right. So, someone who is going to be in the market and
+who can afford fiber cement may be a little different than those who can afford vinyl, and
+then there are some that fall in between there. I would say this, we'
+ve been very
+successful from a market share standpoint versus vinyl. If I just look at kind of a two-year
+look that we break down from a market share standpoint because I think you have to look
+at this in two year stacks. Vinyl would say has grown over that two years a CAGR of 1%, if
+you would look at us just in particular two-year CAGR, we'
+ve grown 11%, so I wouldn't
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 15 of 22
+Q - Lisa Yang
+A - Aaron Erter
+Q - Lisa Yang
+A - Aaron Erter
+Operator
+Q - Andrew Scott
+A - Aaron Erter
+necessarily agree with that assertion that vinyl is outdoing fiber cement. So clearly, and
+when we provide these numbers to you, I think we're winning from a market share
+standpoint.
+{BIO 16487172 <GO>}
+Got it, sure. And then just in terms of LEAN, I mean, how are you thinking about that into
+FY24. I think when you spoke to us in September there was potential to kind of upsize
+what you
+'
+ve done so far?
+{BIO 20530202 <GO>}
+Yeah Lisa, great question. Look we talked so much about each month that was really
+instituted about four or five years ago in here and the team has done a really solid job
+year-over-year. So we're tracking year-over-year savings. What we're going to introduce
+into the conversation with LEAN as well is, I mentioned on the call are Hardie operating
+system, right. So, HMOS is a part of this, and I said on the call, basically, this is our internal
+management system so there was going to be some metrics tied behind that, whether
+that be procurement savings, value improvement that when I come back in front of you
+guys here in the coming quarters, we'll put some concrete targets behind that, but I feel
+very confident on our LEAN savings and our initiatives, and we have our entire enterprise
+rallied behind this, it's not only our manufacturing plants, but it's our new management
+system across all of James Hardie.
+{BIO 16487172 <GO>}
+Okay, sure. Thanks for that. I'll leave it there.
+{BIO 20530202 <GO>}
+Thank you.
+Your next question comes from Andrew Scott with Morgan Stanley. Please go ahead.
+{BIO 6785574 <GO>}
+Thank you. Good morning, good evening, I should say I guess. Just first question for me
+Aaron, I'm sorry if I missed it, but what do you think PDG was in the year just gone, on the
+quarter just gone, and I guess emplacing with that question is what do you think R&R was
+because I know it's a hard number to pin down, but a lot of those numbers there which
+suggests that it's hard to say you
+'re gaining share if we look at some of the other
+numbers that are floating around?
+{BIO 20530202 <GO>}
+Yeah, Andrew. So, I am obviously being in here about nine or 10 months, PDG is
+something I knew we used a lot in the past. So I'
+ve looked at this closely, as you know, I
+used the term profitable share gain. I think this falls right into that and way it's falls right in
+line as being a major focus for us as a company. I think as we looked at FY23, our PDG
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 16 of 22
+Q - Andrew Scott
+A - Jason Miele
+Q - Andrew Scott
+Q - Niraj Shah
+Q - Andrew Scott
+A - Aaron Erter
+Operator
+gain was roughly 3.4%. If we look at moving forward, I have set the target and expectation
+of 4% in North America and APAC. I think from a historical standpoint, it was looked at
+around 6% and it was 6% because we also had a smaller base back then, really that 6%
+and the 4% equate to each other of being roughly 1% market share gain. So that is our
+target for this year and as we move forward, roughly 1% market share gain which equates
+to a PDG 4%.
+{BIO 6785574 <GO>}
+Got it, thank you. The second one is might be for you Jason, but jump in, just thank you for
+that EBIT sensitivity, I think they were or the volume sensitivities they were helpful, it is this
+sort of non-linear profiles. So I'm just trying to understand the levers that you might pull
+there and do we expect that that can work when you just say the seasonal softness that
+we'll see obviously you
+'re not going to make a decision to take a line down just for a
+quarter, so just interested in how that plays out or just in the seasonal swings?
+{BIO 20070385 <GO>}
+Question is that, we might thought all line down in the quarter, I'm not sure I got that
+Andrew.
+{BIO 6785574 <GO>}
+Aaron, in your prepared remarks, you mentioned that you had some levers that you would
+pull if you did say the volumes come down. I'm just interested in what the sort of the
+fluctuations or the tools you
+'
+ve got in the toolkit to adjust to a softer market?
+{BIO 19798057 <GO>}
+Look, Andrew, we're going to manage this business for the longer-term, right. So when I
+think about one of our largest investments, most important investments in our plants and
+in our people, it will take more than quarter-to-quarter for us to pull any type of cost out
+of there. Particularly, right now, when you look at the uncertainty of the marketplace, what
+we have to be prepared for and we are in all of our regions is to make sure that we have
+the capacity to respond. So if we have to invest to be in short to be sure that over the
+next few quarters of this year, we're going to absolutely do that, because that's going to
+help us, take care or take advantage of any type of potential market share gains, which is
+our number one focus.
+{BIO 6785574 <GO>}
+Thank you.
+{BIO 20530202 <GO>}
+Thanks Andrew.
+Your next question comes from David Pace with Greencape. Please go ahead.
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 17 of 22
+Q - David Pace
+A - Aaron Erter
+Q - David Pace
+A - Aaron Erter
+Operator
+Q - Simon Thackray
+A - Aaron Erter
+A - Jason Miele
+Q - Simon Thackray
+{BIO 19763168 <GO>}
+Guys. Aaron just picking-up on your target of 400 basis points of PDG over the next 12
+months or so, how is that split across new housing multi of which are coming off a very low
+base in R&R broadly?
+{BIO 20530202 <GO>}
+David, we look at it combined altogether, I don't have that split. So we look at it combined.
+{BIO 19763168 <GO>}
+Okay. Thanks guys, good quarter. Thank you.
+{BIO 20530202 <GO>}
+Thank you.
+Your next question comes from Simon Thackray with Jefferies. Please go ahead.
+{BIO 7516924 <GO>}
+Thanks. Good evening. Hi Aaron, hi Jason. Couple of simple ones, I think just in terms of
+your assumptions for the gross profit margin or the percentage margin in the guidance
+that you
+'
+ve provided and the extent to which you
+'
+ve already seen cost relief, in, say,
+freight or I don't know if pulps rolled over yet on your lag basis and what sort of cost relief
+you
+'re expecting in the quarterly guidance that you
+'
+ve just provided at the gross profit
+line?
+{BIO 20530202 <GO>}
+I'll take this and I'll let Jason jump in. Simon, thanks for the question. In our guidance range,
+we'
+ve assumed some inflation favorability for Q1 versus that -- of Q1 versus the prior year.
+But really in freight and energy regarding the full year as you are aware, we're not
+providing full year guidance, just because of the uncertainty out there, although we are
+seeing some of the favorability in freight and energy, there's other things where we're
+not seeing favorability, right, areas like cement. So, Jason, I don't know if you want to jump
+in here with anything.
+{BIO 20070385 <GO>}
+Yeah, I think I we'
+ve commonly talked about four key input costs in our variable costs,
+Simon, being pulp, freight, cement and labor. So things remain where they are today or
+the trends remain the same. We expect favorability in pulp and freights, but certainly the
+opposite in cement and labor. All of that considered in our Q1 guidance. As we look to
+give full year guidance, we'll provide more clarity on our assumptions around installation.
+{BIO 7516924 <GO>}
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 18 of 22
+A - Aaron Erter
+Q - Simon Thackray
+A - Jason Miele
+Q - Simon Thackray
+A - Aaron Erter
+Operator
+Q - Brook Campbell
+Okay, that'll be helpful. And then while we're on sort of cost to revenue relationships of
+backing out your D&A from your SG&A. Just the observation over the last several years
+has been and multiple quarters has been, SG&A was tracking along around have 10.5% to
+11% of revenue, it fell 250 basis points during the COVID period, probably a period where
+you would were gifted some demand and as well with disorganized competitors et cetera
+who don't have any capacity. I just want to understand what the expectation should be for
+that SG&A to sales ratio, given it did track 200 basis -- 250 basis points lower during this
+the period preceding with current downturn. Should we be expecting that to go back up,
+given your comments about optimization of the spend, Aaron?
+{BIO 20530202 <GO>}
+Yeah, look, we're focused on SG&A as necessary. I think the -- where we'
+ve been tracking
+from an SG&A standpoint as we will continue to track. And if you go back to our prepared
+remarks, I mean we kind of -- we lay out some fundamentals on how we're going to run
+this business in FY24, so I would expect SG&A to be roughly flat. So where we are, as I
+mentioned on the last call, we'
+ve reallocated resources and we're focusing on areas to
+invest. One of those areas is to really be closer to our customer. So we are doing that, but
+we expect to run SG&A in FY24 to pretty much be in line as how it's been tracking there,
+Simon.
+{BIO 7516924 <GO>}
+Sure, and that's in dollar terms...?
+{BIO 20070385 <GO>}
+Yeah, we're speaking of dollar, that's kind of how we manage the business and make sure
+we're investing in the right things for growth. When you get to the top of the cycle, you
+'d
+expect that percentage to decrease not just continue to hard ways to spend SG&A
+dollars. So top of that, you
+'ll see that. If it goes down, we feel good about our dollar rate
+of last six months than we intend to kind of stay right around there.
+{BIO 7516924 <GO>}
+Very helpful. Thanks Jason.
+{BIO 20530202 <GO>}
+Thanks Simon.
+Your next question comes from Brook Campbell Crawford with Baron Joey. Please go
+head.
+{BIO 22587251 <GO>}
+Yes, thanks for taking my question. Just back on Slide 18, the outlook for repair remodel.
+Can you give an idea of what you
+'re seeing at the moment. So perhaps what you expect
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 19 of 22
+A - Aaron Erter
+Q - Brook Campbell
+A - Aaron Erter
+A - Jason Miele
+Q - Brook Campbell
+Operator
+Q - Harry Saunders
+A - Aaron Erter
+U.S. repair remodel for siding to be down in the first quarter FY24 and how that compares
+to the range you half year or for the full financial year?
+{BIO 20530202 <GO>}
+Yeah, Brook, I would just say, I mean, we would say the same remarks I did on the call. As
+far as how it's tracking right now, I mean, we're a month and half into the first quarter. So I
+would say, it's tracking well but still I wouldn't change my opinion as the outlook for the
+rest of the year.
+{BIO 22587251 <GO>}
+Yeah, okay, that's fair enough. And I haven't caught the Annual Report, I'm not sure if it's
+date yet, but any changes in the financial metrics there for are the short-term or long-
+term incentives for FY24 and I guess three year rolling period for STI's, any changes there
+on the metrics that you guys will be measured on?
+{BIO 20530202 <GO>}
+Yeah, I just gave some highlights. I would say, the STI by region is more situational to what
+we need to do in those respective regions, right. Just kind of the Cliffs notes version, if
+you will. If I look at APAC and I look at APAC and North America, we're focused on
+profitable share gain, right. So we have a metric in there with PDG. We also have a metric
+in there as far as EBIT margin for both of those. If we look to Europe, it's all about growth
+and it's about growth in our high-valued products, namely our fiber cement products and
+some of the innovative flooring products that we have in there, so it's about that, and it's
+also about our EBIT margin as well. Just from a long-term scorecard standpoint, I would
+say, if you look at our strategy slides that we presented here, it's very tightly aligned with
+driving those strategies which is where the long-term incentives should be, so that's just
+the highlights there, Brook.
+{BIO 20070385 <GO>}
+Yeah, Brook, as said that would be up tomorrow. So, because the 20-F is a U.S.
+-based
+document has to be filed their first. So that will be up around this time tomorrow morning.
+{BIO 22587251 <GO>}
+Got it. Thanks so much.
+Your next question comes from Harry Saunders with E&P . Please go ahead.
+{BIO 20470187 <GO>}
+Evening. Thanks for taking my questions. Firstly, just back on price mix expectations in '24,
+just wanted to be clear, are you talking about a sequential improvement across the year
+on the fourth quarter AHP?
+{BIO 20530202 <GO>}
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 20 of 22
+Q - Harry Saunders
+A - Aaron Erter
+Q - Harry Saunders
+A - Aaron Erter
+Q - Harry Saunders
+Operator
+Q - Paul Quinn
+A - Aaron Erter
+We expect to have a higher average sales price in FY24 than we did in FY23.
+{BIO 20470187 <GO>}
+Right. And you
+'re not wanting to sort of expand on versus the fourth quarter?
+{BIO 20530202 <GO>}
+January 1st is when we took our price increase, so the fourth quarter already has some of
+that built into it. So we'd expect the full year versus full year average sales price, yeah,
+based on the detailed dynamics we'
+ve talked about on the last call where we expect to
+achieve our price increase in R&R and we'
+ve talked to the current nature of new
+construction.
+{BIO 20470187 <GO>}
+Okay, thank you. And just a question on your market outlook in APAC and Europe, are you
+willing to sort of give any more color around volumes in those regions?
+{BIO 20530202 <GO>}
+We're not giving any detailed guidance -- annual guidance today, Harry, and we haven't
+given -- focused our guidance, our biggest market in North America along with net income
+which encapsulates everything. I think you heard on our prepared remarks, we do expect
+market weakness in Australia, but we'll be prepared to manage the size of which you that
+just as you
+'
+ve seen us do in the fourth quarter results in all three regions. All three margins
+-- all three markets are uncertain and we're focused on controlling what we can control,
+then delivering the type of results we did here in the fourth quarter.
+{BIO 20470187 <GO>}
+Thank you.
+Your next question comes from Paul Quinn with RBC Capital Markets. Please go ahead.
+{BIO 5632874 <GO>}
+Yeah, thanks very much. I appreciate the volume sensitivity slide, just wondering if you
+could provide us with your cost sensitivity as to the rollover in pulp prices recently. And
+then -- and also I missed that when you about Prattville 3 and 4, could you remind me
+when they
+'re coming up both of those lines?
+{BIO 20530202 <GO>}
+Sorry, Paul, I heard the question about Prattville 3 and 4, so I'll answer that now, but I'm
+going to need you to repeat some of the other parts as we had a choppy line there. So
+Prattville 3, we expect to be ready by the fourth quarter of FY24 and then as that gets
+closer we'll provide further updates on Q4, but it would lag the first one. And then if you
+could repeat the first half of your question.
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 21 of 22
+Q - Paul Quinn
+A - Aaron Erter
+Q - Paul Quinn
+A - Aaron Erter
+Operator
+Q - Unidentified Participant
+A - Jason Miele
+Q - Unidentified Participant
+{BIO 5632874 <GO>}
+Sure, I'll give it another go. Just we see pulp markets roll over here, just wondering about
+the timing of that and the sensitivity on the cost side to NBSK pulp?
+{BIO 20530202 <GO>}
+Yeah, time-wise, it's about a three, four month lag, when you consider how it's priced for
+us and then how it fits in inventory, raw materials inventory that ultimately is finished good
+inventory. So that's kind of the lagging for us. And then we kind of given a specific
+sensitivity, but it's one of our four big cost inputs so it's significant also can have a big
+impact both directions. Pulp, freight, labor and cement are our four biggest input costs.
+{BIO 5632874 <GO>}
+Okay, that's all I had. Thanks a lot.
+{BIO 20530202 <GO>}
+Yeah, thanks.
+Your next question comes from (inaudible) with Bank of America. Please go ahead.
+Good evening, Aaron, Jason, and thank you for taking my question. I just wanted to go
+back to costs again, on the raw material cost and the freight costs, could you give us a
+sense of in terms of perhaps numbers how they look for you in 4Q verse like perhaps
+sequentially or year-on-year? And also how do they look to the start of the year or the
+first quarter? Thank you.
+{BIO 20070385 <GO>}
+Yeah, freight versus the start of the year will certainly be down significantly for Q1 FY23
+within a high point for freights and you see that in most of the market data, somewhat
+stabilizes in kind of across the past couple of months or couple of quarters, so Q4
+expected hugely different outcome in Q1 when it comes to freight. And then as we
+mentioned earlier that kind of the Paul's questions -- Paul's comments and questions we
+are seeing the pulp started to decrease, but we are seeing headwinds when it comes to
+cement and obviously year-over-year labor on a per-person basis will go up, but net-net,
+it's a -- and as Aaron talked about earlier, when we talked about inflation, trends we see
+today are good. We'
+ve included that in our Q1 guidance and then as we go to give full
+year guidance range and targets for net income or give some context as June inflation
+but it's uncertain markets at this point, we're sticking with Q1 guidance.
+Thank you, Jason. Thank you.
+FINAL
+Bloomberg Transcript
+Comp any Name: James H ardie Industries PLC
+Comp any Ticker: JH X AU Eq uity
+Date: 2023-05-15
+Pag e 22 of 22
+Operator
+A - Aaron Erter
+Operator
+There are no further questions at this time. I'll now hand back to Mr. Erter for closing
+remarks.
+{BIO 20530202 <GO>}
+All right. Thank you, operator. I want to thank you all for joining us today and thank all of
+our employees around the world. We remain laser-focused on controlling what we can
+control and executing our strategy and we remain homeowner focused, customer and
+contractor driven. Thanks, everyone.
+That does conclude our conference for today. Thank you for participating. You may now
+disconnect.
+T h i s tr ansc r i p t ma y not b e 1 0 0 p e r c e nt ac c ur ate and ma y c ontai n mi ss p e l l i n g s and oth e r
+i nac c ur ac i e s. T h i s tr ansc r i p t i s p r ovi d e d " as i s"
+, wi th out e x p r e ss or i m p l i e d war r anti e s of
+an y k i nd . B l oomb e r g r e tai ns al l r i g h ts to th i s tr ansc r i p t and p r ovi d e s i t sol e l y f or y our
+p e r sonal , non-c omme r c i al use . B l oomb e r g , i ts su p p l i e r s and th i r d -p ar t y a g e nts sh al l
+h av e no l i ab i l i t y f or e r r or s i n th i s tr ansc r i p t or f or l ost p r ofi ts, l osse s, or d i r e c t , i nd i r e c t ,
+i nc i d e ntal , c onse q ue nti al , s p e c i al or p uni ti v e d ama g e s i n c onne c ti on wi th th e
+f ur ni sh i n g , p e r f or manc e or use of suc h tr ansc r i p t. N e i th e r th e i nf or mati on nor an y
+o p i ni on e x p r e sse d i n th i s tr ansc r i p t c onsti tute s a sol i c i tati on of th e p ur c h ase or sal e of
+se c ur i ti e s or c ommod i ti e s. A n y o p i ni on e x p r e sse d i n th e tr ansc r i p t d oe s not ne c e ssar i l y
+r efl e c t th e vi e ws of B l oomb e r g L P . © C O P Y R I G H T 2 0 2 3 , B L O O M B E R G L P . A l l r i g h ts
+r e se r v e d . A n y r e p r od uc ti on, r e d i str i b uti on or r e tr ansmi ssi on i s e x p r e ssl y p r oh i b i te d .
+FINAL
+Bloomberg Transcript

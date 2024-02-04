@@ -12,7 +12,7 @@ content-type: application/json
 POST http://localhost:7071/api/PromptEmail
 Content-Type: application/json
 
-{"Prompt":"what time to I need to be at the venue? "}
+{"Prompt":"what are james hardie's top initiatives? "}
 
 ## TEST IN AZURE (do `azd provision` first)
 
