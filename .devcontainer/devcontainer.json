@@ -13,9 +13,7 @@
             "version": "latest"
         },
         "ghcr.io/devcontainers/features/common-utils:2": {},
-        "features": {
-            "ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1": {}
-        }
+        "ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1": {}
     },
     "customizations": {
         "vscode": {
