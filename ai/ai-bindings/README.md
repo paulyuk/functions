@@ -1,7 +1,7 @@
 # Azure Functions
 ## Chat Your Data Data using AI Bindings for Functions (C#-InProc, C#-Isolated coming soon!)
 
-This sample shows how to leverage new AI Functions Bindings: `TextCompletion`, `Embeddings`, and `SemanticSearch` to prompt and asks questions using AI.  These are part of these new [Bindings extension Nuget packages](https://www.nuget.org/packages/CGillum.WebJobs.Extensions.OpenAI/0.3.0-alpha)
+This sample shows how to leverage new AI Functions Bindings: `TextCompletion`, `Embeddings`, and `SemanticSearch` to prompt and asks questions using AI.  These are part of these new [Bindings extension Nuget packages](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.OpenAI)
 - `TextCompletions` enables simple prompting using OpenAI.  
 - `Embeddings` enables creating embeddings for raw text or entire files; the embedding value can then be stored in a vector database.  
 - `SemanticSearch` does the actual upload of embeddings to a vector database, and then the consequent queries of it.  Currently the binding only supports using [Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/azure-data-explorer-for-vector-similarity-search/ba-p/3819626) as the vector Database for similarity search.
