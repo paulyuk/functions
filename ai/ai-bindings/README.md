@@ -1,5 +1,5 @@
 # Azure Functions
-## Chat Your Email Data using AI Bindings for Functions (C#-InProc, C#-Isolated coming soon!)
+## Chat Your Data Data using AI Bindings for Functions (C#-InProc, C#-Isolated coming soon!)
 
 This sample shows how to leverage new AI Functions Bindings: `TextCompletion`, `Embeddings`, and `SemanticSearch` to prompt and asks questions using AI.  These are part of these new [Bindings extension Nuget packages](https://www.nuget.org/packages/CGillum.WebJobs.Extensions.OpenAI/0.3.0-alpha)
 - `TextCompletions` enables simple prompting using OpenAI.  
@@ -66,12 +66,12 @@ Use `test.http` along with your favorite REST client or extension to test.
 
 ### Azure Data Explorer (Kusto)
 
-Use this query to see all emails uploaded and the embeddings/vectors:
+Use this query to see all data/documents uploaded and the embeddings/vectors:
 ```
 Documents
 ```
 
-Use this query to reset all emails/embeddings/data:
+Use this query to reset all data/embeddings/data:
 ```
 .clear table Documents data
 ```
@@ -89,19 +89,19 @@ azd up
 
 ## How it works
 
-Looking at [ask-your-email.cs](ask-your-email.cs) in particular, we see two functions: `IngestEmail` and `PromptEmail`.
+Looking at [ask-your-data.cs](ask-your-data.cs) in particular, we see two functions: `IngestData` and `PromptData`.
 
-`IngestEmail` function is responsible for uploading your email file or raw text, and converting it into embeddings using `Embeddings` binding attribute that will work later with a vector search.
+`IngestData` function is responsible for uploading your Data file or raw text, and converting it into embeddings using `Embeddings` binding attribute that will work later with a vector search.
 Once the file is converted into embeddings, the embeddings are uploaded to the vector database using the `SemanticSearch` binding attribute.  
 
-`PromptEmail` function is responsible for searching over the vector database, in this case Azure Data Explorer (Kusto), using a customizable `Prompt` as the query.  `SemanticSearch` binding attribute
+`PromptData` function is responsible for searching over the vector database, in this case Azure Data Explorer (Kusto), using a customizable `Prompt` as the query.  `SemanticSearch` binding attribute
 is used again but this time we specify the embeddings model/deployment, the ChatGPT model/deployment, and the Query.  This connects the ChatGPT search to the vector database to search with your prompt. 
 
 ```csharp
-[FunctionName("IngestEmail")]
-public static async Task<IActionResult> IngestEmail(
+[FunctionName("IngestData")]
+public static async Task<IActionResult> IngestData(
     [HttpTrigger(AuthorizationLevel.Function, "post")] EmbeddingsRequest req,
-    [Embeddings("{FilePath}", InputType.FilePath, 
+    [Embeddings("{FilePath}", inputType: InputType.FilePath, 
     Model = "%AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT%")] EmbeddingsContext embeddings,
     [SemanticSearch("KustoConnectionString", "Documents")] IAsyncCollector<SearchableDocument> output)
 {
@@ -110,8 +110,8 @@ public static async Task<IActionResult> IngestEmail(
     return new OkObjectResult(new { status = "success", title, chunks = embeddings.Count });
 }
 
-[FunctionName("PromptEmail")]
-public static IActionResult PromptEmail(
+[FunctionName("PromptData")]
+public static IActionResult PromptData(
     [HttpTrigger(AuthorizationLevel.Function, "post")] SemanticSearchRequest unused,
     [SemanticSearch("KustoConnectionString", "Documents", 
     Query = "{Prompt}", 
@@ -124,7 +124,7 @@ public static IActionResult PromptEmail(
 ```
 
 Learn more about the AI bindings in their respective NuGet pages:
-[Learn more about Azure Functions AI Bindings](https://www.nuget.org/packages/CGillum.WebJobs.Extensions.OpenAI/0.3.0-alpha)
+[Learn more about Azure Functions AI Bindings](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.OpenAI)
 
 
 

@@ -1,7 +1,7 @@
 ## TEST LOCALLY
 
 ### upload an email
-POST http://localhost:7071/api/IngestEmail HTTP/1.1
+POST http://localhost:7071/api/IngestData HTTP/1.1
 content-type: application/json
 
 {
@@ -9,7 +9,7 @@ content-type: application/json
 }
 
 ### ask a question to your email
-POST http://localhost:7071/api/PromptEmail
+POST http://localhost:7071/api/PromptData
 Content-Type: application/json
 
 {"Prompt":"what time to I need to be at the venue? "}
@@ -19,7 +19,7 @@ Content-Type: application/json
 ### set URL and x-functions-key to correct values for your Azure FunctionApp
 
 ### upload an email
-POST https://func-api-***.azurewebsites.net HTTP/1.1
+POST https://func-api-***.azurewebsites.net/api/IngestData HTTP/1.1
 content-type: application/json
 x-functions-key: ***
 
@@ -28,7 +28,7 @@ x-functions-key: ***
 }
 
 ### ask a question to your email
-POST https://func-api-***.azurewebsites.net/api/PromptEmail
+POST https://func-api-***.azurewebsites.net/api/PromptData
 Content-Type: application/json
 x-functions-key: ***
 
