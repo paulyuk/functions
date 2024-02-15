@@ -14,7 +14,7 @@ namespace genai2
         public record EmbeddingsRequest(string RawText, string FilePath);
         public record SemanticSearchRequest(string Prompt);
 
-        [FunctionName("InngestData")]
+        [FunctionName("IngestData")]
         public static async Task<IActionResult> IngestData(
             [HttpTrigger(AuthorizationLevel.Function, "post")] EmbeddingsRequest req,
             [Embeddings("{FilePath}", inputType: InputType.FilePath, 
