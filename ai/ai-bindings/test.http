@@ -1,6 +1,6 @@
 ## TEST LOCALLY
 
-### upload an email
+### upload an data
 POST http://localhost:7071/api/IngestData HTTP/1.1
 content-type: application/json
 
@@ -8,7 +8,7 @@ content-type: application/json
     "FilePath": "input.txt"
 }
 
-### ask a question to your email
+### ask a question to your data
 POST http://localhost:7071/api/PromptData
 Content-Type: application/json
 
@@ -18,7 +18,7 @@ Content-Type: application/json
 
 ### set URL and x-functions-key to correct values for your Azure FunctionApp
 
-### upload an email
+### upload an data
 POST https://func-api-***.azurewebsites.net/api/IngestData HTTP/1.1
 content-type: application/json
 x-functions-key: ***
@@ -27,7 +27,7 @@ x-functions-key: ***
     "FilePath": "input.txt"
 }
 
-### ask a question to your email
+### ask a question to your data
 POST https://func-api-***.azurewebsites.net/api/PromptData
 Content-Type: application/json
 x-functions-key: ***

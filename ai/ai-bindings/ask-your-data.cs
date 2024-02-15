@@ -9,7 +9,7 @@ using Microsoft.Azure.WebJobs.Extensions.OpenAI.Models;
 
 namespace genai2
 {
-    public static class AskYourEmail
+    public static class AskYourData
     {
         public record EmbeddingsRequest(string RawText, string FilePath);
         public record SemanticSearchRequest(string Prompt);
