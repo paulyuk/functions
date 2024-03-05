@@ -27,7 +27,7 @@ namespace Company.Function
             }
 
             var response = req.CreateResponse(HttpStatusCode.OK);
-            response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
+            response.Headers.Add("Content-Type", "application/json; charset=utf-8");
             if (person == null) {
                 await response.WriteAsJsonAsync(new {});
             } else {
