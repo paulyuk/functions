@@ -1,7 +1,9 @@
+using System.Net;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
 using FromBodyAttribute = Microsoft.Azure.Functions.Worker.Http.FromBodyAttribute;
 
@@ -16,11 +18,26 @@ namespace Company.Function
             _logger = loggerFactory.CreateLogger<HttpPostBody>();
         }
 
-        [Function("httppostbody")]        
-        public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequest req,
-            [FromBody] Person person)
+        [Function("httppostbody")]
+        public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req)
         {
-            return new OkObjectResult(person);
+
+            Person? person = null;
+            
+            if (req.Body.Length > 0) {
+                person = await req.ReadFromJsonAsync<Person>();
+                _logger.LogInformation($"Received Person with name: {person?.Name}");
+            }
+
+            var response = req.CreateResponse(HttpStatusCode.OK);
+            response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
+            if (person == null) {
+                await response.WriteAsJsonAsync(new {});
+            } else {
+                await response.WriteAsJsonAsync(person);        
+            }
+
+            return response;
         }
     }
 
