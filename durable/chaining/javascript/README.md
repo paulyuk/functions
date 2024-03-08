@@ -1,7 +1,7 @@
 # Azure Functions
-## Starter template (JavaScript v4 Function)
+## Chaining with Durable Functions (JavaScript v4 Function)
 
-This sample template provides an "empty starting point" function that is ready to run and deploy Azure easily.  
+This sample template provides a working example of chaining 3 functions in a reliable way using Durable Functions.  This is effectively the output of following this [tutorial](https://learn.microsoft.com/en-us/azure/azure-functions/durable/quickstart-js-vscode?pivots=nodejs-model-v4).  
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=575770869)
 
@@ -39,22 +39,15 @@ func start
 
 Terminal:
 ```bash
-curl -i -X POST http://localhost:7071/api/chat/ \
-  -H "Content-Type: text/json" \
-  --data-binary "@testdata.json"
+curl -i -X POST http://localhost:7071/api/orchestrators/chainingOrchestrator \
+  -H "Content-Type: text/json" 
 ```
 
-testdata.json
-```json
-{
-  "name": "Awesome Developer"
-}
-```
 
 test.http
 ```bash
 
-POST http://localhost:7071/api/chat HTTP/1.1
+POST http://localhost:7071/api/orchestrators/chainingOrchestrator HTTP/1.1
 content-type: application/json
 
 {
@@ -74,18 +67,24 @@ The key code that makes this work is as follows in [src/functions/http.js](src/f
 
 ```javascript
 const { app } = require('@azure/functions');
+const df = require('durable-functions');
+const activityName = 'chaining';
 
-app.http('http', {
-    methods: ['GET', 'POST'],
-    authLevel: 'anonymous',
-    handler: async (request, context) => {
-        context.log(`Http function processed request for url "${request.url}"`);
+df.app.orchestration('chainingOrchestrator', function* (context) {
+    const outputs = [];
+    outputs.push(yield context.df.callActivity(activityName, 'Tokyo'));
+    outputs.push(yield context.df.callActivity(activityName, 'Seattle'));
+    outputs.push(yield context.df.callActivity(activityName, 'Cairo'));
 
-        const name = request.query.get('name') || await request.text() || 'world';
-
-        return { body: `Hello, ${name}!` };
-    }
+    return outputs;
 });
+
+df.app.activity(activityName, {
+    handler: (input) => {
+        return `Hello, ${input}`;
+    },
+});
+
 ```
 
 ## Deploy to Azure
