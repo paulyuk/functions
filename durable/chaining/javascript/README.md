@@ -8,7 +8,7 @@ This sample template provides a working example of chaining 3 functions in a rel
 ## Run on your local environment
 
 ### Pre-reqs
-1) [Node.js 16 or 18](https://www.nodejs.org/) 
+1) [Node.js 20 or 18](https://www.nodejs.org/) 
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
 3) Add this local.settings.json file to the text_summarize folder to simplify local development and include Key from step 3
 ```json
