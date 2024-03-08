@@ -63,7 +63,7 @@ content-type: application/json
 
 ## Source Code
 
-The key code that makes this work is as follows in [src/functions/http.js](src/functions/http.js).  
+The key code that makes this work is as follows in [src/functions/http.js](src/functions/chaining.js).  
 
 ```javascript
 const { app } = require('@azure/functions');
