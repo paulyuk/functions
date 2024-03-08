@@ -51,7 +51,6 @@ POST http://localhost:7071/api/orchestrators/chainingOrchestrator HTTP/1.1
 content-type: application/json
 
 {
-  "name": "Awesome Developer"
 }
 ```
 
