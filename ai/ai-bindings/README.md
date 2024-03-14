@@ -89,7 +89,7 @@ azd up
 
 ## How it works
 
-Looking at [ask-your-data.cs](ask-your-data.cs) in particular, we see two functions: `IngestData` and `PromptData`.
+Looking at [ask-your-data.cs](src/ask-your-data.cs) in particular, we see two functions: `IngestData` and `PromptData`.
 
 `IngestData` function is responsible for uploading your Data file or raw text, and converting it into embeddings using `Embeddings` binding attribute that will work later with a vector search.
 Once the file is converted into embeddings, the embeddings are uploaded to the vector database using the `SemanticSearch` binding attribute.  
