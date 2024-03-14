@@ -19,7 +19,7 @@ namespace genai2
             [HttpTrigger(AuthorizationLevel.Function, "post")] EmbeddingsRequest req,
             [Embeddings("{FilePath}", inputType: InputType.FilePath, 
             Model = "%AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT%")] EmbeddingsContext embeddings,
-            [SemanticSearch("KustoConnectionString", "Documents")] IAsyncCollector<SearchableDocument> output)
+            [SemanticSearch("KustoConnectionString2", "Documents")] IAsyncCollector<SearchableDocument> output)
         {
             string title = Path.GetFileNameWithoutExtension(req.FilePath);
             await output.AddAsync(new SearchableDocument(title, embeddings));

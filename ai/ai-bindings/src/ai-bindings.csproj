@@ -5,8 +5,8 @@
     <UserSecretsId>21bb9b53-eeb2-4f08-8de1-68f2708834b1</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.OpenAI" Version="0.7.0-alpha" />
-    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.OpenAI.Kusto" Version="0.7.0-alpha" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.OpenAI" Version="0.12.0-alpha" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.OpenAI.Kusto" Version="0.12.0-alpha" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.2.0" />
   </ItemGroup>
   <ItemGroup>
