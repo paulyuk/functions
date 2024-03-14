@@ -2,9 +2,9 @@
 
 name: aibindings-cs-ai-func
 metadata:
-  template: aibindings-cs-ai-func@0.0.1-beta
+  template: aibindings-cs-ai-func@0.0.12-beta
 services:
   api:
-    project: ./
+    project: ./src/
     language: dotnet
     host: function
