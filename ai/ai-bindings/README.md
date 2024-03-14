@@ -50,7 +50,7 @@ Create the `Documents` table with desired schema using this query in Azure Data 
 ```
 
 ### Using Visual Studio
-1) Open `a-bindings.sln` using Visual Studio 2022 or later.
+1) Open `ai-bindings.sln` using Visual Studio 2022 or later.
 2) Press Run/F5 to run in the debugger
 
 Use `test.http` along with your favorite REST client or extension to test.
