@@ -48,7 +48,7 @@ module api './app/api.bicep' = {
     appServicePlanId: appServicePlan.outputs.id
     keyVaultName: keyVault.outputs.name
     runtimeName: 'dotnet-isolated'
-    runtimeVersion: '6.0'
+    runtimeVersion: '8.0'
     storageAccountName: storage.outputs.name
     appSettings: {
     }
