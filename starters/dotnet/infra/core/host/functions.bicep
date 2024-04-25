@@ -59,7 +59,6 @@ module functions 'appservice.bicep' = {
         FUNCTIONS_WORKER_RUNTIME: runtimeName
       })
     clientAffinityEnabled: clientAffinityEnabled
-    enableOryxBuild: enableOryxBuild
     functionAppScaleLimit: functionAppScaleLimit
     keyVaultName: keyVaultName
     kind: kind
@@ -70,7 +69,6 @@ module functions 'appservice.bicep' = {
     runtimeName: runtimeName
     runtimeVersion: runtimeVersion
     runtimeNameAndVersion: runtimeNameAndVersion
-    scmDoBuildDuringDeployment: scmDoBuildDuringDeployment
     use32BitWorkerProcess: use32BitWorkerProcess
     reserved: reserved
     containerSize: containerSize != -1 ? containerSize : null
