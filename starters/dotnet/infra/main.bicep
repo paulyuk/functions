@@ -48,7 +48,7 @@ module api './app/api.bicep' = {
     appServicePlanId: appServicePlan.outputs.id
     keyVaultName: keyVault.outputs.name
     runtimeName: 'dotnet-isolated'
-    runtimeVersion: '6.0'
+    runtimeVersion: '8.0'
     storageAccountName: storage.outputs.name
     appSettings: {
     }
@@ -118,7 +118,7 @@ module monitoring './core/monitor/monitoring.bicep' = {
 }
 
 // App outputs
-output APPLICATIONINSIGHTS_CONNECTION_STRING string = monitoring.outputs.applicationInsightsConnectionString
+output APPLICATIONINSIGHTS_NAME string = monitoring.outputs.applicationInsightsConnectionString
 output AZURE_KEY_VAULT_ENDPOINT string = keyVault.outputs.endpoint
 output AZURE_KEY_VAULT_NAME string = keyVault.outputs.name
 output AZURE_LOCATION string = location

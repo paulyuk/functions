@@ -8,7 +8,7 @@ param appServicePlanId string
 param appSettings object = {}
 param keyVaultName string
 param runtimeName string = 'dotnet-isolated'
-param runtimeVersion string = '6.0'
+param runtimeVersion string = '8.0'
 param serviceName string = 'api'
 param storageAccountName string
 

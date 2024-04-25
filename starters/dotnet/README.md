@@ -1,5 +1,5 @@
 # Azure Functions
-## Starter template (.NET 6 C# Function, Consumption plan)
+## Starter template (.NET 8 C# Function, Consumption plan)
 
 This sample template provides an "empty starting point" function that is ready to run and deploy Azure easily.  
 
@@ -8,7 +8,7 @@ This sample template provides an "empty starting point" function that is ready t
 ## Run on your local environment
 
 ### Pre-reqs
-1) [.NET 6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) required *and [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) is strongly recommended*
+1) [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) required *and [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) is strongly recommended*
 2) [Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cmacos%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
 3) Add this local.settings.json file to the http folder to simplify local development
 ```json
@@ -105,11 +105,9 @@ public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "post")] Htt
 
 ## Deploy to Azure
 
-The easiest way to deploy this app is using the [Azure Dev CLI aka AZD](https://aka.ms/azd).  If you open this repo in GitHub CodeSpaces the AZD tooling is already preinstalled.
+The easiest way to deploy this app is using the [Azure Developer CLI](https://aka.ms/azd).  If you open this repo in GitHub CodeSpaces the AZD tooling is already preinstalled.
 
-To provision:
+To provision and deploy app:
 ```bash
-azd provision
+azd up
 ```
-
-Note using the private preview `azd up` and `azd deploy` do not yet work with new deployment APIs needed by Flex Consumption.  Please use Core Tools, Az CLI or VSCode alternatives instead to deploy your app zip to these Flex resources.  
