@@ -10,8 +10,12 @@ namespace AI_Functions
         private readonly ILogger _logger;
 
         // must export and set these Env vars with your AI Cognitive Language resource values
-        private static readonly AzureKeyCredential credentials = new AzureKeyCredential(Environment.GetEnvironmentVariable("AI_SECRET") ?? "SETENVVAR!");
-        private static readonly Uri endpoint = new Uri(Environment.GetEnvironmentVariable("AI_URL") ?? "SETENVVAR!");
+        private static readonly AzureKeyCredential credentials = new AzureKeyCredential(
+            Environment.GetEnvironmentVariable("AI_SECRET") ?? "SETENVVAR!"
+        );
+        private static readonly Uri endpoint = new Uri(
+            Environment.GetEnvironmentVariable("AI_URL") ?? "SETENVVAR!"
+        );
 
         public summarize_function(ILoggerFactory loggerFactory)
         {
@@ -22,7 +26,8 @@ namespace AI_Functions
         [BlobOutput("test-samples-output/{name}-output.txt")]
         public static async Task<string> Run(
             [BlobTrigger("test-samples-trigger/{name}")] string myTriggerItem,
-            FunctionContext context)
+            FunctionContext context
+        )
         {
             var logger = context.GetLogger("summarize_function");
             logger.LogInformation($"Triggered Item = {myTriggerItem}");
@@ -36,25 +41,32 @@ namespace AI_Functions
             // Blob Output
             return summarizedText;
         }
-        static async Task<string> AISummarizeText(TextAnalyticsClient client, string document, ILogger logger)
-        {
 
+        static async Task<string> AISummarizeText(
+            TextAnalyticsClient client,
+            string document,
+            ILogger logger
+        )
+        {
             string summarizedText = "";
 
             // Prepare analyze operation input. You can add multiple documents to this list and perform the same
             // operation to all of them.
-            var batchInput = new List<string>
-            {
-                document
-            };
+            var batchInput = new List<string> { document };
 
             TextAnalyticsActions actions = new TextAnalyticsActions()
             {
-                ExtractSummaryActions = new List<ExtractSummaryAction>() { new ExtractSummaryAction() }
+                ExtractSummaryActions = new List<ExtractSummaryAction>()
+                {
+                    new ExtractSummaryAction(),
+                },
             };
 
             // Start analysis process.
-            AnalyzeActionsOperation operation = await client.StartAnalyzeActionsAsync(batchInput, actions);
+            AnalyzeActionsOperation operation = await client.StartAnalyzeActionsAsync(
+                batchInput,
+                actions
+            );
             await operation.WaitForCompletionAsync();
             // View operation status.
             summarizedText += $"AnalyzeActions operation has completed" + Newline();
@@ -66,30 +78,38 @@ namespace AI_Functions
             // View operation results.
             await foreach (AnalyzeActionsResult documentsInPage in operation.Value)
             {
-                IReadOnlyCollection<ExtractSummaryActionResult> summaryResults = documentsInPage.ExtractSummaryResults;
+                IReadOnlyCollection<ExtractSummaryActionResult> summaryResults =
+                    documentsInPage.ExtractSummaryResults;
 
                 foreach (ExtractSummaryActionResult summaryActionResults in summaryResults)
                 {
                     if (summaryActionResults.HasError)
                     {
                         logger.LogError($"  Error!");
-                        logger.LogError($"  Action error code: {summaryActionResults.Error.ErrorCode}.");
+                        logger.LogError(
+                            $"  Action error code: {summaryActionResults.Error.ErrorCode}."
+                        );
                         logger.LogError($"  Message: {summaryActionResults.Error.Message}");
                         continue;
                     }
 
-                    foreach (ExtractSummaryResult documentResults in summaryActionResults.DocumentsResults)
+                    foreach (
+                        ExtractSummaryResult documentResults in summaryActionResults.DocumentsResults
+                    )
                     {
                         if (documentResults.HasError)
                         {
                             logger.LogError($"  Error!");
-                            logger.LogError($"  Document error code: {documentResults.Error.ErrorCode}.");
+                            logger.LogError(
+                                $"  Document error code: {documentResults.Error.ErrorCode}."
+                            );
                             logger.LogError($"  Message: {documentResults.Error.Message}");
                             continue;
                         }
 
-                        summarizedText += $"  Extracted the following {documentResults.Sentences.Count} sentence(s):" + Newline();
-
+                        summarizedText +=
+                            $"  Extracted the following {documentResults.Sentences.Count} sentence(s):"
+                            + Newline();
 
                         foreach (SummarySentence sentence in documentResults.Sentences)
                         {
@@ -107,8 +127,5 @@ namespace AI_Functions
         {
             return "\r\n";
         }
-
     }
-
-
 }

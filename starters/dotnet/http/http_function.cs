@@ -17,13 +17,16 @@ namespace Company.Function
         }
 
         [Function("http")]
-        public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req)
+        public async Task<HttpResponseData> Run(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req
+        )
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
             string? name = HttpUtility.ParseQueryString(req.Url.Query)["name"];
 
-            if (req.Body.Length > 0) {
+            if (req.Body.Length > 0)
+            {
                 RequestPayload? payload = await req.ReadFromJsonAsync<RequestPayload>();
                 name = payload?.Name;
             }
@@ -36,7 +39,7 @@ namespace Company.Function
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
-            response.WriteString(helloMsg);  
+            response.WriteString(helloMsg);
 
             return response;
         }
