@@ -20,30 +20,36 @@ namespace dotnet
 
         [Function(nameof(CreateThumbnail))]
         [BlobOutput("images-thumbnails/thumbnail.jpg", Connection = "AzureWebJobsStorage")]
-        public async Task<Byte[]> Run([BlobTrigger("images/{name}", Connection = "AzureWebJobsStorage")] Stream stream, string name)
+        public async Task<Byte[]> Run(
+            [BlobTrigger("images/{name}", Connection = "AzureWebJobsStorage")] Stream stream,
+            string name
+        )
         {
-
             _logger.LogInformation($"Processing blob\n Name: {name} \n Data: {name.Length}");
 
             using (var image = Image.Load(stream))
             {
-
                 // Generate thumbnail
-                image.Mutate(async x => x.Resize(new ResizeOptions
-                {
-                    Size = new Size(thumbnailWidth, thumbnailHeight),
-                    Mode = ResizeMode.Max
-                }));
+                image.Mutate(async x =>
+                    x.Resize(
+                        new ResizeOptions
+                        {
+                            Size = new Size(thumbnailWidth, thumbnailHeight),
+                            Mode = ResizeMode.Max,
+                        }
+                    )
+                );
 
                 var outputBlob = new MemoryStream();
-                image.Save(outputBlob, new JpegEncoder()); 
+                image.Save(outputBlob, new JpegEncoder());
 
                 // Save the thumbnail to the output blob
-                _logger.LogInformation($"Finished processing blob\n Name:{name} and saved to output blob");
+                _logger.LogInformation(
+                    $"Finished processing blob\n Name:{name} and saved to output blob"
+                );
 
                 return outputBlob.ToArray();
             }
         }
-
     }
 }

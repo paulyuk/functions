@@ -16,13 +16,18 @@ namespace Company.Function
             _logger = loggerFactory.CreateLogger<HttpPostBody>();
         }
 
-        [Function("httppostbody")]        
-        public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequest req,
-            [FromBody] Person person)
+        [Function("httppostbody")]
+        public IActionResult Run(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequest req,
+            [FromBody] Person person
+        )
         {
             return new OkObjectResult(person);
         }
     }
 
-    public record Person([property: JsonPropertyName("name")] string Name, [property: JsonPropertyName("age")] int Age);
+    public record Person(
+        [property: JsonPropertyName("name")] string Name,
+        [property: JsonPropertyName("age")] int Age
+    );
 }

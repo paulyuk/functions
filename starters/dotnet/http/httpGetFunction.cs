@@ -20,5 +20,4 @@ namespace Company.Function
             return new OkObjectResult("Welcome to Azure Functions!");
         }
     }
-
 }
