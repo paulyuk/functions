@@ -4,6 +4,7 @@
 This sample template provides a working example of chaining 3 functions in a reliable way using Durable Functions.  This is effectively the output of following this [tutorial](https://learn.microsoft.com/en-us/azure/azure-functions/durable/quickstart-js-vscode?pivots=nodejs-model-v4).  
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=575770869)
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/paulyuk/functions/durable/chaining/javascript)
 
 ## Run on your local environment
 

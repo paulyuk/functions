@@ -4,6 +4,7 @@
 This sample template provides an "empty starting point" function that is ready to run and deploy Azure easily.  
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=575770869)
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/paulyuk/functions/starters/javascriptv3)
 
 ## Run on your local environment
 
