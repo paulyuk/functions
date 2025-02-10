@@ -3,7 +3,7 @@
 
 This sample shows how to take a human prompt as HTTP Get or Post input, calculates the completions using chains of human input and templates.  This is a starting point that can be used for more sophisticated chains.  
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=575770869)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=575770869) [![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/paulyuk/functions/ai/langchain/python)
 
 ## Run on your local environment
 
