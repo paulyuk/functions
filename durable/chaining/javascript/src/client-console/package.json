@@ -1,0 +1,12 @@
+{
+  "name": "client-console",
+  "version": "1.0.0",
+  "description": "Node.js console app to call durable function",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}

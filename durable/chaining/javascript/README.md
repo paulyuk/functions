@@ -27,15 +27,30 @@ docker run -p 10000:10000 -p 10001:10001 -p 10002:10002 mcr.microsoft.com/azure-
 ```
 
 ### Using Functions CLI
-1) Open a new terminal and do the following:
+1. Open a new terminal and do the following:
 
 ```bash
 npm install
 func start
 ```
-2) Test a Web hook or GET using the browser to open http://localhost:7071/api/http
 
-3) Test a POST using your favorite REST client, e.g. [RestClient in VS Code](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), PostMan, curl.  `test.http` has been provided to run this quickly.   
+### Test from Console client app
+
+The `concept of a plan` here is to drive the orchestration using a separate console app.  The console app does indeed drive the orchestartion, show status async, and complete. What I wish it did is allow the orchestration/activities to grap the http context and write events to the output during activities.  
+
+2. Open a new terminal and do the following:
+
+```bash
+cd client-console
+npm install
+npm start
+```
+
+
+### Test from Browser/HTTP
+2. Test a Web hook or GET using the browser to open http://localhost:7071/api/http
+
+3. Test a POST using your favorite REST client, e.g. [RestClient in VS Code](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), PostMan, curl.  `test.http` has been provided to run this quickly.   
 
 Terminal:
 ```bash

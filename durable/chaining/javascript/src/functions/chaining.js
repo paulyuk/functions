@@ -5,9 +5,18 @@ const activityName = 'chaining';
 
 df.app.orchestration('chainingOrchestrator', function* (context) {
     const outputs = [];
+
+    context.log(`Called activity '${activityName}' with 'Tokyo'.`);
     outputs.push(yield context.df.callActivity(activityName, 'Tokyo'));
+    context.log(`Outputs updated to '${outputs}'`);
+
+    context.log(`Called activity '${activityName}' with 'Seattle'.`);
     outputs.push(yield context.df.callActivity(activityName, 'Seattle'));
+    context.log(`Outputs updated to '${outputs}'`);
+
+    context.log(`Called activity '${activityName}' with 'Cairo'.`);
     outputs.push(yield context.df.callActivity(activityName, 'Cairo'));
+    context.log(`Outputs updated to '${outputs}'`);
 
     return outputs;
 });
